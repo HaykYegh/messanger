@@ -1,0 +1,5 @@
+provider: s3
+bucket: zangi-desktop-releases
+region: eu-west-1
+path: zangi
+updaterCacheDirName: ./

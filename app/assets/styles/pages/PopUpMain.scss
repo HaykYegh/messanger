@@ -1,0 +1,188 @@
+
+@import "../utils/variables";
+@import "../utils/mixin";
+
+//************************ Main PopUp ************************//
+
+.popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  opacity:1;
+  @include flex();
+  @include align-items-center();
+  @include justify-content-center();
+  &.open {
+    opacity:0;
+    animation: profile-popup-content 0.2s forwards;
+    .popup-content {
+      opacity: 0;
+      transform: scale(0.6);
+      animation: popup-scale 0.3s forwards;
+    }
+  }
+  &.close {
+    opacity:1;
+    animation: close-popup 0.15s forwards;
+    .popup-content {
+      opacity: 1;
+      transform: scale(1);
+      animation: close-popup-scale 0.23s forwards;
+    }
+  }
+  .popup-content {
+    min-height: 100px;
+    min-width: 450px;
+    max-width: 450px;
+    width: auto;
+    height: auto;
+    background-color: #ffffff;
+    padding: 18px 24px 20px 20px;
+    border-radius: 5px;
+    opacity: 1;
+    overflow-x: hidden;
+    @include flex();
+    @include flex-direction-row();
+    @include justify-content-flex-start();
+    .popup-logo {
+      width: 60px;
+      height: 60px;
+      min-width: 60px;
+      margin: 0 20px 0 0;
+      //padding: 3px;
+      .image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .action-content {
+      width: 100%;
+      @include flex();
+      @include flex-direction-column();
+      .title {
+        margin: 10px 0 0 0;
+        display: block;
+        text-align: left;
+        font-weight: 700;
+        font-size: 15px;
+        color: #263239;
+      }
+      .info {
+        display: block;
+        text-align: left;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 1.38;
+        //max-width: 300px;
+        color: #333333;
+        margin: 12px 0 0 0;
+      }
+      .CheckboxBlock{
+        display: block;
+        position: relative;
+        padding-left: 20px;
+        cursor: pointer;
+        text-align: left;
+        margin: 16px 0 0 0;
+        font-size: 13px;
+        color: #333333;
+        font-weight: 600;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        input{
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+        }
+      }
+      /* When the checkbox is checked, add a blue background */
+      .CheckboxBlock input:checked ~ .checkMark {
+        background-color: $primary-color;
+        border-color: $primary-color;
+      }
+
+      /* Create the checkmark/indicator (hidden when not checked) */
+      .checkMark{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 13px;
+        width: 13px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background-color: #eee;
+        &:after {
+          content: "";
+          position: absolute;
+          display: none;
+          left: 4px;
+          top: 1px;
+          width: 4px;
+          height: 8px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+
+      }
+
+      /* Show the checkmark when checked */
+      .CheckboxBlock input:checked ~ .checkMark:after {
+        display: block;
+      }
+
+      .button-block {
+        margin: 24px 0 0 0;
+        @include flex();
+        @include flex-direction-row();
+        @include align-items-center();
+        @include justify-content-flex-end();
+        .cancel-btn {
+          margin: 0 14px 0 0;
+          @include cancel-button();
+          min-width: 90px;
+
+          &.cancel-btn-wsp {
+            padding: 0;
+            background-color: unset;
+            border: unset;
+          }
+        }
+        .confirm-btn {
+          @include confirm-button();
+          min-width: 90px;
+
+          &.confirm-btn-wsp {
+            padding: 0;
+            background-color: unset;
+            border: unset;
+            color: red;
+            width: 170px;
+            text-align: left;
+          }
+        }
+        .confirm-secondary-btn {
+          margin: 0 0 0 25px;
+          @include confirm-button();
+          background: #ff4921;
+          //border: 1px solid #a31d00;
+          &:hover {
+            background: #ff4921;
+          }
+        }
+      }
+    }
+  }
+}

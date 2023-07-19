@@ -1,0 +1,624 @@
+@import '../../utils/variables';
+@import '../../utils/mixin';
+
+//************************ Thread Block ************************//
+.thread_block {
+  max-height: 60px;
+  height: 55px;
+  overflow: hidden;
+  cursor: pointer;
+  @include flex();
+  @include flex-direction-row();
+  @include align-items-center();
+
+  &:hover {
+    background-color: $contact-pack-hover;
+  }
+
+  &.active:hover {
+    background-color: $contact-pack-active !important;
+  }
+
+  &.active {
+    background-color: $contact-pack-active;
+    .conversation-info {
+      .contact_name-info {
+        .group-icon {
+          &:before {
+            color: #FFFFFF !important;
+          }
+        }
+
+        .group_name {
+          color: #FFFFFF !important;
+        }
+
+        .contact_name {
+          font-size: 0.93rem;
+          color: #FFFFFF !important;
+        }
+
+        .contact_time {
+          color: #FFFFFF !important;
+        }
+      }
+
+      .thread-typing {
+        .typing-text {
+          color: #FFFFFF !important;
+          font-weight: 500;
+        }
+
+        .typing-animation {
+          > .type-ico {
+            background-color: #FFFFFF !important;
+          }
+        }
+      }
+    }
+
+    .join-to-call {
+      color: #52B1EB;
+      background-color: white;
+    }
+
+    .message-row {
+      .mute-icon {
+        @include icon-font();
+
+        &:before {
+          color: #FFFFFF !important;
+        }
+      }
+
+      .last-message-text {
+        color: #FFFFFF !important;
+
+        .sender {
+          font-weight: 700;
+        }
+
+        .draft {
+          color: #FFFFFF !important;
+          padding-right: 5px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .contact_img {
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin: 0 12px;
+    object-fit: contain;
+    @include user-drag(none);
+  }
+
+  .contact_icon {
+    position: relative;
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin: 0 12px;
+    background-color: $contact-icon-color;
+    @include flex();
+    @include justify-content-center();
+    @include align-items-center();
+
+    span {
+      font-size: 16px;
+      line-height: 19px;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      text-align: left;
+    }
+  }
+
+  .no-name_icon {
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin: 0 12px;
+    background-color: $avatar-bg-color;
+    @include icon-font();
+    @include flex();
+    @include align-items-center();
+    @include justify-content-center();
+
+    &::after {
+      content: '\e947';
+      color: #ffffff;
+      font-size: 34px;
+      display: block;
+    }
+  }
+
+  .conversation-info {
+    flex: 1;
+    height: 100%;
+    box-sizing: border-box;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+    padding: 0 0 0 1px;
+    position: relative;
+    @include flex();
+    @include flex-direction-column();
+    @include align-items-flex-start();
+    @include justify-content-center();
+    overflow-y: hidden;
+
+    .call-actions {
+      position: absolute !important;
+      display: flex;
+      right: 14px;
+      z-index: 5;
+
+      .icon-call-actions {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        transition: 0.2s;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 6px;
+
+        &:hover {
+          &:before {
+            opacity: .7;
+          }
+        }
+
+        &:before {
+          color: #ffffff;
+          transition: 0.2s;
+          font-size: 30px;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      .icon-microphone {
+        background-color: #707384;
+
+        &.off {
+          background-color: #ffff;
+
+          &:before {
+            color: #FB2C2F;
+          }
+        }
+
+        &.on {
+          background-color: #707384;
+
+          &:before {
+            color: #fff;
+          }
+        }
+
+        &:before {
+          content: "\e928";
+        }
+      }
+
+      .icon-end-call {
+        background-color: #FB2C2F;
+
+        &:before {
+          content: "\e921";
+        }
+      }
+
+      .icon-video-call {
+        background-color: #fff;
+
+        &.disabled {
+          cursor: unset !important;
+          opacity: 0.5;
+          pointer-events: none;
+        }
+
+        &:before {
+          content: "\e929";
+          color: #000;
+        }
+      }
+
+      .icon-accept-call {
+        background-color: #00A2EC;
+
+        &:before {
+          transition: none;
+          content: '\e950';
+          font-size: 16px;
+        }
+      }
+    }
+
+    .info-row {
+      width: 100%;
+      @include flex();
+      @include flex-direction-row();
+
+      .contact_name-info {
+        width: 100%;
+        @include flex();
+        @include align-items-center();
+        @include flex-direction-row();
+        @include justify-content-flex-start();
+
+        .group-icon {
+          width: 12px;
+          height: 12px;
+          margin: 0 5px 0 0;
+          @include icon-font();
+
+          &:before {
+            content: '\e949';
+            color: #8f9cb4;
+            font-size: 12px;
+            display: block;
+          }
+        }
+
+        .group_name, .contact_name {
+          font-size: 0.9825rem;
+          line-height: 1.3;
+          font-weight: 600;
+          display: block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-align: left;
+        }
+
+        .contact_time {
+          font-size: 12px;
+          line-height: 16px;
+          font-weight: 400;
+          position: relative;
+          color: $grey-color;
+          width: auto;
+          margin: 0 15px 0 auto;
+
+          text-align: left;
+        }
+      }
+    }
+
+    .message-row {
+      width: 100%;
+      margin: 2px 0 0 0;
+      @include flex();
+      @include align-items-center();
+      @include flex-direction-row();
+      @include justify-content-flex-start();
+      height: 22px;
+
+      .icon-status_msg_number {
+        position: relative;
+        width: auto;
+        min-width: 18px;
+        height: 14px;
+        margin: 0 5px 0 4px;
+        color: #808088;
+        font-size: 13px;
+        line-height: 16px;
+        font-weight: 400;
+        text-align: left;
+        @include flex();
+        @include justify-content-center();
+        @include align-items-center();
+
+        &:before {
+          content: attr(data-unread);
+          font-size: 12px;
+          font-weight: 400;
+          width: auto;
+          height: 18px;
+          min-width: 18px;
+          background: $primary-color no-repeat;
+          color: #ffffff;
+          border-radius: 15px;
+          padding: 0 5px;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, Helvetica, Arial, 'icomoon', sans-serif;
+          @include flex();
+          @include justify-content-center();
+          @include align-items-center();
+        }
+      }
+
+      .icon-status_trying {
+        position: relative;
+        margin: 0 5px 0 2px;
+        opacity: 0;
+        width: 11px;
+        height: 11px;
+        border: 1px solid #94A6B9;
+        border-radius: 50%;
+        animation: profile-popup-content 0.1ms forwards;
+
+        &:after {
+          content: '';
+          display: block;
+          background-color: #94A6B9;
+          width: 3px;
+          height: 1px;
+          position: absolute;
+          top: 4px;
+          right: 1px;
+          transform-origin: center left;
+          animation: trying-clock 1000ms infinite linear;
+        }
+
+        &:before {
+          content: '';
+          display: block;
+          background-color: #94A6B9;
+          width: 3px;
+          height: 1px;
+          position: absolute;
+          top: 4px;
+          right: 1px;
+          transform-origin: center left;
+          animation: trying-clock 2000ms infinite linear;
+        }
+      }
+
+      .icon-status_sent {
+        position: relative;
+        width: 21px !important;;
+        height: 14px !important;;
+        animation: none !important;
+        border: none !important;
+        @include icon-font();
+
+        &:before {
+          content: '\e909';
+          background-repeat: no-repeat;
+          @include absolute-vertical-center(1px, unset);
+          color: #BDC6D6;
+          font-size: 14px;
+        }
+      }
+
+      .mute-icon {
+        position: relative;
+        width: 12px !important;
+        height: 12px !important;;
+        animation: none !important;
+        border: none !important;
+        margin: 0 5px 0 0;
+        @include icon-font();
+
+        &:before {
+          content: '\e971';
+          background-repeat: no-repeat;
+          @include absolute-vertical-center(1px, unset);
+          color: #BDC6D6;
+          font-size: 12px;
+        }
+      }
+
+      .icon-status_delivered {
+        position: relative;
+        width: 21px !important;;
+        height: 14px !important;;
+        animation: none !important;
+        border: none !important;
+        @include icon-font();
+
+        &:before {
+          content: '\e909';
+          background-repeat: no-repeat;
+          @include absolute-vertical-center(1px, unset);
+          color: $primary-color;
+          font-size: 14px;
+        }
+      }
+
+      .icon-status_seen {
+        position: relative;
+        width: 21px !important;;
+        height: 14px !important;;
+        animation: none !important;
+        border: none !important;
+        @include icon-font();
+
+        &:before {
+          content: '\e90a';
+          @include absolute-vertical-center(1px, unset);
+          background-repeat: no-repeat;
+          color: $primary-color;
+          font-size: 14px;
+        }
+      }
+
+      .last-message-text {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: normal;
+        color: #8f9cb4;
+        width: 100%;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+        padding: 0 70px 0 0;
+
+        &.status {
+          padding-left: 3px;
+        }
+
+        .sender {
+          font-weight: 700;
+        }
+
+        .draft {
+          color: $primary-color;
+          padding-right: 5px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .thread-typing {
+      width: 100%;
+      text-align: left;
+      margin: 2px 0 0 0;
+      height: 22px;
+      white-space: nowrap;
+      @include flex();
+      @include flex-direction-row();
+      @include align-items-center();
+
+      .typing-text {
+        font-size: 13px;
+        margin: 0 0 7px 12px;
+        color: $primary-color;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: normal;
+        font-weight: 500;
+      }
+
+      .typing-animation {
+        min-width: 20px;
+        height: 11px;
+        will-change: transform;
+        position: relative;
+        animation: 2s bulge infinite ease-out;
+        //padding: 0 10px;
+        margin: 0 0 0 6px;
+        @include flex();
+        @include flex-direction-row();
+        @include justify-content-space-between();
+        @include align-items-center();
+
+        > .type-ico {
+          height: 4px;
+          width: 4px;
+          background-color: $primary-color;
+          display: block !important;
+          border-radius: 50%;
+          opacity: 0.4;
+          @for $i from 1 through 3 {
+            &:nth-of-type(#{$i}) {
+              animation: 1s blink infinite ($i * .2s);
+            }
+          }
+        }
+
+        @keyframes blink {
+          50% {
+            opacity: 1;
+            transform: translate3d(0, -3px, 0);
+          }
+        }
+
+        .guest_bubble_time {
+          display: none;
+        }
+
+        .user_bubble_status_seen {
+          display: none;
+        }
+
+        span {
+          display: none;
+        }
+
+        .guest_circle {
+          position: absolute;
+          left: -7px;
+          bottom: -2px;
+          width: 8px;
+          height: 8px;
+          background-color: $guest-bubble-color;
+          border: 1px solid $guest-bubble-border;
+        }
+      }
+    }
+  }
+  //.join-to-call {
+  //  margin-right: 10px;
+  //  padding: 5px 10px;
+  //  font-size: 14px;
+  //  cursor: pointer;
+  //  background-color: #259fe6;
+  //  border: 1px solid #D8DBE1;
+  //  color: white;
+  //  border-radius: 6px;
+  //  position: absolute;
+  //  right: 5px;
+  //}
+
+  .join-to-call {
+    position: absolute;
+    right: 10px;
+    width: 53px;
+    height: 24px;
+    border-radius: 17px;
+    cursor: pointer;
+    background-color: $selected-contact-bg;
+    box-sizing: border-box;
+    outline: unset;
+    font-size: 12px;
+    color: white;
+    text-transform: uppercase;
+    border: 0px solid #47A6E0;
+    transition: border 0.125s linear;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    font-weight: 700;
+
+    &:hover {
+      border: 1px solid #47A6E0;
+    }
+  }
+}
+
+.react-contextmenu {
+  opacity: 0;
+  padding: 7px 0;
+  position: fixed;
+  background: #ffffff;
+  border-radius: 6px;
+  z-index: 15;
+  transform: scale(0);
+  transition: all 100ms;
+}
+
+.react-contextmenu--visible {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 9999;
+  transform: scale(1);
+  transition: transform 100ms;
+  box-shadow: 0 2px 20px 3px rgba(0, 0, 0, 0.1);
+}
+
+.react-contextmenu-item {
+  padding: 0 20px;
+  font-size: 14px;
+  color: #000000;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+.react-contextmenu-item:hover {
+  color: #FFFFFF;
+  background-color: #17ABF6;
+}

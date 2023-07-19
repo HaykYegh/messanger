@@ -1,0 +1,539 @@
+
+@import "../../utils/variables";
+@import "../../utils/mixin";
+
+//******************* Left Side Header *******************//
+
+.left_side_header {
+  background-color: #e9ebee;
+  min-height: 40px;
+  height: 80px;
+  background: linear-gradient(to right, #91b6ec 0%, #85d0f5 100%);
+
+/*  -webkit-box-shadow: 0 10px 38px -19px rgb(204, 204, 204);
+  -moz-box-shadow: 0 10px 38px -19px rgb(204, 204, 204);
+  box-shadow: 0 10px 38px -19px rgb(204, 204, 204);*/
+  .title {
+    height: 100%;
+    position: relative;
+    @include flex();
+    @include justify-content-center();
+    @include align-items-center();
+    .user_icon {
+      position: relative;
+      z-index: 1;
+      cursor: pointer;
+      @include icon-font();
+      @include flex();
+      @include align-items-center;
+      @include justify-content-center();
+      &:before {
+        content: "\e93c";
+        color: $primary-color;
+        font-size: 70px;
+        display: block;
+      }
+    }
+    .back-to-chat {
+      @include absolute-vertical-center(unset, 14px);
+      @include icon-font();
+      cursor: pointer;
+      &:after {
+        content: "\e962";
+        color: #ffffff;
+        font-size: 20px;
+      }
+    }
+    .title_info {
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .right-side-info {
+      .right-side-info-text {
+        font-weight: 500;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 18px;
+        width: auto;
+        color: #000000;
+        .profile-popup {
+          width: 0;
+          height: 0;
+          min-width: 0;
+          min-height: 0;
+          /*position: absolute;
+          top: 75px;
+          left: 50%;
+          margin-left: -141px;*/
+          position: absolute;
+          top: 75px;
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+          background-color: #ffffff;
+          border-radius: 8px;
+          z-index: 11;
+          -webkit-box-shadow: 0px 2px 20px 3px rgba(0,0,0,0.1);
+          -moz-box-shadow: 0px 2px 20px 3px rgba(0,0,0,0.1);
+          box-shadow: 0px 2px 20px 3px rgba(0,0,0,0.1);
+          &:before {
+            content: '';
+            @include absolute-center-x();
+            top: -11px;
+            border: 1px solid #fff;
+            border-color: #fff transparent;
+            border-width: 0 13px 12px 13px;
+            z-index: 12;
+          }
+          .profile-popup-content {
+            position: relative;
+            padding: 0 20px;
+            opacity: 0;
+            animation: profile-popup-content 0.2s forwards;
+            -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+            .edit-btn {
+              font-weight: 400;
+              font-size: 15px;
+              line-height: 15px;
+              color: $right-panel-blue;
+              cursor: pointer;
+              position: absolute;
+              top: 20px;
+              right: 20px;
+            }
+            .save-btn {
+              font-weight: 400;
+              font-size: 15px;
+              line-height: 15px;
+              color: $right-panel-blue;
+              cursor: pointer;
+              position: absolute;
+              top: 20px;
+              right: 20px;
+            }
+            .avatar_delete {
+              font-weight: 400;
+              font-size: 15px;
+              line-height: 15px;
+              color: red;
+              cursor: pointer;
+              position: absolute;
+              top: 20px;
+              left: 20px;
+            }
+            .info-block {
+              width: 100%;
+              height: auto;
+              background-color: #ffffff;
+              border-top-right-radius: 8px;
+              border-top-left-radius: 8px;
+              .image-block {
+                width: 100%;
+                height: auto;
+                @include flex();
+                @include align-items-flex-start();
+                @include justify-content-center();
+                .profile-icon {
+                  margin: 40px 0 20px 0;
+                  width: 90px;
+                  height: 90px;
+                  border-radius: 50%;
+                  @include flex();
+                  @include align-items-center();
+                  @include justify-content-center();
+                  background-color: #eceff1;
+                  position: relative;
+                  overflow: hidden;
+                  @include icon-font();
+                  transform: scale(0.6);
+                  animation: profile-popup-img 0.2s forwards;
+                  -webkit-animation-delay: 0.2s;
+                  animation-delay: 0.2s;
+                  &:before {
+                    content: "\e947";
+                    color: #A5AFB8;
+                    font-size: 81px;
+                    display: block;
+                    @include absolute-center-x();
+                    bottom: 0;
+                  }
+                  &:after {
+                    content: " ";
+                    display: block;
+                    width: 90px;
+                    height: 90px;
+                    border-radius: 50%;
+                    background-color: #F4F7FC;
+                    @include absolute-center-xy();
+                    z-index: -1;
+                  }
+                  .icon {
+                    width: 60px;
+                    height: 60px;
+                    @include flex();
+                    @include align-items-center();
+                    @include justify-content-center();
+                    @include icon-font();
+                    &:after {
+                      content: "\e948";
+                      color: #8b959f;
+                      font-size: 60px;
+                      z-index: 5;
+                    }
+                  }
+                  .profile-pic-icon {
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0,0,0,0.2);
+                    z-index: 8;
+                    @include flex();
+                    @include align-items-center();
+                    @include justify-content-center();
+                    @include absolute-center-xy();
+                    @include icon-font();
+                    &:before {
+                      content: "\e968";
+                      color: #FFFFFF;
+                      font-size: 36px;
+                    }
+                    .profile-pic-upload {
+                      width: 100%;
+                      height: 100%;
+                      position: absolute;
+                      right: 0px;
+                      margin: 0;
+                      bottom: 0;
+                      padding: 0;
+                      opacity: 0;
+                      outline: none;
+                      cursor: pointer;
+                      font-size: 0px !important;
+                    }
+                  }
+                }
+                .profile-img {
+                  background-size: cover;
+                  background-position: center;
+                  margin: 40px 0 20px 0;
+                  width: 90px;
+                  height: 90px;
+                  border-radius: 50%;
+                  position: relative;
+                  overflow: hidden;
+                  transform: scale(0.6);
+                  animation: profile-popup-img 0.2s forwards;
+                  -webkit-animation-delay: 0.2s;
+                  animation-delay: 0.2s;
+                  .icon {
+                    width: 60px;
+                    height: 60px;
+                    @include flex();
+                    @include align-items-center();
+                    @include justify-content-center();
+                    @include icon-font();
+                    &:after {
+                      content: "\e948";
+                      color: #8b959f;
+                      font-size: 60px;
+                      z-index: 5;
+                    }
+                  }
+                  .profile-pic-icon {
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0,0,0,0.2);
+                    z-index: 8;
+                    @include flex();
+                    @include align-items-center();
+                    @include justify-content-center();
+                    @include absolute-center-xy();
+                    @include icon-font();
+                    &:before {
+                      content: "\e968";
+                      color: #FFFFFF;
+                      font-size: 36px;
+                    }
+                    .profile-pic-upload {
+                      width: 100%;
+                      height: 100%;
+                      position: absolute;
+                      right: 0px;
+                      margin: 0;
+                      bottom: 0;
+                      padding: 0;
+                      opacity: 0;
+                      outline: none;
+                      cursor: pointer;
+                      font-size: 0px !important;
+                    }
+                  }
+                }
+              }
+              .number-block {
+                width: 100%;
+                height: auto;
+                background-color: #ffffff;
+                border-bottom: 1px solid #eaeaea;
+                @include flex();
+                @include flex-direction-column();
+                @include align-items-flex-start();
+                @include justify-content-center();
+                .profile-name {
+                  margin: 17px 0 0 0;
+                  font-weight: 500;
+                  font-weight: 500;
+                  font-size: 17px;
+                  line-height: 17px;
+                  width: 220px;
+                  color: #000000;
+                  display: block;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                }
+                .edit-name-input {
+                  .user-name-input {
+                    border: none;
+                    border-bottom: 1px solid #eaeaea;
+                    color: #000;
+                    background-color: transparent;
+                    width: 100%;
+                    font-size: 15px;
+                    line-height: 15px;
+                    height: 36px;
+                    font-weight: 400;
+                    &::-webkit-input-placeholder {
+                      color: #c7c7c7;
+                    }
+                    &:-moz-placeholder {
+                      color: #c7c7c7;
+                    }
+                    &::-moz-placeholder {
+                      color: #c7c7c7;
+                    }
+                    &:-ms-input-placeholder {
+                      color: #c7c7c7;
+                    }
+                  }
+                  .user-lastname-input {
+                    margin: 4px 0 0 0;
+                    border: none;
+                    background-color: transparent;
+                    width: 100%;
+                    font-size: 15px;
+                    line-height: 15px;
+                    color: #000;
+                    height: 36px;
+                    font-weight: 400;
+                    &::-webkit-input-placeholder {
+                      color: #c7c7c7;
+                    }
+                    &:-moz-placeholder {
+                      color: #c7c7c7;
+                    }
+                    &::-moz-placeholder {
+                      color: #c7c7c7;
+                    }
+                    &:-ms-input-placeholder {
+                      color: #c7c7c7;
+                    }
+                  }
+                }
+                .profile-number {
+                  margin: 10px 0 17px 0;
+                  font-weight: 400;
+                  font-size: 15px;
+                  line-height: 15px;
+                  color: #a0a0a0;
+                }
+              }
+            }
+            .balance-block {
+              width: 100%;
+              height: 70px;
+              border-bottom: 1px solid #eaeaea;
+              @include flex();
+              @include flex-direction-row();
+              @include align-items-center();
+              @include justify-content-space-between();
+              .balance-info {
+                @include flex();
+                @include flex-direction-column();
+                .balance-text {
+                  font-weight: 400;
+                  font-size: 15px;
+                  line-height: 15px;
+                  color: #000000;
+                }
+                .number-of-money {
+                  margin: 8px 0 0 0;
+                  font-weight: 400;
+                  font-size: 15px;
+                  line-height: 15px;
+                  color: #a0a0a0;
+                  text-transform: capitalize;
+                }
+              }
+              .buy-credit-button {
+                margin: 0 20px 0 0;
+                .buy-credit-btn {
+                  background: transparent;
+                  border: 2px solid $primary-color;
+                  color: $primary-color;
+                  width: 100px;
+                  border-radius: 20px;
+                  line-height: 30px;
+                  text-align: center;
+                  cursor: pointer;
+                  display: block;
+                  font-weight: 400;
+                  text-transform: capitalize;
+                  font-size: 14px;
+                }
+              }
+            }
+            .sign-out {
+              width: 100%;
+              height: 54px;
+              border-bottom-left-radius: 23px;
+              border-bottom-right-radius: 23px;
+              @include flex();
+              @include align-items-center();
+              @include justify-content-flex-start();
+              .sign-out-btn {
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 15px;
+                color: $right-panel-blue;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+      .create-group-header {
+        width: auto;
+        height: auto;
+        @include flex();
+        @include flex-direction-column();
+        @include align-items-center();
+        @include justify-content-center();
+        .create-group-text {
+          font-weight: 500;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 16px;
+          width: auto;
+          color: #000000;
+        }
+        .members_number {
+          margin: 5px 0 0 0;
+          .add_number {
+            font-size: 14px;
+            color: #8b8a89;
+          }
+          .all_contacts {
+            font-size: 14px;
+            color: #8b8a89;
+          }
+        }
+      }
+    }
+    .back-to-chat-list {
+      display: block;
+      cursor: pointer;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+      color: #ffffff;
+      @include absolute-vertical-center(unset, 14px);
+    }
+    .profile-edit {
+      display: block;
+      cursor: pointer;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+      color: $primary-color;
+      @include absolute-vertical-center(14px, unset);
+    }
+    .next_btn {
+      display: block;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+      color: #8b8a89;
+      cursor: pointer;
+      @include absolute-vertical-center(5%, unset);
+    }
+    .next_btn_active {
+      font-weight: 500;
+      color: $primary-color;
+      cursor: pointer;
+      @include absolute-vertical-center(5%, unset);
+    }
+    .edit_icon {
+      width: 40px;
+      height: 40px;
+      position: relative;
+      z-index: 1;
+      @include icon-font();
+      @include absolute-vertical-center(5%, unset);
+      &:before {
+        content: "\e926";
+        color: #ffffff;
+        font-size: 40px;
+        display: block;
+      }
+      &:after {
+        content: " ";
+        display: block;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: $primary-color;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        z-index: -1;
+      }
+    }
+    .create_contact_icon {
+      width: 40px;
+      height: 40px;
+      position: relative;
+      z-index: 1;
+      @include icon-font();
+      @include absolute-vertical-center(5%, unset);
+      &:before {
+        content: "\e958";
+        color: #EFF4FB;
+        font-size: 40px;
+        display: block;
+      }
+      &:after {
+          content: " ";
+          display: block;
+          width: 38px;
+          height: 38px;
+          border-radius: 50%;
+          background-color: #5a93ca;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          z-index: -1;
+        }
+    }
+    .invisible {
+      display: none;
+    }
+  }
+}

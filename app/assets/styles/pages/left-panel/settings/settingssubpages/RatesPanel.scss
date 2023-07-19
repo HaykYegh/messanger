@@ -1,0 +1,162 @@
+
+@import "../../../../utils/variables";
+@import "../../../../utils/mixin";
+
+//************************ Chat List ************************//
+
+.left_side_content {
+  .our-rates {
+    margin: 0 0 0 auto;
+    height: 50px;
+    width: 90%;
+    .rates-at-your-location {
+      .rates-title {
+        margin-top: 8px;
+        font-size: 13px;
+        color: #ccc;
+        text-align: left;
+      }
+    }
+    .info {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      @include flex();
+      @include flex-direction-row();
+      @include align-items-center();
+      @include justify-content-flex-start();
+      .flag {
+        width: 50px;
+        height: 40px;
+        background-position: center;
+        float: left;
+      }
+      .country-info {
+        @include flex();
+        @include flex-direction-column();
+        @include justify-content-flex-start();
+        .country-name {
+          height: 20px;
+          margin: 0 0 0 15px;
+          width: 100%;
+          text-align: left;
+          font-size: 14px;
+          line-height: 14px;
+          font-weight: 400;
+          color: #263238;
+          cursor: pointer;
+        }
+        .rates {
+          margin: 0 0 0 15px;
+          width: 100%;
+          @include flex();
+          @include flex-direction-row();
+          @include justify-content-space-between();
+          .rate-amount {
+            font-size: 12px;
+            line-height: 12px;
+            font-weight: 400;
+            color: #263238;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .country-data {
+    margin: 0 0 0 auto;
+    height: 50px;
+    width: 90%;
+    .rates-at-your-location {
+      .rates-title {
+        margin-top: 8px;
+        font-size: 13px;
+        color: #ccc;
+        text-align: left;
+      }
+    }
+    .info {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      @include flex();
+      @include flex-direction-row();
+      @include align-items-center();
+      @include justify-content-flex-start();
+      .flag {
+        width: 50px;
+        height: 40px;
+        background-position: center;
+        float: left;
+      }
+      .country-info {
+        @include flex();
+        @include flex-direction-column();
+        @include justify-content-flex-start();
+        .country-name {
+          height: 20px;
+          margin: 0 0 0 15px;
+          width: 100%;
+          text-align: left;
+          font-size: 14px;
+          line-height: 14px;
+          font-weight: 400;
+          color: #263238;
+          cursor: pointer;
+        }
+        .rates {
+          margin: 0 0 0 15px;
+          width: 100%;
+          @include flex();
+          @include flex-direction-row();
+          @include justify-content-space-between();
+          .rate-amount {
+            font-size: 12px;
+            line-height: 12px;
+            font-weight: 400;
+            color: #263238;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .country-price {
+      margin: 15px 0 0 0;
+      @include flex();
+      @include flex-direction-column();
+      .price-info {
+        @include flex();
+        @include flex-direction-row-reverse();
+        @include justify-content-space-between();
+        .price-code {
+          font-size: 14px;
+          line-height: 14px;
+          font-weight: 400;;
+          color: #263238;
+          margin: 0 20px 0 0;
+        }
+        .price-name {
+          font-size: 14px;
+          line-height: 14px;
+          font-weight: 400;
+          color: #263238;
+          width: 150px;
+          display: block;
+          text-align: left;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      .price-count {
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: 400;
+        color: #263238;
+        cursor: pointer;
+        margin: 10px 0 0 0;
+        text-align: left;
+      }
+    }
+  }
+}

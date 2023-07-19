@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            -webkit-text-size-adjust: auto !important;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        span, p {
+            -webkit-font-smoothing: antialiased;
+        }
+
+        :focus {
+            outline-color: transparent;
+            outline-style: none;
+        }
+
+        *, :after, :before {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            background: transparent;
+        }
+
+
+        @font-face {
+            font-family: Noto;
+            src: url('./assets/fonts/NotoSansDisplay-unhinted/NotoSansDisplay-Regular.ttf') format('truetype');
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: Noto;
+            src: url('./assets/fonts/NotoSansDisplay-unhinted/NotoSansDisplay-Medium.ttf') format('truetype');
+            font-weight: 500;
+        }
+
+        @font-face {
+            font-family: Noto;
+            src: url('./assets/fonts/NotoSansDisplay-unhinted/NotoSansDisplay-Semibold.ttf') format('truetype');
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: Noto;
+            src: url('./assets/fonts/NotoSansDisplay-unhinted/NotoSansDisplay-Bold.ttf') format('truetype');
+            font-weight: 700;
+        }
+
+        @font-face {
+            font-family: NotoArm;
+            src: url('./assets/fonts/NotoSansArmenian-unhinted/NotoSansArmenian-Regular.ttf') format('truetype');
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: NotoArm;
+            src: url('./assets/fonts/NotoSansArmenian-unhinted/NotoSansArmenian-Medium.ttf') format('truetype');
+            font-weight: 500;
+        }
+
+        @font-face {
+            font-family: NotoArm;
+            src: url('./assets/fonts/NotoSansArmenian-unhinted/NotoSansArmenian-Semibold.ttf') format('truetype');
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: NotoArm;
+            src: url('./assets/fonts/NotoSansArmenian-unhinted/NotoSansArmenian-Bold.ttf') format('truetype');
+            font-weight: 700;
+        }
+
+        @font-face {
+            font-family: 'icomoon';
+            src: url('./assets/fonts/icomoon.eot');
+            src: url('./assets/fonts/icomoon.eot') format('embedded-opentype'),
+            url('./assets/fonts/icomoon.ttf') format('truetype'),
+            url('./assets/fonts/icomoon.woff') format('woff'),
+            url('./assets/fonts/icomoon.svg') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        [class^="icon-"], [class*=" icon-"] {
+            /* use !important to prevent issues with browser extensions that change fonts */
+            font-family: 'icomoon' !important;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: Noto, NotoArm, system-ui, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif !important;
+            line-height: 1;
+            word-wrap: break-word;
+            -webkit-app-region: drag;
+            margin: 0;
+            user-select: none; /* supported by Chrome and Opera */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+        }
+
+        .flex {
+            display: -webkit-flex;
+            /* Safari */
+            display: -ms-flexbox;
+            /* IE 10+ */
+            display: flex;
+        }
+
+        .flex-column {
+            -webkit-flex-direction: column;
+            /* Safari 6.1+ */
+            -ms-flex-direction: column;
+            /* IE 10+ */
+            flex-direction: column;
+        }
+
+        .flex-center {
+            -webkit-justify-content: center;
+            /* Safari 6.1+ */
+            justify-content: center;
+        }
+
+        .flex-item-center {
+            -webkit-align-items: center;
+            /* Safari 7.0+ */
+            -ms-flex-align: center;
+            /* IE 10+ */
+            align-items: center;
+        }
+
+        .flex-space-between {
+            -webkit-justify-content: space-between;
+            /* Safari 6.1+ */
+            justify-content: space-between;
+        }
+
+        .show {
+            display: flex !important;
+        }
+
+        .incoming-call {
+            width: 280px;
+            height: 410px;
+            z-index: 9999;
+            cursor: default;
+            border-radius: 4px;
+            background-color: #26334F;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .incoming-call .icon-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            z-index: 15;
+            speak: none;
+            cursor: pointer;
+            color: #000;
+            -webkit-app-region: no-drag;
+        }
+
+        .incoming-call .icon-close:after {
+            content: "\e995";
+            color: #D1DCEE;
+            font-size: 16px;
+        }
+
+        .incoming-call .avatar-blur {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            filter: blur(40px) brightness(.85);
+            -webkit-filter: blur(40px) brightness(.85);
+            -moz-filter: blur(40px) brightness(.85);
+        }
+
+        .incoming-call .header {
+            padding: 17px 0 40px 0;
+            z-index: 2;
+        }
+
+        .incoming-call .header .call-type {
+            color: rgba(255, 255, 255, .7);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .incoming-call .content {
+            color: rgb(255, 255, 255);
+            z-index: 1;
+        }
+
+        .incoming-call .content .caller-info {
+            width: 100px;
+            height: 100px;
+        }
+
+        .incoming-call .content .caller-info .caller-avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            -webkit-user-drag: none;
+            /* Chrome all / Safari all */
+            -khtml-user-drag: none;
+            /* Firefox all */
+            -moz-user-drag: none;
+            /* IE 10+ */
+            -o-user-drag: none;
+            /* Likely future */
+            user-drag: none;
+        }
+
+        .incoming-call .content .caller-info .caller-icon {
+            font-size: 14px;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #eef3fa;
+            -webkit-justify-content: center;
+            /* Safari 6.1+ */
+            justify-content: center;
+            -webkit-align-items: center;
+            /* Safari 7.0+ */
+            -ms-flex-align: center;
+            /* IE 10+ */
+            align-items: center;
+            display: -webkit-flex;
+            /* Safari */
+            display: -ms-flexbox;
+            /* IE 10+ */
+            display: flex;
+        }
+
+        .incoming-call .content .caller-info .caller-icon > span {
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .incoming-call .content .caller-name {
+            padding: 40px 0 10px 0;
+            font-size: 20px;
+            font-weight: 600;
+            text-overflow: ellipsis;
+            width: 160px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .incoming-call .content .call-type {
+            font-size: 15px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, .7);
+        }
+
+        .incoming-call .footer {
+            width: 100%;
+            position: absolute;
+            bottom: 30px;
+        }
+
+        .incoming-call .footer .call-actions {
+            padding: 0 45px;
+        }
+
+        .incoming-call .footer .call-actions > div {
+            display: -webkit-flex;
+            /* Safari */
+            display: -ms-flexbox;
+            /* IE 10+ */
+            display: flex;
+            -webkit-flex-direction: column;
+            /* Safari 6.1+ */
+            -ms-flex-direction: column;
+            /* IE 10+ */
+            flex-direction: column;
+        }
+
+        .incoming-call .footer .call-actions .icon-footer {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #232426;
+            transition: 0.2s;
+            cursor: pointer;
+            display: -webkit-flex;
+            /* Safari */
+            display: -ms-flexbox;
+            /* IE 10+ */
+            display: flex;
+            -webkit-justify-content: center;
+            /* Safari 6.1+ */
+            justify-content: center;
+            -ms-flex-pack: center;
+            -webkit-align-items: center;
+            /* Safari 7.0+ */
+            -ms-flex-align: center;
+            /* IE 10+ */
+            align-items: center;
+            -webkit-app-region: no-drag;
+        }
+
+        .incoming-call .footer .call-actions .icon-footer:before {
+            color: #ffffff;
+            font-size: 50px;
+            transition: 0.2s;
+        }
+
+        .incoming-call .footer .call-actions .icon-footer:hover {
+            cursor: pointer;
+        }
+
+        .incoming-call .footer .call-actions .icon-footer:hover:before {
+            color: #ffffff;
+            opacity: .7;
+        }
+
+        .incoming-call .footer .call-actions .icon-footer.icon-decline-call {
+            background-color: #FB2C2F;
+        }
+
+        .incoming-call .footer .call-actions .icon-footer.icon-decline-call:before {
+            content: "\e921";
+        }
+
+        .incoming-call .footer .call-actions .icon-footer.icon-video-call {
+            background-color: #ffffff;
+        }
+
+        .incoming-call .footer .call-actions .video-call.disabled{
+            cursor: unset !important;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+
+        .incoming-call .footer .call-actions .icon-footer.icon-video-call:before {
+            content: "\e929";
+            color: #000;
+        }
+
+        .incoming-call .footer .call-actions .icon-footer.icon-accept-call {
+            background-color: #00A2EC;
+        }
+
+        .incoming-call .footer .call-actions .icon-footer.icon-accept-call:before {
+            transition: none;
+            content: '\e950';
+            font-size: 24px;
+        }
+
+        .incoming-call .footer .call-actions .description {
+            padding-top: 10px;
+            color: rgba(255, 255, 255, .7);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+<div class="incoming-call flex flex-column" id="incoming-call">
+    <span id="close" class="icon-close"></span>
+    <div class="header flex flex-item-center flex-center"><span class="call-type" id="call-type">Header</span></div>
+    <img src="" alt="avatar-blur" id="avatar-blur" class="avatar-blur">
+
+    <div class="content flex flex-item-center flex-center flex-column">
+        <div class="caller-info" id="caller-info">
+        </div>
+        <div class="caller-name" id="caller-name"></div>
+        <div class="call-type" id="call-text"></div>
+    </div>
+    <div class="footer flex-item-center flex-center flex-column">
+        <div class='call-actions flex flex-space-between flex-item-center'>
+            <div class='decline-call flex flex-center flex-item-center flex-column'>
+                <span class="icon-footer icon-decline-call" id="decline-call"></span>
+                <span class='description' id="decline-description"></span>
+            </div>
+            <div class='video-call flex flex-center flex-item-center flex-column'>
+                <span class="icon-footer icon-video-call" id="video-call"></span>
+                <span class='description' id="video-description"></span>
+            </div>
+            <div class='accept-call flex flex-center flex-item-center flex-column'>
+                <span class="icon-footer icon-accept-call" id="accept-call"></span>
+                <span class='description' id="accept-description"></span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    const ipcRenderer = window.ipcRenderer;
+    ipcRenderer.on('sendUserInfo', (event, caller) => {
+        const isGroupCall = caller.isGroupCall;
+        const callerInfo = caller.callerInfo;
+        const avatarInfo = caller.avatarInfo;
+        const avatarCharacter = callerInfo.avatarCharacter || (caller.callerPhone && caller.callerPhone.trim().slice(0, 1) || '');
+
+
+        const callerInfoContainer = document.getElementById('caller-info');
+        const callType = document.getElementById('call-type');
+        const callText = document.getElementById('call-text');
+        const callerName = document.getElementById('caller-name');
+        const acceptDesc = document.getElementById('accept-description');
+        const videoDesc = document.getElementById('video-description');
+        const videoIcon = document.querySelector('.video-call');
+        const declineDesc = document.getElementById('decline-description');
+        const avatarBlur = document.getElementById('avatar-blur');
+
+
+        callerInfoContainer.innerHTML = "";
+        avatarBlur.classList.remove('show');
+
+        if (avatarInfo) {
+            const callerAvatar = document.createElement("img");
+            callerAvatar.src = avatarInfo;
+            callerAvatar.className = 'caller-avatar';
+            avatarBlur.src = avatarInfo;
+            avatarBlur.classList.add('show');
+
+            callerInfoContainer.appendChild(callerAvatar);
+
+        } else {
+            const callerIcon = document.createElement("span");
+
+            if (callerInfo && callerInfo.name) {
+                const characterElement = document.createElement("span");
+                characterElement.innerHTML = avatarCharacter;
+                callerIcon.appendChild(characterElement);
+                callerIcon.style.color = callerInfo.color || '#4fa5ff';
+            }
+
+            callerIcon.dataset.line = avatarCharacter;
+            callerIcon.className = 'caller-icon';
+
+            callerInfoContainer.appendChild(callerIcon);
+        }
+
+
+
+        callType.innerHTML = caller.text.callTypeText;
+        callText.innerHTML = caller.text.callText;
+        acceptDesc.innerHTML = caller.text.acceptDescription;
+        declineDesc.innerHTML = caller.text.declineDescription;
+        videoDesc.innerHTML = caller.text.videoDescription;
+        if (caller.mobileCall){
+            videoIcon.classList.add("disabled");
+        }
+
+        callerName.innerHTML = callerInfo && callerInfo.name !== callerInfo.phone ? callerInfo.name : caller.callerPhone;
+
+        if (isGroupCall) {
+
+        } else {
+
+
+        }
+
+
+    });
+
+
+
+    document.getElementById("accept-call").addEventListener("click", () => {
+        ipcRenderer.send("doCallAction", "take");
+    });
+
+    document.getElementById("decline-call").addEventListener("click", () => {
+        ipcRenderer.send("doCallAction", "decline");
+    });
+
+    document.getElementById("video-call").addEventListener("click", () => {
+        ipcRenderer.send("doCallAction", "takeVideo");
+    });
+
+    document.getElementById("close").addEventListener("click", () => {
+        ipcRenderer.send("doCallAction", "ignore");
+    });
+</script>
+</html>

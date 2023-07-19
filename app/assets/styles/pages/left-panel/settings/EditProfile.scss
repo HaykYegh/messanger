@@ -1,0 +1,312 @@
+@import "../../../utils/variables";
+@import "../../../utils/mixin";
+
+.edit-profile-content {
+  padding: 0 20px;
+
+  .profile-img-block {
+    margin: 0 auto;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E6EAEE;
+
+    .no-name_icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: $avatar-bg-color;
+      margin: 0 auto;
+      @include icon-font();
+      @include flex();
+      @include align-items-center();
+      @include justify-content-center();
+
+      &::after {
+        content: "\e947";
+        color: #ffffff;
+        font-size: 82px;
+        margin: 5px 0 0 0;
+        display: block;
+      }
+    }
+
+    .contact_img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: contain;
+      margin: 0 auto 19px auto;
+      @include icon-font();
+      @include flex();
+      @include align-items-center();
+      @include justify-content-center();
+    }
+
+    .profile-pic-input {
+      text-align: center;
+
+      .button-file {
+        border-radius: 4px;
+        border: none;
+        font-size: 12px;
+        color: #ffffff;
+        cursor: pointer;
+        transition: 0.3s;
+        text-transform: capitalize;
+        background-color: #17ABF6;
+        padding: 5px 15px;
+      }
+
+      .hidden {
+        display: none
+      }
+    }
+
+    .profile-img-loader {
+      z-index: 8;
+      position: absolute;
+      left: 50%;
+      top: 60px;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .done-btn {
+      color: #000;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 1.2;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      z-index: 10;
+    }
+
+    .back-btn {
+      color: #000;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 1.2;
+      cursor: pointer;
+      position: absolute;
+      left: 20px;
+      z-index: 10;
+    }
+  }
+
+
+
+  .edit-buttons {
+    float: right;
+
+    .button {
+      border-radius: 4px;
+      font-size: 12px;
+      transition: 0.3s;
+      text-transform: capitalize;
+      padding: 5px 15px;
+      cursor: pointer;
+
+      &.save-button {
+        border: none;
+        color: #ffffff;
+        background-color: #17ABF6;
+        //margin-right: 5px;
+
+        &.disabled {
+          cursor: unset !important;
+          opacity: 0.5;
+          pointer-events: none;
+        }
+      }
+
+      &.cancel-button {
+        border: 1px solid #E6EAEE;
+        color: #58666e;
+      }
+    }
+  }
+
+  .arrow-left {
+    border: solid black;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    margin: -36px 0 0 0;
+    position: fixed;
+    cursor: pointer;
+  }
+  .arrow-left-hovered {
+    margin: -43px 0px 0px -8px;
+    position: fixed;
+    height: 20px;
+    width: 20px;
+    border: none;
+    &:hover{
+      border: 2px solid #E6EAEE;
+    }
+  }
+}
+
+
+//.profile-img {
+//  background-size: cover;
+//  background-position: center;
+//  background-color: $avatar-bg-color;
+//  width: 120px;
+//  height: 120px;
+//  border-radius: 50%;
+//  object-fit: contain;
+//  margin: 0 auto;
+//  position: relative;
+//  overflow: hidden;
+//  //transform: scale(0.6);
+//  //animation: profile-popup-img 0.2s forwards;
+//  //-webkit-animation-delay: 0.2s;
+//  //animation-delay: 0.2s;
+//  @include icon-font();
+//  @include flex();
+//  @include align-items-center();
+//  @include justify-content-center();
+//
+//  .icon {
+//    width: 60px;
+//    height: 60px;
+//    @include flex();
+//    @include align-items-center();
+//    @include justify-content-center();
+//    @include icon-font();
+//
+//    &:after {
+//      background-size: cover;
+//      background-position: center;
+//      content: "\e947";
+//      color: #ffffff;
+//      font-size: 82px;
+//      margin: 5px 0 0 0;
+//      display: block;
+//    }
+//  }
+//
+//  //.profile-pic-icon {
+//  //  width: 100%;
+//  //  height: 100%;
+//  //  background-color: rgba(0, 0, 0, 0.2);
+//  //  border-radius: 50%;
+//  //  z-index: 8;
+//  //  @include flex();
+//  //  @include align-items-center();
+//  //  @include justify-content-center();
+//  //  @include absolute-center-xy();
+//  //  @include icon-font();
+//  //
+//  //  &:before {
+//  //    content: "\e968";
+//  //    color: #FFFFFF;
+//  //    font-size: 36px;
+//  //  }
+//  //
+//  //  .profile-pic-upload {
+//  //    width: 100%;
+//  //    height: 100%;
+//  //    position: absolute;
+//  //    right: 0px;
+//  //    margin: 0;
+//  //    bottom: 0;
+//  //    padding: 0;
+//  //    opacity: 0;
+//  //    outline: none;
+//  //    cursor: pointer;
+//  //    font-size: 0px !important;
+//  //  }
+//  //}
+//}
+//
+//.profile-icon {
+//  background-size: cover;
+//  background-position: center;
+//  width: 120px;
+//  height: 120px;
+//  border-radius: 50%;
+//  object-fit: contain;
+//  margin: 0 auto;
+//  position: relative;
+//  overflow: hidden;
+//  //transform: scale(0.6);
+//  //animation: profile-popup-img 0.2s forwards;
+//  //-webkit-animation-delay: 0.2s;
+//  //animation-delay: 0.2s;
+//  @include icon-font();
+//  @include flex();
+//  @include align-items-center();
+//  @include justify-content-center();
+//
+//  //&::after {
+//  //  content: "\e947";
+//  //  font-size: 82px;
+//  //  margin: 5px 0 0 0;
+//  //  display: block;
+//  //  color: #FFFFFF;
+//  //  z-index: 15;
+//  //}
+//
+//  .icon {
+//    width: 60px;
+//    height: 60px;
+//    @include flex();
+//    @include align-items-center();
+//    @include justify-content-center();
+//    @include icon-font();
+//
+//    &:after {
+//      content: "\e947";
+//      color: #ffffff;
+//      font-size: 82px;
+//      margin: 5px 0 0 0;
+//      display: block;
+//    }
+//  }
+//
+//  .profile-pic-icon {
+//    width: 100%;
+//    height: 100%;
+//    background-color: #EFF1F5;
+//    border-radius: 50%;
+//    z-index: 8;
+//    @include flex();
+//    @include align-items-center();
+//    @include justify-content-center();
+//    @include absolute-center-xy();
+//    @include icon-font();
+//
+//    &:before {
+//      content: "\e968";
+//      color: #FFFFFF;
+//      font-size: 36px;
+//    }
+//
+//    .profile-pic-upload {
+//      width: 100%;
+//      height: 100%;
+//      position: absolute;
+//      right: 0px;
+//      margin: 0;
+//      bottom: 0;
+//      padding: 0;
+//      opacity: 0;
+//      outline: none;
+//      cursor: pointer;
+//      font-size: 0px !important;
+//    }
+//  }
+//}
+//
+//.save-status {
+//  float: left;
+//  font-size: 12px;
+//  margin-right: 7px;
+//  padding-top: 7px;
+//}
+//

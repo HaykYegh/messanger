@@ -1,0 +1,123 @@
+.chat_background {
+    /*background-image: url("./images/dextop-patern.svg");*/
+    /*background-color: #ffffff;*/
+    background-color: #FDFEFF;
+    background-size: 200px auto;
+    background-repeat: repeat;
+    background-position: top center;
+}
+
+.authentication-page {
+    background-image: url("./images/login-bg.png");
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.alien-smile-2x, .angel-smile-2x, .angre-sik-smile-2x, .angree-blue-green-smile-2x, .angree-blue-smile-2x,
+.angree-smile-2x, .apple-smile-2x, .ball-smile-2x, .basketball-smile-2x, .beach-smile-2x,
+.bear-smile-2x, .bell-smile-2x, .bigeye-pink-smile-2x, .bigeye-smile-2x, .bike-smile-2x,
+.bliss-pink-smile-2x, .bliss-smile-2x, .blush-smile-2x, .boom-smile-2x, .boom-violet-smile-2x,
+.broken-heart-smile-2x, .bug-smile-2x, .cactus-smile-2x, .cant-talk-smile-2x, .car2-smile-2x,
+.car-smile-2x, .card-smile-2x, .cat-smile-2x, .cheeky-smile-2x, .cheky-wink-green-smile-2x,
+.cheky-wink-smile-2x, .cherry-smile-2x, .clawn-smile-2x, .clover-smile-2x, .clown-smile-2x,
+.cool-smile-2x, .cowboy-smile-2x, .cry-blue-smile-2x, .cry-smile-2x, .cup-smile-2x,
+.devil-smile-2x, .dizziness-smile-2x, .dog-smile-2x, .donut-smile-2x, .dracula-smile-2x,
+.dull-smile-2x, .earth-smile-2x, .evil-smile-2x, .family-smile-2x, .fear-smile-2x,
+.flower-smile-2x, .football-smile-2x, .frozen-smile-2x, .ghost-smile-2x, .girl-smile-2x,
+.grumpy-smile-2x, .hahaha-smile-2x, .hamburger-smile-2x, .hand-deal-smile-2x, .hand-dislike-smile-2x,
+.hand-like-smile-2x, .hand-ok-smile-2x, .hand-power-smile-2x, .hand-stop-smile-2x, .hand-victory-smile-2x,
+.happy-smile-2x, .happytear-smile-2x, .heart-smile-2x, .hehe-smile-2x, .hendtrail-smile-2x,
+.hmm-smile-2x, .ice-cream2-smile-2x, .ice-cream-smile-2x, .inlove-smile-2x, .intro-smile-2x,
+.kiss2-smile-2x, .kiss-smile-2x, .kissing-heart-smile-2x, .lamp-smile-2x, .laugh-smile-2x,
+.lemon-smile-2x, .mail-smile-2x, .martini-smile-2x, .money-smile-2x, .monkey2-smile-2x,
+.monkey3-smile-2x, .monkey-smile-2x, .moon-smile-2x, .music-smile-2x, .ninja-smile-2x,
+.pear-smile-2x, .pizza-smile-2x, .plant-smile-2x, .puke-smile-2x, .question-smile-2x,
+.rain-smile-2x, .rainbow-smile-2x, .rose-smile-2x, .sad-smile-2x, .shit-smile-2x,
+.shy-smile-2x, .sleep-smile-2x, .slightly-smile-2x, .smart-smile-2x, .smile-blue-smile-2x,
+.smile-smile-2x, .smirk-smile-2x, .snail-smile-2x, .sob-smile-2x, .speechless-smile-2x,
+.stareye-smile-2x, .stop-smile-2x, .sun-smile-2x, .surprised-smile-2x, .sweat-smile-2x,
+.together-smile-2x, .underblack-smile-2x, .whistle-smile-2x, .wine-smile-2x, .wink2-smile-2x,
+.wink-blue-smile-2x, .wink-smile-2x, .wondering-smile-2x, .wondering-violet-smile-2x, .worried-smile-2x,
+.wow-smile-2x, .yawn-smile-2x, .yum-smile-2x, .zorro-smile-2x, .devil-smile-red-2x, .mobile-smile-2x,
+.plant-green-smile-2x, .cloud-smile-2x, .haha-smile-2x, .tired-smile-2x, .kissed-smile-2x,
+.surprised-smile-two-2x, .laughing-smile-2x, .ghost-white-smile-2x, .drum-smile-2x, .guitar-smile-2x,
+.palette-smile-2x, .juice-smile-2x, .cola-smile-2x, .fries-smile-2x, .cake-smile-2x {
+    background: url('./images/sprite-zangi.png');
+}
+
+@font-face {
+    font-family: Noto;
+    src: url('fonts/NotoSansDisplay-unhinted/NotoSansDisplay-Regular.ttf') format('truetype');
+    font-weight: 400;
+    list:armenia
+}
+
+@font-face {
+    font-family: Noto;
+    src: url('fonts/NotoSansDisplay-unhinted/NotoSansDisplay-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Noto;
+    src: url('fonts/NotoSansDisplay-unhinted/NotoSansDisplay-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Noto;
+    src: url('fonts/NotoSansDisplay-unhinted/NotoSansDisplay-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: NotoArm;
+    src: url('fonts/NotoSansArmenian-unhinted/NotoSansArmenian-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: NotoArm;
+    src: url('fonts/NotoSansArmenian-unhinted/NotoSansArmenian-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: NotoArm;
+    src: url('fonts/NotoSansArmenian-unhinted/NotoSansArmenian-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: NotoArm;
+    src: url('fonts/NotoSansArmenian-unhinted/NotoSansArmenian-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot');
+    src: url('fonts/icomoon.eot') format('embedded-opentype'),
+    url('fonts/icomoon.ttf') format('truetype'),
+    url('fonts/icomoon.woff') format('woff'),
+    url('fonts/icomoon.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon',Noto, NotoArm, system-ui, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+

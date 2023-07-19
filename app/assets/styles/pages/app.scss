@@ -1,0 +1,246 @@
+@import "../utils/variables";
+@import "../utils/mixin";
+
+video::-internal-media-controls-download-button {
+  display: none;
+}
+
+video::-webkit-media-controls-enclosure {
+  overflow: hidden;
+}
+
+video::-webkit-media-controls-panel {
+  width: calc(100% + 30px);
+}
+
+audio::-internal-media-controls-download-button {
+  display: none;
+}
+
+audio::-webkit-media-controls-enclosure {
+  overflow: hidden;
+}
+
+audio::-webkit-media-controls-panel {
+  width: calc(100% + 30px);
+}
+
+.disable {
+  cursor: default;
+  pointer-events: none;
+  color: #cccccc !important;
+  &::before {
+    color: #cccccc !important;
+  }
+}
+
+.start-loader {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 9999;
+  background-color: #FFFFFF;
+  display: block;
+  top: 0;
+  right: 0;
+  //background-image: url("../../images/reg_bg.svg");
+  //background-position: top;
+  //background-repeat: no-repeat;
+  @include flex();
+  @include align-items-center();
+  @include justify-content-center();
+  .loader-content {
+    width: auto;
+    height: auto;
+    margin: 64px 0 0 0;
+    @include flex();
+    @include flex-direction-column();
+    @include align-items-center();
+    @include justify-content-center();
+    .logo {
+      background: url("../../images/logo.svg") no-repeat;
+      height: 175px;
+      width: 175px;
+      display: block;
+    }
+    .app-name {
+      margin: 90px 0 0 0;
+      font-size: 85px;
+      color: $primary-color;
+      font-weight: 900;
+    }
+    .welcome-message {
+      color: #ccc;
+      margin: 10px 0 0 0;
+      font-weight: 400;
+    }
+    .loader {
+      margin: 50px 0 0 0;
+      .loader-content {
+        position: relative;
+        margin: 0 auto;
+        width: 60px;
+        &:before {
+          content: '';
+          display: block;
+          padding-top: 100%;
+        }
+        .circular {
+          animation: rotate 2s linear infinite;
+          height: 100%;
+          transform-origin: center center;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          .path {
+            stroke-dasharray: 1, 200;
+            stroke-dashoffset: 0;
+            animation: dash 1.5s ease-in-out infinite;
+            stroke-linecap: round;
+            stroke: $primary-color;
+            stroke-width: 3px;
+            stroke-miterlimit: 10px;
+          }
+        }
+      }
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes dash {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+      50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+      }
+      100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+      }
+    }
+  }
+}
+
+.react-autosuggest__container {
+  margin: 0 0 0 auto;
+  height: 50px;
+  width: 90%;
+}
+
+.react-autosuggest__container input {
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+  height: 36px;
+  line-height: 38px;
+  text-rendering: optimizeLegibility;
+}
+
+.react-autosuggest__suggestions-container {
+  display: none;
+}
+
+.react-autosuggest__suggestions-container--open {
+  display: block;
+  text-align: left;
+  background-color: #fff;
+  font-weight: 300;
+  font-size: 16px;
+  z-index: 2;
+  position: relative;
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+}
+
+.react-autosuggest_row {
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid rgb(204, 204, 204);
+  @include flex();
+  @include align-items-center();
+  @include justify-content-flex-start();
+}
+
+.top-destinations {
+  margin: 10px 0 0 0;
+  @include flex();
+  @include align-items-center();
+  @include justify-content-flex-start();
+}
+
+.flag {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  float: left;
+}
+
+.country-name {
+  margin: 0 0 0 20px;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: #ddd;
+}
+
+.react-autosuggest__suggestion-match {
+  color: red;
+  font-weight: bold;
+}
+
+.small_loader {
+  border: 5px solid #f3f3f3;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  border-top: 5px solid #555;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 10;
+  top: 40%;
+  left: 45%;
+}
+
+.channel-loader {
+  width: 100%;
+  height: 100%;
+  background: #ffffff4a;
+  @include flex();
+  @include align-items-center();
+  @include justify-content-center();
+  @include absolute(0, 0, unset, unset);
+  z-index: 10;
+}
+
+.channel-info {
+  position: relative;
+}
+
+.chat_status_wrapper {
+  margin: 0 0 0 10px;
+  &.location_wrapper {
+    flex: 1;
+  }
+}

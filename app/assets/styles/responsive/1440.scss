@@ -1,0 +1,133 @@
+@import "../utils/variables";
+@import "../utils/mixin";
+
+/* ipad */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .right_side {
+    height: auto !important;
+    //height: 100% !important;
+    .right_side_content {
+      height: 1024px !important;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .right_side {
+    height: auto !important;
+    //height: 100% !important;
+    .right_side_content {
+      height: 768px !important;
+    }
+  }
+}
+
+/* iphone5 */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  /* .fullheight {
+      height: 320px;
+  } */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  /* .fullheight {
+      height: 568px;
+  } */
+}
+
+/* iPhone 4 */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  /* .fullheight {
+      height: 320px;
+  } */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  /* .fullheight {
+      height: 480px;
+  } */
+}
+
+@media screen and (max-width: 1440px) {
+
+  .left_side {
+    width: 25%;
+    height: 100%;
+    min-width: 321px;
+    display: flex;
+    flex-direction: column;
+    .left_side_content {
+      flex: 1;
+      overflow-y: hidden;
+      text-align: -webkit-center;
+    }
+  }
+  .right_bar {
+    width: 310px;
+    .shared_media {
+      .shared_media_content {
+        width: 100%;
+        height: calc(100% - 88px);
+        background-color: #FFFFFF;
+        .shared_images {
+          .images_content {
+            .list_image {
+              width: 94px;
+              height: 94px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .carousel-block {
+    .carousel {
+      padding: 12px 10px;
+      .content {
+        .info {
+          height: 180px;
+          .text {
+            height: 80px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+  }
+  .header {
+    .header-content {
+      .header-left {
+        .left-side-content {
+          .create-contact-popup {
+            right: 12px;
+            .contact-form {
+              .contact-form-content {
+                min-width: 288px;
+              }
+            }
+          }
+          .profile-popup.open {
+            .profile-popup-content {
+              .profile-main-block {
+                width: 89%;
+                left: 4%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .animation-right {
+    .left_side {
+      //min-width: 380px;
+    }
+  }
+  .header-left {
+    width: 25%;
+    height: 100%;
+    min-width: 310px;
+  }
+
+}

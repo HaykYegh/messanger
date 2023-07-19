@@ -1,0 +1,41 @@
+
+@import "../../../../utils/variables";
+@import "../../../../utils/mixin";
+
+//************************ Chat List ************************//
+
+.left_side_content {
+  .promo-block {
+    margin: 0 0 0 auto;
+    height: 50px;
+    width: 90%;
+    .promo-input {
+      width: 100%;
+      margin-top: 10px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      height: 36px;
+      line-height: 38px;
+      text-rendering: optimizeLegibility;
+      background-color: transparent;
+    }
+    .promo-hint {
+      margin-top: 8px;
+      font-size: 13px;
+      color: $grey-color;
+      text-align: left;
+    }
+    .promo-success {
+      color: green;
+      margin-top: 12px;
+      font-size: 15px;
+      text-align: right;
+    }
+    .promo-error {
+      color: red;
+      margin-top: 12px;
+      font-size: 15px;
+      text-align: right;
+    }
+  }
+}

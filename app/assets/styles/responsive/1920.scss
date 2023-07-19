@@ -1,0 +1,17 @@
+@import '../utils/variables';
+
+@media screen and (max-width: 1920px) {
+  .left_side {
+    background-color: $left_side-background;
+    height: 100%;
+    width: 292px;
+    display: flex;
+    flex-direction: column;
+    .left_side_content {
+      flex: 1;
+      overflow-y: hidden;
+      text-align: -webkit-center;
+    }
+  }
+
+}

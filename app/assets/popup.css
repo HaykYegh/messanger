@@ -1,0 +1,72 @@
+.default-popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 14;
+    display: -webkit-flex; /* Safari */
+    display: -ms-flexbox; /* IE 10+ */
+    display: flex;
+    -webkit-align-items: center; /* Safari 7.0+ */
+    -ms-flex-align: center; /* IE 10+ */
+    align-items: center;
+    -webkit-justify-content: center; /* Safari 6.1+ */
+    justify-content: center;
+    -ms-flex-pack: center;
+}
+.default-popup .default-popup-content {
+    min-height: 100px;
+    min-width: 300px;
+    width: 450px;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 18px 20px;
+    overflow-x: hidden;
+    display: -webkit-flex; /* Safari */
+    display: -ms-flexbox; /* IE 10+ */
+    display: flex;
+    -webkit-animation: popup 0.25s 1; /* Safari 4+ */
+    -moz-animation:    popup 0.25s 1; /* Fx 5+ */
+    -o-animation:      popup 0.25s 1; /* Opera 12+ */
+    animation:         popup 0.25s 1; /* IE 10+, Fx 29+ */
+}
+.default-popup .default-popup-content .default-popup-info {
+    width: 100%;
+    padding: 10px 0 0 14px;
+}
+.default-popup .default-popup-content img {
+    width: 60px;
+    height: 60px;
+    max-width: 100%;
+}
+.default-popup .default-popup-content .title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+    padding-bottom: 12px;
+}
+.default-popup .default-popup-content .info {
+    font-size: 13px;
+    color: #5C7692;
+    padding-bottom: 21px;
+}
+.default-popup .default-popup-content .button-block {
+    width: 100%;
+    text-align: right;
+}
+
+.default-popup .default-popup-content .button-block button {
+    border: none;
+    padding: 0 21px;
+    height: 21px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-family: 'Semibold',sans-serif;
+    font-size: 13px;
+}
+.default-popup .default-popup-content .button-block button.cancel-btn {
+    margin-right: 14px;
+}

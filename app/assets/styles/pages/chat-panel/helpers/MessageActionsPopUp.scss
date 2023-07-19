@@ -1,0 +1,322 @@
+
+@import "../../../utils/variables";
+@import "../../../utils/mixin";
+@import "../../../utils/LoaderMixin";
+
+.message-action-popup {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 15;
+  @include flex();
+  @include align-items-center();
+  @include justify-content-center();
+  &.open {
+    opacity:0;
+    animation: profile-popup-content 0.2s forwards;
+    .popup-block {
+      opacity: 0;
+      transform: scale(0.6);
+      animation: popup-scale 0.3s forwards;
+    }
+  }
+  &.close {
+    opacity:1;
+    animation: close-popup 0.15s forwards;
+    .popup-block {
+      opacity: 1;
+      transform: scale(1);
+      animation: close-popup-scale 0.23s forwards;
+    }
+  }
+  .popup-block {
+    width: 350px;
+    height: 500px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    opacity: 1;
+    .popup-content {
+      width: 100%;
+      height: 100%;
+      padding: 20px 30px;
+      opacity: 1;
+      position: relative;
+      @include flex();
+      @include flex-direction-column();
+      @include align-items-flex-start();
+      @include justify-content-flex-start();
+      .search_container {
+        width: 100%;
+        .contact_search {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 78px;
+          padding: 0;
+          //border-bottom: 1px solid #eaeaea;
+          background-color: transparent !important;
+          .search_input {
+            position: relative;
+            width: 100%;
+            margin: 0;
+            @include icon-font();
+            &::after {
+              position: absolute;
+              content: "\e93d";
+              color: #8492ab;
+              font-size: 16px;
+              left: 14px;
+              top: 9px;
+            }
+            input {
+              width: 100%;
+              height: 34px;
+              border-radius: 8px;
+              border: 1px solid rgba(144,155,180,0.34);
+              padding: 0 38px;
+              font-weight: 400;
+              font-size: 13px;
+              line-height: 13px;
+              background-color: #f9f9f9;
+              &:focus {
+                border: 1px solid #909cb4;
+              }
+            }
+            input::placeholder {
+              color: #8492ab;
+              font-weight: 400;
+              @include user-select(none);
+            }
+          }
+        }
+      }
+      .popup-text {
+        margin: 10px 0 10px 0;
+        font-size: 18px;
+        color: #000000;
+      }
+      .contacts-container {
+        width: 100%;
+        margin: 0 0 10px 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        .contact-row {
+          max-height: 60px;
+          height: 60px;
+          width: 100%;
+          overflow: hidden;
+          cursor: pointer;
+          @include flex();
+          @include flex-direction-row();
+          @include justify-content-flex-start();
+          @include align-items-center();
+          .contact_img {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            margin-right: 14px;
+            object-fit: contain;
+            @include user-drag(none);
+            @include user-select(none);
+          }
+          .contact_icon {
+            font-weight: 300;
+            font-size: 14px;
+            position: relative;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            margin-right: 14px;
+            background-color: $contact-icon-color;
+            @include flex();
+            @include justify-content-center();
+            @include align-items-center();
+            span {
+              font-size: 16px;
+              line-height: 19px;
+              font-weight: 700;
+              text-transform: uppercase;
+
+              text-align: left;
+            }
+          }
+          .no-name_icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            margin-right: 14px;
+            background-color: $avatar-bg-color;
+            @include icon-font();
+            @include flex();
+            @include align-items-center();
+            @include justify-content-center();
+            &::after {
+              content: "\e947";
+              color: #ffffff;
+              font-size: 34px;
+              display: block;
+            }
+          }
+          .contact-info {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            align-items: flex-start;
+            justify-content: center;
+            height: 44px;
+            .forward-name {
+              width: 100%;
+              @include flex();
+              @include flex-direction-row();
+              @include align-items-center();
+              @include justify-content-flex-start();
+              .group-icon {
+                width: 12px;
+                height: 12px;
+                margin: 0 10px 0 0;
+                @include icon-font();
+                &:before {
+                  content: "\E949";
+                  color: #8f9cb4;
+                  font-size: 12px;
+                  display: block;
+                }
+              }
+              .private-chat-icon {
+                width: 12px;
+                height: 12px;
+                margin: 0 10px 0 0;
+                @include icon-font();
+                &:before {
+                  content: "\E96C";
+                  color: #8f9cb4;
+                  font-size: 12px;
+                  display: block;
+                }
+              }
+            }
+            .contact-name {
+              font-weight: 500;
+              font-size: 16px;
+              line-height: 20px;
+              width: 150px;
+              height: 20px;
+              display: block;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              user-select: none;
+            }
+            .private-chat-name {
+              color: #00963f;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 20px;
+              width: 100%;
+              display: block;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              text-align: left;
+            }
+            .contact-number {
+              margin: 5px 0 0 0;
+              font-weight: 500;
+              font-size: 12px;
+              line-height: 12px;
+              width: 150px;
+              color: #CCCCCC;
+              display: block;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+          .delete-checked {
+            width: 20px;
+            height: 20px;
+            @include flex();
+            @include align-items-center();
+            @include justify-content-center();
+            margin: 0 10px 0 auto ;
+            border: 1px solid #C7CED8;
+            border-radius: 50px;
+            background-color: $left-side-bg;
+            &:before {
+              content: " ";
+              width: 8px;
+              height: 8px;
+              border-radius: 50px;
+              background-color: $primary-color;
+            }
+          }
+          .delete-not-checked{
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px 0 auto ;
+            border: 1px solid #C7CED8;
+            border-radius: 50px;
+          }
+        }
+      }
+      .send-block {
+        width: 100%;
+        height: auto;
+        padding: 25px 0 0 0;
+        min-height: 24px;
+        margin: auto 0 0 0;
+        @include flex();
+        @include align-items-flex-end();
+        @include justify-content-flex-end();
+        .send-btn {
+          @include confirm-button();
+        }
+        .cancel-btn {
+          margin: 0 18px 0 0;
+          @include cancel-button();
+        }
+      }
+      .loader {
+        @include absolute-center-xy();
+      }
+      .no-info {
+        width: 100%;
+        height: auto;
+        padding: 0 55px;
+        @include flex();
+        @include absolute-center-xy();
+        @include flex-direction-column();
+        @include align-items-center();
+        @include justify-content-center();
+        .no-info-title {
+          font-weight: 300;
+          font-size: 20px;
+          color: #000000;
+        }
+        .no-info-text {
+          margin: 15px 0 0 0;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 1.2;
+          color: #8A93A4;
+          text-align: center;
+          width: 100%;
+        }
+      }
+    }
+    .padding-input{
+      .search-container{
+        .content{
+          padding: 0 0 13px;
+        }
+      }
+
+    }
+  }
+}

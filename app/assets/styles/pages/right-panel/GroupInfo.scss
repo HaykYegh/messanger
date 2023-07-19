@@ -1,0 +1,644 @@
+@import "../../utils/variables";
+@import "../../utils/mixin";
+
+//******************* Group Chat Info Page *******************//
+
+.right_bar {
+  &.open {
+    transform: translate($right-panel-width, 0);
+    width: 0;
+
+    &.openActive {
+      transform: translate(0, 0);
+      width: $right-panel-width;
+      transition: all 200ms ease-in-out;
+    }
+  }
+
+  &.close {
+    transform: translate(0, 0);
+    width: $right-panel-width;
+
+    &.closeActive {
+      transform: translate($right-panel-width, 0);
+      width: 0;
+      transition: all 200ms ease-in-out;
+    }
+  }
+
+  .group-profile-right {
+    width: 100%;
+    height: 100%;
+    @include flex();
+    @include flex-direction-column();
+    position: relative;
+
+    .right-header {
+      width: 100%;
+      height: $header-height;
+      min-height: $header-height;
+      position: relative;
+      background-color: $header-color;
+      border-bottom: 1px solid #edf2f9;
+    }
+
+    .group-profile-content {
+      width: 100%;
+      overflow-y: auto;
+      padding: 0 22px;
+      position: absolute;
+      @include user-select(text);
+      visibility: visible;
+      opacity: 1;
+      transition: visibility .2s linear, opacity .2s linear;
+      z-index: 1;
+
+      &.transparent {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        z-index: -1;
+      }
+
+      .close_btn {
+        @include absolute(15px, unset, unset, 22px);
+        @include user-select(none);
+        font-size: 13px;
+        line-height: 1.2;
+        font-weight: 400;
+        cursor: pointer;
+        z-index: 8;
+      }
+
+      .right_btn {
+        @include absolute(15px, 22px, unset, unset);
+        @include user-select(none);
+        display: block;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 15px;
+
+        transition: 0.3s;
+        cursor: pointer;
+        z-index: 8;
+
+        &.done {
+          font-weight: 600;
+        }
+      }
+
+      .image-block {
+        width: 100%;
+        height: auto;
+        @include flex();
+        @include flex-direction-column();
+        @include justify-content-flex-start();
+        @include align-items-center();
+
+        .img {
+          margin: 30px 0 0 0;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          object-fit: contain;
+          @include user-drag(none);
+        }
+
+        .group-icon {
+          display: block;
+          margin: 30px 0 0 0;
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          @include flex();
+          @include flex-direction-column();
+          @include justify-content-center();
+          @include align-items-center();
+
+          &:after {
+            content: attr(data-line);
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 30px;
+            text-transform: uppercase;
+            color: #fff;
+          }
+        }
+
+        .contact_img {
+          margin: 30px 0 0 0;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          object-fit: contain;
+          @include user-drag(none);
+          @include user-select(none);
+        }
+
+        .contact_icon {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background-color: $contact-icon-color;
+          @include flex();
+          @include align-items-center();
+          @include justify-content-center();
+
+          span {
+            font-size: 28px;
+            line-height: 1.2;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: left;
+          }
+        }
+
+        .no-name_icon {
+          margin: 30px 0 0 0;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background-color: $avatar-bg-color;
+          @include icon-font();
+          @include flex();
+          @include align-items-center();
+          @include justify-content-center();
+
+          &::after {
+            content: "\e947";
+            color: #ffffff;
+            font-size: 60px;
+            display: block;
+          }
+        }
+
+        .group-name {
+          display: block;
+          margin-bottom: 5px;
+          font-size: 18px;
+          line-height: 1.3;
+          font-weight: 700;
+          text-align: center;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          cursor: pointer;
+          width: 240px;
+          -webkit-user-select: text;
+          -moz-user-select: text;
+          -ms-user-select: text;
+          user-select: text;
+        }
+
+        .number-of-members {
+          display: block;
+          margin: 0 0 20px 0;
+          font-size: 13px;
+          line-height: 1.2;
+          font-weight: 400;
+
+          color: #7C7E90;
+        }
+
+        .img-edit {
+          display: block;
+          margin-top: 45px;
+          width: 120px;
+          height: 120px;
+          //background: linear-gradient(rgb(52, 165, 243) 0%, rgb(107, 208, 252) 100%);
+          border-radius: 50%;
+          position: relative;
+          @include flex();
+          @include flex-direction-column();
+          @include justify-content-center();
+          @include align-items-center();
+
+          .group-pic-icon {
+            width: 100%;
+            height: 100%;
+            display: block;
+            z-index: 8;
+            //background-color: #e9ebee;
+            border-radius: 50%;
+            @include flex();
+            @include icon-font();
+            @include align-items-center();
+            @include justify-content-center();
+            @include absolute-center-xy();
+
+            &.no-image {
+              background-color: #e9ebee;
+            }
+
+            &:before {
+              content: "\E968";
+              font-size: 36px;
+              color: #FFFFFF;
+            }
+
+            .group-pic-upload {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              right: 0;
+              margin: 0;
+              bottom: 0;
+              padding: 0;
+              opacity: 0;
+              outline: none;
+              cursor: pointer;
+              font-size: 0 !important;
+              border: 1px solid #F5F5F7;
+            }
+          }
+
+          .no-name_icon {
+            display: none !important;
+          }
+
+          .contact_icon {
+            display: none !important;
+          }
+        }
+
+        .group-name-input {
+          border: none;
+          margin: 16px 0 26px;
+          padding: 5px 0;
+          border-bottom: 1px solid rgba(199, 206, 216, 0.3);
+          color: #2D2E3B;
+          background-color: transparent;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          height: 40px;
+          width: 100%;
+
+          &::placeholder {
+            color: #999;
+            font-size: 15px;
+            line-height: 17px;
+            @include user-select(none);
+          }
+
+          &:focus {
+            border-bottom: 1px solid $primary-color;
+            caret-color: $primary-color;
+          }
+        }
+      }
+
+      .mute-row {
+        width: 100%;
+        margin: 0 auto;
+        height: 40px;
+        border-bottom: 1px solid $grey-border-color;
+        transition: .3s;
+        @include flex();
+        @include flex-direction-row();
+        @include justify-content-flex-start();
+        @include align-items-center();
+        @include user-select(none);
+        cursor: pointer;
+
+        &:hover {
+          .mute-name {
+
+            color: $primary-color;
+          }
+        }
+
+        .mute-ico {
+          width: 24px;
+          @include flex();
+          @include icon-font();
+          @include justify-content-center();
+          display: none !important;
+
+          &:before {
+            content: "\e963";
+            color: $primary-color;
+            font-size: 24px;
+
+          }
+        }
+
+        .mute-name {
+          display: block;
+          transition: .3s;
+          font-size: 14px;
+          line-height: 1.2;
+          font-weight: 400;
+        }
+
+        .mute-icons {
+          margin: 0 0 0 auto;
+          @include flex();
+          @include flex-direction-row();
+          @include align-items-center();
+
+          .mute-status {
+            display: block;
+            font-size: 14px;
+            line-height: 1.2;
+            font-weight: 400;
+
+            color: $grey-color;
+          }
+
+          .mute-ico-next {
+            @include icon-font();
+
+            &:before {
+              content: "\e946";
+              color: $header-icon-color;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .shared-media {
+        cursor: pointer;
+        width: 100%;
+        margin: 0 auto;
+        height: 40px;
+        border-bottom: 1px solid $grey-border-color;
+        @include flex();
+        @include flex-direction-row();
+        @include justify-content-flex-start();
+        @include align-items-center();
+        @include user-select(none);
+
+        &:hover {
+          .shared-media-btn {
+            color: $primary-color;
+          }
+        }
+
+        .shared-media-ico {
+          width: 24px;
+          @include flex();
+          @include justify-content-center();
+          @include icon-font();
+          display: none !important;
+
+          &:before {
+            content: "\e952";
+            color: $primary-color;
+            font-size: 24px;
+
+          }
+        }
+
+        .shared-media-btn {
+          transition: .3s;
+          font-size: 14px;
+          line-height: 1.2;
+          font-weight: 400;
+        }
+
+        .shared-media-icons {
+          margin: 0 0 0 auto;
+          @include flex();
+          @include flex-direction-row();
+          @include align-items-center();
+
+          .shared-media-length {
+            display: block;
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 400;
+            color: $grey-color;
+          }
+
+          .shared-media-ico-next {
+            @include icon-font();
+
+            &:before {
+              content: "\e946";
+              color: $header-icon-color;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      //.group-chat-not-checked {
+      //  display: none;
+      //}
+
+      .add-members {
+        cursor: pointer;
+        width: 100%;
+        margin: 0 auto;
+        height: 40px;
+        //border-top: 1px solid $grey-border-color;
+        @include flex();
+        @include flex-direction-row();
+        @include justify-content-flex-start();
+        @include align-items-center();
+        @include user-select(none);
+
+        &:hover {
+          .add-members-btn {
+            color: $primary-color;
+          }
+        }
+
+        .add-members-ico {
+          width: 24px;
+          @include flex();
+          @include justify-content-center();
+          @include icon-font();
+          display: none !important;
+
+          &:before {
+            content: "\e914";
+            color: $primary-color;
+            font-size: 24px;
+          }
+        }
+
+        .add-members-btn {
+          transition: .3s;
+          font-size: 14px;
+          line-height: 16px;
+          font-weight: 400;
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
+
+        .add-members-ico-next {
+          margin: 0 0 0 auto;
+          @include icon-font();
+
+          &:before {
+            content: "\e946";
+            color: $header-icon-color;
+            font-size: 16px;
+          }
+        }
+      }
+
+      > .contacts {
+        padding: 10px 0;
+        border-top: 1px solid $grey-border-color;
+        border-bottom: 1px solid $grey-border-color;
+
+        > .contacts-container {
+          > .group-member-content {
+            position: relative;
+            .in-call {
+              position: absolute;
+              right: 20px;
+              top: 50%;
+              transform: translateY(-50%);
+              font-size: 13px;
+              color: rgb(91, 184, 240);
+            }
+            > .contacts_pack {
+              max-height: 50px;
+              height: 50px;
+              overflow: hidden;
+              cursor: pointer;
+              @include flex();
+              @include flex-direction-row();
+              @include justify-content-flex-start();
+              @include align-items-center();
+
+              &:hover {
+                background-color: unset;
+              }
+
+              .contact_time {
+                display: none;
+              }
+
+              .contact_img {
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                margin-right: 0;
+                margin-left: 0;
+                object-fit: contain;
+                @include user-drag(none);
+                @include user-select(none);
+              }
+
+              .contact_icon {
+                user-select: none;
+                position: relative;
+                width: 38px;
+                min-width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                margin-right: 0;
+                margin-left: 0;
+                background-color: $contact-icon-color;
+                @include flex();
+                @include justify-content-center();
+                @include align-items-center();
+
+                span {
+                  font-size: 16px;
+                  line-height: 19px;
+                  font-weight: 700;
+                  text-transform: uppercase;
+
+                  text-align: left;
+                }
+              }
+
+              .no-name_icon {
+                width: 38px;
+                min-width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                margin-right: 0;
+                margin-left: 0;
+                background-color: $avatar-bg-color;
+                @include icon-font();
+                @include flex();
+                @include align-items-center();
+                @include justify-content-center();
+
+                &::after {
+                  content: "\e947";
+                  color: #fff;
+                  font-size: 28px;
+                  display: block;
+                }
+              }
+
+              > .contact_info {
+                height: 32px;
+                margin: 0 0 0 10px;
+
+                > .contact_name {
+                  user-select: none;
+                  font-size: 14px;
+                  line-height: 22px;
+                  width: 143px;
+                  height: 22px;
+                  font-weight: 400;
+                }
+
+                > .contact_number {
+                  font-size: 12px;
+                  font-weight: 400;
+                  position: relative;
+                  color: #8a8e91;
+                  display: none;
+                }
+              }
+
+              .group-chat-not-checked {
+                display: none;
+              }
+
+              > .group-chat-delete {
+                @include flex();
+                @include justify-content-center();
+                @include align-items-center();
+                margin-left: auto;
+
+                .contact_option_btn {
+                  text-transform: capitalize;
+                  font-size: 12px;
+                  font-weight: 400;
+
+                  color: #E92E28;
+                  width: auto;
+                }
+              }
+            }
+          }
+
+        }
+      }
+
+      .leave-group {
+        cursor: pointer;
+        width: 100%;
+        height: 40px;
+        margin: 26px auto 0;
+        border-bottom: 1px solid $grey-border-color;
+        @include flex();
+        @include flex-direction-row();
+        @include align-items-center();
+        @include user-select(none);
+
+        .leave-group-btn {
+          margin: 0;
+          font-size: 15px;
+          line-height: 16px;
+          font-weight: 400;
+          color: $red-color
+        }
+      }
+    }
+  }
+}

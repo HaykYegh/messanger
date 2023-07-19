@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 59 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Монтажная-область1" serif:id="Монтажная область1" transform="matrix(1,0,0,1,0,-1.98037e-06)">
+        <rect x="0" y="0" width="59" height="59" style="fill:none;"/>
+        <clipPath id="_clip1">
+            <rect x="0" y="0" width="59" height="59"/>
+        </clipPath>
+        <g clip-path="url(#_clip1)">
+            <g transform="matrix(1,0,0,1,0,-20)">
+                <clipPath id="_clip2">
+                    <path d="M58.487,37.025L42.598,20.559C42.079,20.023 41.285,19.854 40.593,20.132C39.899,20.413 39.444,21.084 39.444,21.83L39.444,29.759L38.833,29.759C25.692,29.759 15,40.429 15,53.543L15,57.202C15,58.051 15.599,58.758 16.427,58.951C16.562,58.985 16.696,59 16.831,59C17.523,59 18.185,58.595 18.505,57.958C21.942,51.096 28.853,46.834 36.54,46.834L39.444,46.834L39.444,54.762C39.444,55.509 39.899,56.18 40.593,56.458C41.28,56.738 42.079,56.568 42.598,56.031L58.487,39.565C59.171,38.855 59.171,37.738 58.487,37.025Z"/>
+                </clipPath>
+                <g clip-path="url(#_clip2)">
+                    <rect x="10" y="15" width="54" height="49" style="fill:rgb(5,124,249);"/>
+                </g>
+            </g>
+            <g transform="matrix(1,0,0,1,0,10)">
+                <clipPath id="_clip3">
+                    <path d="M51.625,49L7.375,49C3.309,49 0,45.703 0,41.65L0,7.35C0,3.298 3.309,0 7.375,0L14.75,0C16.109,0 17.208,1.095 17.208,2.45C17.208,3.805 16.109,4.9 14.75,4.9L7.375,4.9C6.018,4.9 4.916,5.997 4.916,7.35L4.916,41.65C4.916,43.003 6.018,44.1 7.375,44.1L51.625,44.1C52.982,44.1 54.083,43.003 54.083,41.65L54.083,22.05C54.083,20.695 55.182,19.6 56.541,19.6C57.901,19.6 59,20.695 59,22.05L59,41.65C59,45.703 55.691,49 51.625,49Z"/>
+                </clipPath>
+                <g clip-path="url(#_clip3)">
+                    <rect x="-5" y="-5" width="69" height="59" style="fill:rgb(5,124,249);"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        a, abbr, acronym, address, applet, article, aside, audio, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+            outline: 0 !important;
+        }
+
+        * {
+            -webkit-text-size-adjust: auto !important;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        a {
+            border: 0;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        span, p {
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+        blockquote:after, blockquote:before, q:after, q:before {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        input, textarea {
+            outline: 0 !important;
+            -webkit-appearance: none;
+            -webkit-border-radius: 0;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 0;
+        }
+
+        :focus {
+            outline-color: transparent;
+            outline-style: none;
+        }
+
+        *, :after, :before {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            background: transparent;
+        }
+
+        .clear {
+            clear: both !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            height: 0 !important;
+            width: 0 !important;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        @font-face {
+            font-family: Noto;
+            src: url('./assets/fonts/NotoSansDisplay-unhinted/NotoSansDisplay-Regular.ttf') format('truetype');
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: Noto;
+            src: url('./assets/fonts/NotoSansDisplay-unhinted/NotoSansDisplay-Medium.ttf') format('truetype');
+            font-weight: 500;
+        }
+
+        @font-face {
+            font-family: Noto;
+            src: url('./assets/fonts/NotoSansDisplay-unhinted/NotoSansDisplay-Semibold.ttf') format('truetype');
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: Noto;
+            src: url('./assets/fonts/NotoSansDisplay-unhinted/NotoSansDisplay-Bold.ttf') format('truetype');
+            font-weight: 700;
+        }
+
+        @font-face {
+            font-family: NotoArm;
+            src: url('./assets/fonts/NotoSansArmenian-unhinted/NotoSansArmenian-Regular.ttf') format('truetype');
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: NotoArm;
+            src: url('./assets/fonts/NotoSansArmenian-unhinted/NotoSansArmenian-Medium.ttf') format('truetype');
+            font-weight: 500;
+        }
+
+        @font-face {
+            font-family: NotoArm;
+            src: url('./assets/fonts/NotoSansArmenian-unhinted/NotoSansArmenian-Semibold.ttf') format('truetype');
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: NotoArm;
+            src: url('./assets/fonts/NotoSansArmenian-unhinted/NotoSansArmenian-Bold.ttf') format('truetype');
+            font-weight: 700;
+        }
+        @font-face {
+            font-family: 'icomoon';
+            src: url("./assets/fonts/icomoon.eot");
+            src: url("./assets/fonts/icomoon.eot") format("embedded-opentype"), url("./assets/fonts/icomoon.ttf") format("truetype"), url("./assets/fonts/icomoon.woff") format("woff"), url("./assets/fonts/icomoon.svg") format("svg");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        [class^="icon-"], [class*=" icon-"] {
+            /* use !important to prevent issues with browser extensions that change fonts */
+            font-family: 'icomoon', sans-serif !important;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        body {
+            font-family: Noto, NotoArm, system-ui, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif !important;
+            /*-webkit-box-shadow: 0 0 15px -2px #24332f;*/
+            /*-moz-box-shadow: 0 0 15px -2px #24332f;*/
+            /*box-shadow: 0 0 15px -2px #24332f;*/
+            line-height: 1;
+            word-wrap: break-word;
+        }
+        .incoming-call-popup {
+            width: 300px;
+            height: 400px;
+            z-index: 9999;
+            cursor: move;
+            border-radius: 4px;
+            background-color: #26334F;
+            display: -webkit-flex;
+            /* Safari */
+            display: -ms-flexbox;
+            /* IE 10+ */
+            display: flex;
+            -webkit-flex-direction: column;
+            /* Safari 6.1+ */
+            -ms-flex-direction: column;
+            /* IE 10+ */
+            flex-direction: column;
+        }
+
+        .incoming-call-popup .popup-content {
+            width: 100%;
+            height: 300px;
+            display: -webkit-flex;
+            /* Safari */
+            display: -ms-flexbox;
+            /* IE 10+ */
+            display: flex;
+            -webkit-flex-direction: column;
+            /* Safari 6.1+ */
+            -ms-flex-direction: column;
+            /* IE 10+ */
+            flex-direction: column;
+            -webkit-align-items: center;
+            /* Safari 7.0+ */
+            -ms-flex-align: center;
+            /* IE 10+ */
+            align-items: center;
+            -webkit-justify-content: center;
+            /* Safari 6.1+ */
+            justify-content: center;
+            -ms-flex-pack: center;
+            position: relative;
+        }
+
+        .incoming-call-popup .popup-content .icon-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            z-index: 15;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            cursor: pointer;
+            color: #000;
+        }
+
+        .incoming-call-popup .popup-content .icon-close:after {
+            content: "\e995";
+            color: #D1DCEE;
+            font-size: 14px;
+        }
+
+        .incoming-call-popup .popup-content .contact_img {
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            object-fit: contain;
+            -webkit-user-drag: none;
+            /* Chrome all / Safari all */
+            -khtml-user-drag: none;
+            /* Firefox all */
+            -moz-user-drag: none;
+            /* IE 10+ */
+            -o-user-drag: none;
+            /* Likely future */
+            user-drag: none;
+        }
+
+        .incoming-call-popup .popup-content .contact_icon {
+            font-size: 14px;
+            position: relative;
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eef3fa;
+        }
+
+        .incoming-call-popup .popup-content .contact_icon > span {
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 19px;
+        }
+
+        .incoming-call-popup .popup-content .no-name_icon {
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            background-color: #94A6B9;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            display: -webkit-flex;
+            /* Safari */
+            display: -ms-flexbox;
+            /* IE 10+ */
+            display: flex;
+            -webkit-align-items: center;
+            /* Safari 7.0+ */
+            -ms-flex-align: center;
+            /* IE 10+ */
+            align-items: center;
+            -webkit-justify-content: center;
+            /* Safari 6.1+ */
+            justify-content: center;
+            -ms-flex-pack: center;
+        }
+
+        .incoming-call-popup .popup-content .no-name_icon::after {
+            content: "\E947";
+            color: #ffffff;
+            font-size: 56px;
+            display: block;
+        }
+
+        .incoming-call-popup .popup-content .incoming-call-name {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 26px;
+            color: #ffffff;
+            margin: 30px 0 0 0;
+            width: 190px;
+            height: 26px;
+            text-align: center;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .incoming-call-popup .popup-content .incoming-call-number {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;
+            width: auto;
+            color: #ffffff;
+            margin: 5px 0 0 0;
+        }
+
+        .incoming-call-popup .popup-content .incoming-call-type {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;
+            width: auto;
+            color: #ffffff;
+            margin: 20px 0 0 0;
+        }
+
+        .incoming-call-popup .popup-footer {
+            width: 100%;
+            height: 100px;
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons {
+            width: 100%;
+            height: 100%;
+            display: -webkit-flex;
+            /* Safari */
+            display: -ms-flexbox;
+            /* IE 10+ */
+            display: flex;
+            -webkit-flex-direction: row;
+            /* Safari 6.1+ */
+            -ms-flex-direction: row;
+            /* IE 10+ */
+            flex-direction: row;
+            -webkit-align-items: center;
+            /* Safari 7.0+ */
+            -ms-flex-align: center;
+            /* IE 10+ */
+            align-items: center;
+            -webkit-justify-content: center;
+            /* Safari 6.1+ */
+            justify-content: center;
+            -ms-flex-pack: center;
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .footer-icon {
+            margin: 0 15px 0 0;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            cursor: pointer;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: -webkit-flex;
+            /* Safari */
+            display: -ms-flexbox;
+            /* IE 10+ */
+            display: flex;
+            -webkit-align-items: center;
+            /* Safari 7.0+ */
+            -ms-flex-align: center;
+            /* IE 10+ */
+            align-items: center;
+            -webkit-justify-content: center;
+            /* Safari 6.1+ */
+            justify-content: center;
+            -ms-flex-pack: center;
+            transition: 0.5s;
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .footer-icon:last-child {
+            margin: 0;
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .footer-icon.disabled {
+            cursor: unset !important;
+            background-color: #666666 !important;
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .footer-icon:before {
+            content: "\E926";
+            color: #00963f;
+            font-size: 30px;
+            transition: 0.5s;
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .footer-icon:hover {
+            /*background-color: #00963f;*/
+            opacity: .7;
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .footer-icon:hover:before {
+            color: #ffffff;
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-keypad-on:before {
+            content: "\e91f";
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-keypad-off:before {
+            content: "\e920";
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-hold-on:before {
+            content: "\e96a";
+            font-size: 24px;
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-hold-off:before {
+            content: "\e96a";
+            font-size: 24px;
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-video_call-on:before {
+            font-size: 24px;
+            content: "\e911";
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-video_call-off:before {
+            font-size: 24px;
+            content: "\e911";
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-microphone-on:before {
+            content: "\e910";
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-microphone-off:before {
+            content: "\e924";
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-decline_call {
+            margin: 0 25px 0 0;
+            background-color: #f44336;
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-decline_call:before {
+            color: #ffffff;
+            content: "\e957";
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-decline_call:hover {
+            background-color: #f41d00;
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-decline_call:hover:before {
+            color: #ffffff;
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-accept_call {
+            background-color: #00A2EC;
+            margin: 0 25px 0 0;
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-accept_call:before {
+            color: #ffffff;
+            content: "\e950";
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-accept_call:hover {
+            /*background-color: #00be5b;*/
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-accept_call:hover:before {
+            color: #ffffff;
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-accept_video_call {
+            background-color: #ffffff;
+            margin: 0 25px 0 0;
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-accept_video_call:before {
+            color: #000000;
+            content: "\e911";
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-accept_video_call:hover {
+            background-color: #d2d2d2;
+        }
+
+        .incoming-call-popup .popup-footer .call-buttons .icon-accept_video_call:hover:before {
+            color: #000000;
+        }
+
+        /*# sourceMappingURL=main.css.map */
+        .draggable {
+            -webkit-app-region: drag;
+        }
+
+        .call-buttons span {
+            -webkit-app-region: no-drag;
+        }
+
+        #closeButton {
+            -webkit-app-region: no-drag;
+        }
+    </style>
+</head>
+<body class="draggable">
+<div class="incoming-call-popup">
+    <div class="popup-content">
+        <span id="closeButton" class="icon-close"></span>
+        <div class="popup-content" id="callContainer"></div>
+    </div>
+    <div class="popup-footer">
+        <div class="call-buttons">
+            <span id="takeCallBtn" class="footer-icon icon-accept_call"></span>
+            <span id="takeVideoCallBtn" class="footer-icon icon-accept_video_call"></span>
+            <span id="declineCallBtn" class="footer-icon icon-decline_call"></span>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function getFirstCharacter(text) {
+        return text.toString().trim().length > 0 ? String.fromCodePoint(text.toString().codePointAt(0)) : '';
+    }
+    const ipcRenderer = window.ipcRenderer;
+    ipcRenderer.on('sendUserInfo', (event, caller) => {
+
+        const callerInfo = caller.caller.callerInfo;
+        const avatarCharacter = callerInfo.avatarCharacter || getFirstCharacter(caller.caller.callerPhone);
+
+        if (caller.caller.avatarInfo) {
+            const Img = document.createElement("img");
+            Img.src = caller.caller.avatarInfo;
+            Img.className = "contact_img";
+        } else if (callerInfo && callerInfo.name) {
+            const Img = document.createElement("span");
+            Img.style.color = callerInfo.color.numberColor;
+            Img.className = "contact_icon";
+            Img.dataset.line = avatarCharacter;
+
+            const characterElement =  document.createElement("span");
+            characterElement.innerHTML = avatarCharacter;
+            Img.appendChild(characterElement);
+
+        } else {
+            const Img = document.createElement("span");
+            Img.className = "contact_icon";
+            Img.dataset.line = avatarCharacter;
+        }
+
+        const callerNameElement = document.createElement("span");
+        if (callerInfo && callerInfo.name !== callerInfo.phone) {
+            callerNameElement.className = "incoming-call-name";
+            callerNameElement.innerHTML = callerInfo.name;
+        } else {
+            callerNameElement.className = "incoming-call-name";
+            callerNameElement.innerHTML = caller.caller.callerPhone;
+        }
+        const incomingCallElement = document.createElement("span");
+        incomingCallElement.className = "incoming-call-type";
+        incomingCallElement.innerHTML = caller.caller.callText;
+
+        const container = document.getElementById("callContainer");
+        container.innerHTML = "";
+        container.appendChild(Img);
+        container.appendChild(callerNameElement);
+        container.appendChild(incomingCallElement);
+    });
+
+
+    document.getElementById("takeCallBtn").addEventListener("click", () => {
+        ipcRenderer.send("doCallAction", "take");
+    });
+    document.getElementById("declineCallBtn").addEventListener("click", () => {
+        ipcRenderer.send("doCallAction", "decline");
+    });
+    document.getElementById("takeVideoCallBtn").addEventListener("click", () => {
+        ipcRenderer.send("doCallAction", "takeVideo");
+    });
+    document.getElementById("closeButton").addEventListener("click", () => {
+        ipcRenderer.send("doCallAction", "ignore");
+    });
+</script>
+</html>

@@ -1,0 +1,106 @@
+
+@import "../../utils/variables";
+@import "../../utils/mixin";
+
+//************************ Rates PopUp ************************//
+
+.rates-popup {
+  width: 0;
+  height: 0;
+  animation: rates-popup 0.2s forwards;
+  border-radius: 8px;
+  background-color: #ffffff;
+  position: absolute;
+  right: 0;
+  top: 60px;
+  z-index: 11;
+  -webkit-box-shadow: 0px 2px 20px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 2px 20px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 20px 3px rgba(0, 0, 0, 0.1);
+  .rates-popup-content {
+    transition: 0.5s;
+    width: 100%;
+    height: 100%;
+    @include flex();
+    @include flex-direction-row();
+    @include align-items-center();
+    @include justify-content-flex-start();
+    /*&:after {
+      content: '';
+      position: absolute;
+      border: 1px solid #ffffff;
+      border-width: 0 13px 12px 13px;
+      border-color: #ffffff transparent;
+      top: -11px;
+      right: 25px;
+      z-index: 12;
+    }*/
+    .info {
+      opacity: 0;
+      animation: profile-popup-content 0.2s forwards;
+      -webkit-animation-delay: 0.2s;
+      animation-delay: 0.2s;
+      @include flex();
+      @include flex-direction-column();
+      @include align-items-flex-start();
+      @include justify-content-center();
+      padding: 0 0 0 18px;
+      .price {
+        font-size: 18px;
+        line-height: 18px;
+        font-weight: 300;
+        color: #000000;
+      }
+      .country-info {
+        margin: 5px 0 0 0;
+        height: auto;
+        @include flex();
+        @include flex-direction-row();
+        @include align-items-flex-end();
+        .flag {
+          width: 25px;
+          height: 20px;
+          background-position: center;
+        }
+        .country-name {
+          font-size: 16px;
+          line-height: 16px;
+          font-weight: 400;
+          color: $grey-color;
+          margin: 0 0 0 15px;
+        }
+      }
+    }
+    .call-icon {
+      opacity: 0;
+      animation: profile-popup-content 0.2s forwards;
+      -webkit-animation-delay: 0.2s;
+      animation-delay: 0.2s;
+      width: 44px;
+      height: 44px;
+      position: relative;
+      z-index: 1;
+      @include icon-font();
+      cursor: pointer;
+      margin: 0 18px 0 auto;
+      display: none !important;
+      &:before {
+        content: "\E92E";
+        color: #EFF4FB;
+        font-size: 26px;
+        display: block;
+        @include absolute-center-xy();
+      }
+      &:after {
+        content: " ";
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $footer-icon-color;
+        @include absolute-center-xy();
+        z-index: -1;
+      }
+    }
+  }
+}

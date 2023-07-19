@@ -1,0 +1,141 @@
+//+++++++++++++++++ App Variables +++++++++++++++++//
+
+//header
+$header-color: #ffffff;
+$header-icon-bg: #eef3fb;
+$header-height: 58px;
+$header-icon-size: 27px;
+$header-icon-color: #6c6f82;
+
+//left menu
+$left-menu-background: #FFFFFF;
+$left-menu-icon-color: #6d7f92;
+$left-menu-icon-color-hover: #4d4f6b;
+$left-menu-icon-color-active: #17ABF6;
+
+$left-menu-icon-messages-color-active: #00ACE6;
+$left-menu-icon-calls-color-active: #4D94FF;
+$left-menu-icon-contacts-color-active: #7D79CB;
+
+//footer
+$footer-color: #ffffff;
+$footer-icon-color: #6c6f82;
+$footer-icon-color-hover: #6d7f92;
+$footer-icon-color-active: #17ABF6;
+$footer-icon-bg: #ECF1F9;
+$footer-icon-size: 28px;
+$chat-panel-footer-input-bg: #FDFEFF;
+$chat-panel-footer-input-color: #499cd9;
+$chat-panel-footer-input-border: #E4E5E6;
+$chat-panel-footer-input-border-focus: #2BAEE2;
+$chat-footer-icon-border: transparent;
+$chat-panel-background: #FDFEFF;
+
+//keypad key color
+$keypad-key-bg: #ffffff;
+$keypad-key-bg-hover: #e9ebee;
+$keypad-key-bg-active: #499cd9;
+$keypad-key-color: #000000;
+$keypad-key-color-active: #ffffff;
+
+//right-left side background
+$left-side-bg: rgba(232, 234, 237, 0.5);
+$right-side-bg: #ffffff;
+$left_side-background: #E9EEF9;
+
+//Guest bubble
+$guest-bubble-color: #e3e5e6;
+$guest-bubble-border: none;
+$guest-bubble-time: #a2b0c4;
+
+//User bubble
+$user-bubble-color: #D1EEFE;
+$user-bubble-border: none;
+$user-bubble-time: #a2b0c4;
+//$user-bubble-color: #d2ffd2;
+//$user-bubble-border: #C2EEC1;
+
+$grey-color: #808088;
+$grey-border-color: rgba(199, 206, 216, 0.5);
+$avatar-bg-color: #e9ebee;
+
+//Primary color
+$primary-color: #357BF2;
+$primary-btn-color: #00A2E2;
+$primary-active-color: #0A89CA;
+//secondary blue color
+$secondary-color: #17ABF6;
+//Right panel blue color
+$right-panel-blue: #17ABF6;
+//Link Color
+$chat-link-color: #0079ff;
+//main border color
+$border-color: #edf2f9;
+
+//bubble link color
+$link-color: #8cd8ff;
+
+// Contact pack
+//$selected-contact-bg: #e8e8e8;
+//$contact-pack-hover: #f7f7f7;
+
+$contact-pack: #EDEFF4;
+$contact-icon-color: #EEF3FA;
+$selected-contact-bg: #5BB8F0;
+$selected-contact-bg-linear: linear-gradient(to right, #89CBED, #A2C2EE);
+$contact-pack-hover: rgba(255, 255, 255, 0.26);
+$contact-pack-active: rgba(0, 0, 0, 0.2);
+
+//confirm button
+$confirm-button-bg: #17ABF6;
+$confirm-button-border: #0b89df;
+$confirm-button-text: #ffffff;
+
+$confirm-button-disabled-bg: #fff;
+$confirm-button-disabled-text: #d3d3d3;
+$confirm-button-disabled-border: #d3d3d3;
+
+$confirm-button-hover-bg: #499cd9;
+$confirm-button-hover-text: #ffffff;
+
+//Cancel button
+$cancel-button-bg: #FFF;
+$cancel-button-border: #d3d3d3;
+$cancel-button-text: #333;
+
+$cancel-button-hover-bg: #f4f7fc;
+$cancel-button-hover-text: #000000;
+
+//Login Page Line Height
+$login-line-height: 1.42857143;
+
+// Delete Button
+$red-color: #E92E28;
+
+// Fonts family
+$sfProTextRegular: 'sf-pro-text-regular';
+$sfProTextMedium: 'sf-pro-text-medium';
+$sfProTextSemiBold: 'sf-pro-text-semibold';
+$sfProTextBold: 'sf-pro-text-bold';
+
+// Settings block
+$settings-menu-bar-bg: #E8E9EC;
+$settings-account-active: #00ACE6;
+$settings-networks-active: #6666CC;
+$settings-add-credit-active: #88BE60;
+$settings-sticker-store-active: #FF4D94;
+$settings-chat-settings-active: #4D94FF;
+$settings-privacy-active: #8DC068;
+$settings-check-for-updates-active: #4D94FF;
+$settings-system-language-active: #7272CF;
+$settings-why-us-active: #FF9800;
+$settings-logs-active: #00ACE6;
+$settings-notifications-active: #FF4D4D;
+
+// Right panel
+$right-panel-width: 310px;
+$right-panel-background: #F9FAFF;
+
+// Voice Play
+$voicePlayColor: rgba(41, 135, 234, 1);
+$voiceNoPlayColor: rgba(149, 195, 245, 1);

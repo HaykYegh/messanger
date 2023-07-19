@@ -1,0 +1,44 @@
+@import "../../utils/variables";
+@import "../../utils/mixin";
+
+//************************ call out screen ************************//
+
+.call-out-message {
+  width: 340px;
+  height: 230px;
+  z-index: 8;
+  border-radius: 30px;
+  background-color: #f4f7fc;
+  border: 1px solid #e6ebf4;
+  @include absolute-center-xy();
+  @include flex();
+  @include flex-direction-column();
+  @include align-items-center();
+  @include justify-content-flex-start();
+  .image {
+    margin: 35px 0 0 0;
+    width: 65px;
+    height: 65px;
+    position: relative;
+    z-index: 1;
+    @include icon-font();
+    &:before {
+      content: "\e900";
+      color: $primary-color;
+      font-size: 55px;
+      display: block;
+      @include absolute-center-xy();
+    }
+  }
+  .info {
+    @include user-select(none);
+    margin: 15px 0 0 0;
+    color: #000;
+    width: 236px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.35;
+  }
+}

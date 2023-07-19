@@ -1,0 +1,844 @@
+@import "../../../utils/variables";
+@import "../../../utils/mixin";
+
+//************************* Sticker Store *************************//
+
+.stickers-store {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  @include flex();
+  @include flex-direction-column();
+
+  .sticker_store_title {
+    height: 38px;
+    margin: 25px 0 0 0;
+    width: 90%;
+    border-bottom: 1px solid $grey-border-color;
+    font-weight: 400;
+    line-height: 16px;
+    font-size: 15px;
+    color: #000000;
+    cursor: pointer;
+    @include flex();
+    @include justify-content-space-between();
+    @include flex-direction-row();
+
+    .icon_arrow {
+      margin: 0 15px 0 0;
+      @include icon-font();
+
+      &::before {
+        content: "\e946";
+        color: #bababa;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .contacts-tab {
+    @include flex();
+    @include justify-content-center();
+
+    .shared_media_menu_active {
+      position: relative;
+
+      &:nth-of-type(1) {
+        .menu-title {
+          border-radius: 4px 0 0 4px;
+        }
+      }
+
+      &:nth-of-type(2) {
+        .menu-title {
+          border-radius: 0;
+        }
+      }
+
+      &:nth-of-type(3) {
+        .menu-title {
+          border-radius: 0 4px 4px 0;
+        }
+      }
+
+      .menu-title {
+        background-color: #E6EAEE;
+      }
+
+      &:hover {
+        .menu-title {
+          background-color: #E6EAEE !important;
+        }
+      }
+    }
+
+    .menu-item {
+      &:nth-of-type(1) {
+        .menu-title {
+          border-radius: 4px 0 0 4px;
+          border: 1px solid #E6EAEE;
+        }
+      }
+
+      &:nth-of-type(2) {
+        .menu-title {
+          border-radius: 0;
+          border-top: 1px solid #E6EAEE;
+          border-bottom: 1px solid #E6EAEE;
+        }
+      }
+
+      &:nth-of-type(3) {
+        .menu-title {
+          border-radius: 0 4px 4px 0;
+          border: 1px solid #E6EAEE;
+        }
+      }
+
+      cursor: pointer;
+      height: 100%;
+      @include flex();
+      @include justify-content-center();
+
+      &:hover {
+        .menu-title {
+          background-color: rgba(230, 234, 238, .2);
+        }
+      }
+
+      .menu-title {
+        display: block;
+        width: 94px;
+        font-weight: 400;
+        font-size: 13px;
+        color: #4C4C5C;
+        text-align: center;
+        cursor: pointer;
+        padding: 4px 0;
+      }
+    }
+  }
+
+  .stickers-store-content {
+    height: calc(100% - 41px);
+    //overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 0;
+    background-color: #FFFFFF;
+    border-radius: 5px !important;
+    padding: 0 17px;
+
+    .sticker_free {
+      height: 76px;
+      border-bottom: 1px solid $grey-border-color;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+
+      .sticker_info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+        .loader {
+          width: 40px;
+          height: 40px;
+          @include sticker-loader();
+          position: relative;
+
+          .sticker-loader {
+            @include absolute-center-xy
+          }
+        }
+
+        .broken-sticker-icon {
+          width: 40px;
+          height: 40px;
+          @include icon-font();
+
+          &:before {
+            content: "\E90D";
+            color: #c5cdd6;
+            font-size: 40px;
+          }
+        }
+
+        .sticker_ico {
+          min-height: 40px;
+          min-width: 40px;
+          background-repeat: no-repeat;
+          background-position: center;
+          //background-image: url("../../../../images/Sticker_Store_spritesheet.png");
+          //background-position: center center;
+          //background-size: 100% 100%;
+        }
+
+        .sticker-name {
+          max-width: 186px;
+          margin-left: 19px;
+          margin-bottom: 5px;
+          display: block;
+          text-transform: capitalize;
+          text-align: left;
+          cursor: pointer;
+          color: #373749;
+          font-size: 15px;
+          font-weight: 700;
+        }
+
+        .sticker-count {
+          max-width: 182px;
+          margin-left: 19px;
+          display: block;
+          text-transform: capitalize;
+          text-align: left;
+          cursor: pointer;
+          color: #373749;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 17px;
+        }
+      }
+
+      .sticker_status {
+        display: inline-block;
+        font-size: 14px;
+        text-transform: capitalize;
+        color: #69CB83;
+        font-weight: 400;
+        line-height: 17px;
+        text-align: right;
+        margin-right: 10px;
+        vertical-align: bottom;
+      }
+
+      .icon-arrow {
+        display: inline-block;
+        color: #7C7E90;
+      }
+    }
+
+    .sticker_paid {
+      height: 76px;
+      //width: 90%;
+      border-bottom: 1px solid $grey-border-color;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .sticker_info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+        .loader {
+          width: 40px;
+          height: 40px;
+          @include sticker-loader();
+          position: relative;
+
+          .sticker-loader {
+            @include absolute-center-xy
+          }
+        }
+
+        .broken-sticker-icon {
+          width: 40px;
+          height: 40px;
+          @include icon-font();
+
+          &:before {
+            content: "\E90D";
+            color: #c5cdd6;
+            font-size: 40px;
+          }
+        }
+
+        .sticker_ico {
+          min-height: 40px;
+          min-width: 40px;
+          background-repeat: no-repeat;
+          background-position: center;
+          //background-image: url(../../../../images/Sticker_Store_spritesheet.png);
+          //background-position: center center;
+          //background-size: 100% 100%;
+        }
+
+        .sticker-name {
+          max-width: 186px;
+          margin-left: 19px;
+          margin-bottom: 5px;
+          display: block;
+          text-transform: capitalize;
+          text-align: left;
+          cursor: pointer;
+          color: #373749;
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 22px;
+        }
+
+        .sticker-count {
+          max-width: 182px;
+          margin-left: 19px;
+          display: block;
+          text-transform: capitalize;
+          text-align: left;
+          cursor: pointer;
+          color: #373749;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 17px;
+        }
+      }
+
+      .sticker_status {
+        margin: 0 15px 0 0;
+        display: block;
+        color: #acabab;
+        font-size: 14px;
+        text-transform: capitalize;
+        font-weight: 300;
+        vertical-align: bottom;
+      }
+    }
+
+    .sticker_exist {
+      height: 76px;
+      //width: 90%;
+      border-bottom: 1px solid $grey-border-color;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .sticker_info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+        .loader {
+          width: 40px;
+          height: 40px;
+          @include sticker-loader();
+          position: relative;
+
+          .sticker-loader {
+            @include absolute-center-xy
+          }
+        }
+
+        .broken-sticker-icon {
+          width: 40px;
+          height: 40px;
+          @include icon-font();
+
+          &:before {
+            content: "\E90D";
+            color: #c5cdd6;
+            font-size: 40px;
+          }
+        }
+
+        .sticker_ico {
+          min-height: 40px;
+          min-width: 40px;
+          background-repeat: no-repeat;
+          background-position: center;
+          //background-image: url(../../../../images/Sticker_Store_spritesheet.png);
+          //background-position: center center;
+          //background-size: 100% 100%;
+        }
+
+        .sticker-name {
+          max-width: 186px;
+          margin-left: 19px;
+          margin-bottom: 5px;
+          display: block;
+          text-transform: capitalize;
+          text-align: left;
+          cursor: pointer;
+          color: #373749;
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 22px;
+        }
+
+        .sticker-count {
+          max-width: 182px;
+          margin-left: 19px;
+          display: block;
+          text-transform: capitalize;
+          text-align: left;
+          cursor: pointer;
+          color: #373749;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 17px;
+        }
+      }
+
+      .sticker_status {
+        margin: 0 5px 0 0;
+        @include icon-font();
+
+        &::before {
+          content: "\e906";
+          color: $primary-color;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .my-sticker {
+      height: 76px;
+      //width: 90%;
+      border-bottom: 1px solid $grey-border-color;
+      display: flex;
+      align-items: center;
+      position: relative;
+      justify-content: space-between;
+
+      .sticker_info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        width: 100%;
+
+        .loader {
+          width: 40px;
+          height: 40px;
+          @include sticker-loader();
+          position: relative;
+
+          .sticker-loader {
+            @include absolute-center-xy
+          }
+        }
+
+        .broken-sticker-icon {
+          width: 40px;
+          height: 40px;
+          @include icon-font();
+
+          &:before {
+            content: "\E90D";
+            color: #c5cdd6;
+            font-size: 40px;
+          }
+        }
+
+        .sticker_ico {
+          min-height: 40px;
+          min-width: 40px;
+          background-repeat: no-repeat;
+          background-position: center;
+          //background-image: url("../../../../images/Sticker_Store_spritesheet.png");
+        }
+
+        .sticker-name {
+          max-width: 186px;
+          margin-left: 19px;
+          margin-bottom: 5px;
+          display: block;
+          text-transform: capitalize;
+          text-align: left;
+          cursor: pointer;
+          color: #373749;
+          font-size: 15px;
+          font-weight: 700;
+          line-height: 22px;
+        }
+
+        .sticker-count {
+          max-width: 182px;
+          margin-left: 19px;
+          display: block;
+          text-transform: capitalize;
+          text-align: left;
+          cursor: pointer;
+          color: #373749;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 17px;
+        }
+
+        .sticker-store-menu {
+          margin: 0 10px 0 auto;
+          padding: 0;
+          background: 0;
+          border: none;
+          display: block;
+          width: 15px;
+          @include icon-font();
+          @include flex();
+          @include align-items-center();
+          @include justify-content-center();
+          cursor: pointer;
+          transition: .3s;
+
+          &:after {
+            transition: .3s;
+            content: "\E976";
+            color: #7C7E90;
+            font-size: 22px;
+            display: block;
+          }
+
+          &:hover {
+            &:after {
+              transition: .3s;
+              content: "\E976";
+              color: $primary-color;
+              font-size: 22px;
+              display: block;
+            }
+          }
+        }
+      }
+
+      .sticker_status {
+        margin: 0 15px 0 0;
+        @include icon-font();
+
+        &::before {
+          content: "\e906";
+          color: $primary-color;
+          font-size: 14px;
+        }
+      }
+
+      .my-sticker-menu {
+        display: none;
+        background: white;
+        z-index: 15;
+        position: absolute;
+        border-radius: 6px;
+        padding: 5px 0;
+        top: 55px;
+        right: 39px;
+        -webkit-box-shadow: 0px 2px 20px 3px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0px 2px 20px 3px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 2px 20px 3px rgba(0, 0, 0, 0.1);
+
+        &--option {
+          padding: 6px 50px 5px 10px;
+          min-width: 160px;
+          cursor: pointer;
+          font-size: 12px;
+
+          &:hover {
+            background: linear-gradient(to top, #555, #333);
+            color: white;
+          }
+
+          &:active {
+            color: #e9e9e9;
+            background: linear-gradient(to top, #555, #444);
+          }
+
+          &__disabled {
+            color: #999999;
+            pointer-events: none;
+          }
+        }
+
+        &--separator {
+          width: 100%;
+          height: 1px;
+          background: #CCCCCC;
+          margin: 0 0 0 0;
+        }
+      }
+    }
+  }
+}
+
+.sticker-individual {
+  //@include animation(right-to-left, 0.17s);
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: relative;
+  padding: 0 3px;
+  height: calc(100% - 15px) !important;
+
+  .sticker-content {
+    height: calc(100% - 100px);
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .preview {
+      width: 100%;
+      height: auto;
+      background-size: contain;
+      background-repeat: no-repeat;
+      padding: 10px 10px;
+      background-color: #fff;
+      border-radius: 8px;
+    }
+
+    .loader {
+      margin: 40% 45%;
+
+      .loader-content {
+        border: 4px solid #ecedef;
+        border-top: 4px solid #91939c;
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+        animation: spin 1s linear infinite;
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+    }
+
+    .icon-back {
+      position: fixed;
+      cursor: pointer;
+      margin: -60px 0 0 10px;
+      transition: 0.3s;
+      padding: 2px 4px;
+      border: 1px solid #fff;
+      box-shadow: 1px 1px 3px 0 #fff;
+      z-index: 2;
+
+      &:hover {
+        background-color: rgba(251, 251, 251, 0.7);
+        border: 1px solid rgba(228, 228, 228, 0.7);
+        border-radius: 4px;
+        box-shadow: 1px 1px 3px 0 rgba(228, 228, 228, 0.7);
+      }
+    }
+  }
+
+  .info {
+    background-color: #fff;
+    height: auto;
+    min-height: 82px;
+    border-radius: 5px;
+    width: 100%;
+    @include flex();
+    @include align-items-center();
+    @include justify-content-flex-start();
+    @include flex-direction-row();
+
+    .icon {
+      min-width: 80px;
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .loader {
+      width: 40px;
+      height: 40px;
+      @include sticker-loader();
+      position: relative;
+
+      .sticker-loader {
+        @include absolute-center-xy
+      }
+    }
+
+    .broken-sticker-icon {
+      width: 80px;
+      height: 80px;
+      @include icon-font();
+
+      &:before {
+        content: "\E90D";
+        color: #c5cdd6;
+        font-size: 80px;
+      }
+    }
+
+    .img-block {
+      margin: 0 0 0 15px;
+      width: 75px;
+      height: 75px;
+
+      .icon {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .sticker-info {
+      @include flex();
+      @include flex-direction-column();
+      @include align-items-center();
+      @include justify-content-center();
+      width: 100%;
+      margin: 0 0 0 20px;
+
+      .name {
+        color: #69CB83;
+        font-size: 14px;
+        width: 100%;
+        font-weight: 400;
+        text-align: center;
+        line-height: 1.3;
+      }
+
+      .price {
+        margin: 10px 0 0 0;
+        width: 100%;
+        text-align: left;
+        color: $grey-color;
+      }
+
+      .description {
+        margin: 10px 0 0 0;
+        color: #94A6B9;
+        font-size: 14px;
+        text-align: left;
+        width: 100%;
+      }
+
+      .add-button {
+        margin: 15px 0 0 0;
+        border: none;
+        color: #FFFFFF;
+        padding: 0 20px;
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+        display: block;
+        font-weight: 400;
+        font-size: 15px;
+        transition: 0.3s;
+        background-color: #69CB83;
+        border-radius: 4px;
+        width: 273px;
+        height: 32px;
+
+        .content-loader {
+          position: static;
+
+          .circular-loader {
+            margin: 0 auto;
+
+            .loader-stroke-left, .loader-stroke-right {
+              &:before {
+                border-color: #FFFFFF;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .loader {
+    margin: 40% 0 0 0;
+
+    .loader-content {
+      @keyframes rotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes dash {
+        0% {
+          stroke-dasharray: 1, 200;
+          stroke-dashoffset: 0;
+        }
+        50% {
+          stroke-dasharray: 89, 200;
+          stroke-dashoffset: -35px;
+        }
+        100% {
+          stroke-dasharray: 89, 200;
+          stroke-dashoffset: -124px;
+        }
+      }
+      position: relative;
+      margin: 0 auto;
+      width: 60px;
+
+      &:before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+      }
+
+      .circular {
+        animation: rotate 2s linear infinite;
+        height: 100%;
+        transform-origin: center center;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+
+        .path {
+          stroke-dasharray: 1, 200;
+          stroke-dashoffset: 0;
+          animation: dash 1.5s ease-in-out infinite;
+          stroke-linecap: round;
+          stroke: $primary-color;
+          stroke-width: 3px;
+          stroke-miterlimit: 10px;
+        }
+      }
+    }
+  }
+}
+
+.new-sticker-loader {
+  border: 4px solid #ecedef;
+  border-top: 4px solid #91939c;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+
+  &.new-sticker-loader-middle {
+    margin: 50%;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.arrow-left {
+  border: solid black;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  margin: -38px 0 0 20px;
+  position: fixed;
+  cursor: pointer;
+}
+
+.arrow-right {
+  border: solid #979797;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+

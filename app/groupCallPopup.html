@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        a, abbr, acronym, address, applet, article, aside, audio, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+            outline: 0 !important;
+        }
+
+        * {
+            -webkit-text-size-adjust: auto !important;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        a {
+            border: 0;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        span, p {
+            -webkit-font-smoothing: antialiased;
+        }
+
+        :focus {
+            outline-color: transparent;
+            outline-style: none;
+        }
+
+        *, :after, :before {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            background: transparent;
+        }
+
+        @font-face {
+            font-family: Noto;
+            src: url('./assets/fonts/NotoSansDisplay-unhinted/NotoSansDisplay-Regular.ttf') format('truetype');
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: Noto;
+            src: url('./assets/fonts/NotoSansDisplay-unhinted/NotoSansDisplay-Medium.ttf') format('truetype');
+            font-weight: 500;
+        }
+
+        @font-face {
+            font-family: Noto;
+            src: url('./assets/fonts/NotoSansDisplay-unhinted/NotoSansDisplay-Semibold.ttf') format('truetype');
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: Noto;
+            src: url('./assets/fonts/NotoSansDisplay-unhinted/NotoSansDisplay-Bold.ttf') format('truetype');
+            font-weight: 700;
+        }
+
+        @font-face {
+            font-family: NotoArm;
+            src: url('./assets/fonts/NotoSansArmenian-unhinted/NotoSansArmenian-Regular.ttf') format('truetype');
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: NotoArm;
+            src: url('./assets/fonts/NotoSansArmenian-unhinted/NotoSansArmenian-Medium.ttf') format('truetype');
+            font-weight: 500;
+        }
+
+        @font-face {
+            font-family: NotoArm;
+            src: url('./assets/fonts/NotoSansArmenian-unhinted/NotoSansArmenian-Semibold.ttf') format('truetype');
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: NotoArm;
+            src: url('./assets/fonts/NotoSansArmenian-unhinted/NotoSansArmenian-Bold.ttf') format('truetype');
+            font-weight: 700;
+        }
+
+        @font-face {
+            font-family: 'icomoon';
+            src: url("./assets/fonts/icomoon.eot");
+            src: url("./assets/fonts/icomoon.eot") format("embedded-opentype"), url("./assets/fonts/icomoon.ttf") format("truetype"), url("./assets/fonts/icomoon.woff") format("woff"), url("./assets/fonts/icomoon.svg") format("svg");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        [class^="icon-"], [class*=" icon-"] {
+            /* use !important to prevent issues with browser extensions that change fonts */
+            font-family: 'icomoon', sans-serif !important;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: Noto, NotoArm, system-ui, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif !important;
+            -webkit-box-shadow: 0 0 15px -2px #24332f;
+            -moz-box-shadow: 0 0 15px -2px #24332f;
+            box-shadow: 0 0 15px -2px #24332f;
+            line-height: 1;
+            word-wrap: break-word;
+        }
+
+        .conference-incoming {
+            width: 300px;
+            height: 400px;
+            z-index: 9999;
+            cursor: move;
+            border-radius: 12px;
+            background-color: #233144;
+            display: -webkit-flex;
+            /* Safari */
+            display: -ms-flexbox;
+            /* IE 10+ */
+            display: flex;
+            -webkit-flex-direction: column;
+            /* Safari 6.1+ */
+            -ms-flex-direction: column;
+            /* IE 10+ */
+            flex-direction: column;
+        }
+
+        .conference-incoming .content {
+            width: 100%;
+            height: 300px;
+            display: -webkit-flex;
+            /* Safari */
+            display: -ms-flexbox;
+            /* IE 10+ */
+            display: flex;
+            -webkit-flex-direction: column;
+            /* Safari 6.1+ */
+            -ms-flex-direction: column;
+            /* IE 10+ */
+            flex-direction: column;
+            -webkit-align-items: center;
+            /* Safari 7.0+ */
+            -ms-flex-align: center;
+            /* IE 10+ */
+            align-items: center;
+            -webkit-justify-content: center;
+            /* Safari 6.1+ */
+            justify-content: center;
+            -ms-flex-pack: center;
+            position: relative;
+        }
+
+        .conference-incoming .content .icon-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            z-index: 15;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            cursor: pointer;
+            color: #000;
+        }
+
+        .conference-incoming .content .icon-close:after {
+            content: "\e995";
+            color: #D1DCEE;
+            font-size: 14px;
+        }
+
+        .conference-incoming .content .group-info {
+            display: -webkit-flex;
+            /* Safari */
+            display: -ms-flexbox;
+            /* IE 10+ */
+            display: flex;
+            -webkit-flex-direction: column;
+            /* Safari 6.1+ */
+            -ms-flex-direction: column;
+            /* IE 10+ */
+            flex-direction: column;
+            -webkit-justify-content: center;
+            /* Safari 6.1+ */
+            justify-content: center;
+            -ms-flex-pack: center;
+            -webkit-align-items: center;
+            /* Safari 7.0+ */
+            -ms-flex-align: center;
+            /* IE 10+ */
+            align-items: center;
+        }
+
+        .conference-incoming .content .group-info .group-name {
+            font-weight: 500;
+            font-size: 20px;
+            padding-bottom: 10px;
+            color: #ffffff;
+            width: 190px;
+            height: 26px;
+            text-align: center;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .conference-incoming .content .group-info .call-type {
+            font-weight: 500;
+            font-size: 14px;
+            width: auto;
+            color: #ffffff;
+        }
+
+        .conference-incoming .footer {
+            width: 100%;
+            height: 100px;
+        }
+
+        .conference-incoming .footer .call-actions {
+            width: 100%;
+            height: 100%;
+            display: -webkit-flex;
+            /* Safari */
+            display: -ms-flexbox;
+            /* IE 10+ */
+            display: flex;
+            -webkit-flex-direction: row;
+            /* Safari 6.1+ */
+            -ms-flex-direction: row;
+            /* IE 10+ */
+            flex-direction: row;
+            -webkit-align-items: center;
+            /* Safari 7.0+ */
+            -ms-flex-align: center;
+            /* IE 10+ */
+            align-items: center;
+            -webkit-justify-content: center;
+            /* Safari 6.1+ */
+            justify-content: center;
+            -ms-flex-pack: center;
+        }
+
+        .conference-incoming .footer .call-actions .accept-call,
+        .conference-incoming .footer .call-actions .decline-call {
+            display: -webkit-flex;
+            /* Safari */
+            display: -ms-flexbox;
+            /* IE 10+ */
+            display: flex;
+            -webkit-flex-direction: column;
+            /* Safari 6.1+ */
+            -ms-flex-direction: column;
+            /* IE 10+ */
+            flex-direction: column;
+            -webkit-align-items: center;
+            /* Safari 7.0+ */
+            -ms-flex-align: center;
+            /* IE 10+ */
+            align-items: center;
+            -webkit-justify-content: center;
+            /* Safari 6.1+ */
+            justify-content: center;
+            -ms-flex-pack: center;
+            color: #fff;
+        }
+
+        .conference-incoming .footer .call-actions .decline-call {
+            padding: 0 40px 0 0;
+        }
+
+        .conference-incoming .footer .call-actions .icon-footer {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            cursor: pointer;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: -webkit-flex;
+            /* Safari */
+            display: -ms-flexbox;
+            /* IE 10+ */
+            display: flex;
+            -webkit-align-items: center;
+            /* Safari 7.0+ */
+            -ms-flex-align: center;
+            /* IE 10+ */
+            align-items: center;
+            -webkit-justify-content: center;
+            /* Safari 6.1+ */
+            justify-content: center;
+            -ms-flex-pack: center;
+            transition: 0.5s;
+            margin-bottom: 7px;
+        }
+
+        .conference-incoming .footer .call-actions .icon-footer:before {
+            color: #ffffff;
+            font-size: 30px;
+            transition: 0.2s;
+        }
+
+        .conference-incoming .footer .call-actions .icon-footer:hover {
+            background-color: #00963f;
+            cursor: pointer;
+        }
+
+        .conference-incoming .footer .call-actions .icon-footer:hover:before {
+            color: #ffffff;
+        }
+
+        .conference-incoming .footer .call-actions .decline-call .icon-decline-call {
+            background-color: #f44336;
+        }
+
+        .conference-incoming .footer .call-actions .decline-call .icon-decline-call:before {
+            color: #ffffff;
+            content: "\e957";
+        }
+
+        .conference-incoming .footer .call-actions .decline-call .icon-decline-call:hover {
+            background-color: #f41d00;
+        }
+
+        .conference-incoming .footer .call-actions .decline-call .icon-decline-call:hover:before {
+            color: #ffffff;
+        }
+
+        .conference-incoming .footer .call-actions .accept-call .icon-accept-call {
+            background-color: #70be64;
+        }
+
+        .conference-incoming .footer .call-actions .accept-call .icon-accept-call:before {
+            color: #ffffff;
+            content: "\e950";
+        }
+
+        .conference-incoming .footer .call-actions .accept-call .icon-accept-call:hover {
+            background-color: #00be5b;
+        }
+
+        .conference-incoming .footer .call-actions .accept-call .icon-accept-call:hover:before {
+            color: #ffffff;
+        }
+
+        .conference-incoming .footer .call-actions .description {
+            font-size: 14px;
+        }
+
+        .draggable {
+            -webkit-app-region: drag;
+        }
+
+        .call-actions span {
+            -webkit-app-region: no-drag;
+        }
+
+        #closeButton {
+            -webkit-app-region: no-drag;
+        }
+    </style>
+</head>
+<body class="draggable">
+<div class="conference-incoming">
+    <div class="content">
+        <span id="close" class="icon-close"></span>
+        <div class='group-info'>
+            <span class='group-name' id="group-name"></span>
+            <span class="call-type" id="call-type"></span>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="call-actions">
+            <div class='decline-call'>
+                <span class="icon-footer icon-decline-call" id="decline-call"></span>
+                <span class='description'>Decline</span>
+            </div>
+            <div class='accept-call'>
+                <span class="icon-footer icon-accept-call" id="accept-call"></span>
+                <span class='description'>Accept</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    const ipcRenderer = window.ipcRenderer;
+    ipcRenderer.on('sendUserInfo', (event, info) => {
+        const groupName = document.getElementById("group-name");
+        groupName.innerHTML = info.groupName || "";
+
+        const callType = document.getElementById("call-type");
+        callType.innerHTML = info.callType;
+    });
+
+
+    document.getElementById("accept-call").addEventListener("click", () => {
+        ipcRenderer.send("doGroupCallAction", "accept");
+    });
+
+    document.getElementById("decline-call").addEventListener("click", () => {
+        ipcRenderer.send("doGroupCallAction", "decline");
+    });
+
+    document.getElementById("close").addEventListener("click", () => {
+        ipcRenderer.send("doGroupCallAction", "ignore");
+    });
+</script>
+</html>

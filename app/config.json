@@ -1,0 +1,811 @@
+{
+  "zz": {
+    "PREFIX": "zz",
+    "APP_NAME": "Zangi",
+    "TITLE": "Zangi",
+    "BUILD_VERSION": "1.0.0",
+    "VERSION_T": "3",
+    "TEST": true,
+    "API_URL": "https://services.zangi.com/zangiServices",
+    "SOCKET_URL": "wss://aws1.hawkstream.com:9443/ws/",
+    "SIGN_IN_SOCKET_URL": "wss://services.zangi.com/zangiServices/v3/auth/getPinWS",
+    "VERSION_NAME": "zangi",
+    "COPYRIGHT": "Zangi Inc.",
+    "CREATEGROUPWITHALLADMIN": false,
+    "WITHEMAILLOGIN": true,
+    "WITHLOGINVALIDATION": false,
+    "WITHEMAIL": false,
+    "WITHWALLET": false,
+    "WITHOUTPIN": false,
+    "WITHOUTVALIDATION": false,
+    "WITHOUTCOUNTRY": false,
+    "WITHCONFERENCE": true,
+    "MAILTO": "",
+    "BRANDURL": "",
+    "BUCKETS": {
+      "fileTransfer": "zangifiletransfer",
+      "profile": "zangiprofile",
+      "group": "zangigroupfiletransfer",
+      "amazon": "zangistickersnew",
+      "logs": "zangi-logs",
+      "desktopReleases": "zangi-desktop-releases"
+    },
+    "LANGUAGES": [
+      {
+        "label": "English",
+        "name": "english",
+        "value": "en-US"
+      },
+      {
+        "label": "Arabic",
+        "name": "عربى",
+        "value": "ar"
+      },
+      {
+        "label": "Russian",
+        "name": "русский",
+        "value": "ru"
+      },
+      {
+        "label": "Spanish",
+        "name": "español",
+        "value": "es"
+      }
+    ],
+    "ignores": ["check_for_updates", "add_credit"],
+    "BUNDLE_ID": "jalagroup.telco",
+    "APPLE_ID": "davor.pavisic@jalasoft.com",
+    "APPLE_ID_PASSWORD": "bejy-qkuu-rdjo-spyq",
+    "TEAM_ID": "JalasoftInc",
+    "DOWNLOAD_FOLDER_NAME": "zangi",
+    "LEARN_MORE_URL": "https://zangi.com/",
+    "SECURITY_LINK": {
+      "href": "https://zangi.com/features/security",
+      "target": "_blank"
+    },
+    "S3": {
+      "accessKeyId": "AKIA5RIDCFW5RZKOPY6J",
+      "secretAccessKey":"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",
+      "region": "eu-west-1",
+      "path": "zangi"
+    }
+  },
+  "po": {
+    "PREFIX": "po",
+    "APP_NAME": "PrimeOne",
+    "TITLE": "PrimeOne Chat",
+    "BUILD_VERSION": "1.0.00",
+    "VERSION_T": "1",
+    "TEST": false,
+    "API_URL": "https://services.primeonechat.com/zangiServices",
+    "SOCKET_URL": "wss://po.zangi.com:9443/ws/",
+    "SIGN_IN_SOCKET_URL": "wss://services.primeonechat.com/zangiServices/v3/auth/getPinWS",
+    "VERSION_NAME": "primeone",
+    "COPYRIGHT": "PrimeOne Inc.",
+    "CREATEGROUPWITHALLADMIN": false,
+    "WITHEMAILLOGIN": true,
+    "WITHLOGINVALIDATION": false,
+    "WITHEMAIL": false,
+    "WITHWALLET": true,
+    "WITHOUTPIN": false,
+    "WITHOUTVALIDATION": false,
+    "WITHOUTCOUNTRY": false,
+    "WITHCONFERENCE": false,
+    "MAILTO": "",
+    "BRANDURL": "",
+    "BUCKETS": {
+      "fileTransfer": "primeonechatfiletransfer",
+      "profile": "primeonechatprofile",
+      "group": "primeonechatgroupfiletransfer",
+      "amazon": "primeonechatstickers",
+      "logs": "",
+      "desktopReleases": ""
+    },
+    "LANGUAGES": [
+      {
+        "label": "English",
+        "name": "english",
+        "value": "en-US"
+      },
+      {
+        "label": "Spanish",
+        "name": "español",
+        "value": "es"
+      }
+    ],
+    "ignores": ["logs", "why_us"],
+    "BUNDLE_ID": "com.desktop.zangiapp",
+    "APPLE_ID": "info@secretphone.io",
+    "APPLE_ID_PASSWORD": "uqrg-qvfc-dfbk-uhvr",
+    "TEAM_ID": "48HRNY665T",
+    "DOWNLOAD_FOLDER_NAME": "primeone",
+    "LEARN_MORE_URL": "",
+    "SECURITY_LINK": {},
+    "S3": {
+      "accessKeyId": "AKIAZPWQHE2CGQKYVEHY",
+      "secretAccessKey":"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",
+      "region": "us-west-2",
+      "path": "zangi"
+    }
+  },
+  "rs": {
+    "PREFIX": "rs",
+    "APP_NAME": "RASED",
+    "TITLE": "RASED",
+    "BUILD_VERSION": "1.0.1",
+    "VERSION_T": "1",
+    "TEST": false,
+    "API_URL": "https://services.zangi.com/zangiServices",
+    "SOCKET_URL": "wss://aws2.hawkstream.com:9443/ws/",
+    "SIGN_IN_SOCKET_URL": "wss://services.zangi.com/zangiServices/v3/auth/getPinWS",
+    "VERSION_NAME": "rased",
+    "COPYRIGHT": "RASED",
+    "CREATEGROUPWITHALLADMIN": false,
+    "WITHEMAILLOGIN": true,
+    "WITHLOGINVALIDATION": false,
+    "WITHEMAIL": false,
+    "WITHWALLET": false,
+    "WITHOUTPIN": false,
+    "WITHOUTVALIDATION": false,
+    "WITHOUTCOUNTRY": false,
+    "WITHCONFERENCE": false,
+    "MAILTO": "",
+    "BRANDURL": "",
+    "BUCKETS": {
+      "fileTransfer": "rasedwhitel/rased/rasedfiletransfer",
+      "profile": "rasedwhitel/rased/rasedprofile",
+      "group": "rasedwhitel/rased/rasedgroupfiletransfer",
+      "amazon": "rasedwhitel/rased/rasedstickers",
+      "logs": "rased-logs",
+      "desktopReleases": "rased-desktop-releases"
+    },
+    "LANGUAGES": [
+      {
+        "label": "English",
+        "name": "english",
+        "value": "en-US"
+      },
+      {
+        "label": "Arabic",
+        "name": "عربى",
+        "value": "ar"
+      }
+    ],
+    "ignores": ["logs", "why_us"],
+    "BUNDLE_ID": "com.desktop.zangiapp",
+    "APPLE_ID": "info@secretphone.io",
+    "APPLE_ID_PASSWORD": "uqrg-qvfc-dfbk-uhvr",
+    "TEAM_ID": "48HRNY665T",
+    "DOWNLOAD_FOLDER_NAME": "rased",
+    "LEARN_MORE_URL": "https://zangi.com/",
+    "SECURITY_LINK": {
+      "href": "https://zangi.com/features/security",
+      "target": "_blank"
+    },
+    "S3": {
+      "accessKeyId": "AKIA5RIDCFW5X5LFLOMU",
+      "secretAccessKey":"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",
+      "region": "eu-west-1",
+      "path": "zangi"
+    }
+  },
+  "jt": {
+    "PREFIX": "jt",
+    "APP_NAME": "Jala Talk",
+    "TITLE": "Jala Talk",
+    "BUILD_VERSION": "1.0.1",
+    "VERSION_T": "1",
+    "TEST": false,
+    "API_URL": "http://services-1875447329.us-east-1.elb.amazonaws.com/zangiServices",
+    "SOCKET_URL": "wss://oo.hawkstream.com:9443/ws/",
+    "SIGN_IN_SOCKET_URL": "wss://services.aloo.chat/zangiServices/v3/auth/getPinWS",
+    "VERSION_NAME": "jala",
+    "COPYRIGHT": "Jalasoft",
+    "CREATEGROUPWITHALLADMIN": false,
+    "WITHEMAILLOGIN": true,
+    "WITHLOGINVALIDATION": false,
+    "WITHEMAIL": false,
+    "WITHWALLET": false,
+    "WITHOUTPIN": false,
+    "WITHOUTVALIDATION": false,
+    "WITHOUTCOUNTRY": false,
+    "WITHCONFERENCE": false,
+    "MAILTO": "",
+    "BRANDURL": "",
+    "BUCKETS": {
+      "fileTransfer": "aloowhitel/jala/jalafiletransfer",
+      "profile": "aloowhitel/jala/jalaprofile",
+      "group": "aloowhitel/jala/jalagroupfiletransfer",
+      "amazon": "aloowhitel/jala/jalastickers",
+      "logs": "jala-logs",
+      "desktopReleases": "jala-desktop-releases"
+    },
+    "LANGUAGES": [
+      {
+        "label": "English",
+        "name": "english",
+        "value": "en-US"
+      },
+      {
+        "label": "Russian",
+        "name": "русский",
+        "value": "ru"
+      },
+      {
+        "label": "Spanish",
+        "name": "español",
+        "value": "es"
+      }
+    ],
+    "ignores": ["sticker_store", "networks", "why_us", "logs"],
+    "BUNDLE_ID": "jalagroup.telco",
+    "APPLE_ID": "davor.pavisic@jalasoft.com",
+    "APPLE_ID_PASSWORD": "bejy-qkuu-rdjo-spyq",
+    "TEAM_ID": "JalasoftInc",
+    "DOWNLOAD_FOLDER_NAME": "jalaTalk",
+    "LEARN_MORE_URL": "http://www.jalasoft.com/",
+    "SECURITY_LINK": {
+      "href": "http://www.jalatalk.com/#/es/home",
+      "target": "_blank"
+    },
+    "S3": {
+      "accessKeyId": "AKIASQVT7LDMKKZRM257",
+      "secretAccessKey":"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",
+      "region": "us-east-1",
+      "path": ""
+    }
+  },
+  "oo": {
+    "PREFIX": "oo",
+    "APP_NAME": "Aloo",
+    "TITLE": "Aloo",
+    "BUILD_VERSION": "1.0.0",
+    "VERSION_T": "1",
+    "TEST": false,
+    "API_URL": "https://services.aloo.chat/zangiServices",
+    "SOCKET_URL": "wss://oo.hawkstream.com:9443/ws/",
+    "SIGN_IN_SOCKET_URL": "wss://services.aloo.chat/zangiServices/v3/auth/getPinWS",
+    "VERSION_NAME": "aloo",
+    "COPYRIGHT": "Aloo",
+    "CREATEGROUPWITHALLADMIN": false,
+    "WITHEMAILLOGIN": true,
+    "WITHLOGINVALIDATION": false,
+    "WITHEMAIL": false,
+    "WITHWALLET": false,
+    "WITHOUTPIN": false,
+    "WITHOUTVALIDATION": false,
+    "WITHOUTCOUNTRY": false,
+    "WITHCONFERENCE": false,
+    "MAILTO": "",
+    "BRANDURL": "",
+    "BUCKETS": {
+      "fileTransfer": "aloo-filetransfer",
+      "profile": "aloo-profile",
+      "group": "aloo-groupfiletransfer",
+      "amazon": "aloo-stickers",
+      "logs": "aloo-logs",
+      "desktopReleases": "aloo-desktop-releases"
+    },
+    "LANGUAGES": [
+      {
+        "label": "English",
+        "name": "english",
+        "value": "en-US"
+      },
+      {
+        "label": "Russian",
+        "name": "русский",
+        "value": "ru"
+      },
+      {
+        "label": "Spanish",
+        "name": "español",
+        "value": "es"
+      }
+    ],
+    "ignores": ["sticker_store", "networks", "why_us", "logs"],
+    "BUNDLE_ID": "jalagroup.telco",
+    "APPLE_ID": "davor.pavisic@jalasoft.com",
+    "APPLE_ID_PASSWORD": "cpsn-awur-scez-sldp",
+    "TEAM_ID": "JalasoftInc",
+    "DOWNLOAD_FOLDER_NAME": "aloo",
+    "LEARN_MORE_URL": "http://aloo.chat/",
+    "SECURITY_LINK": {},
+    "S3": {
+      "accessKeyId": "AKIASQVT7LDMKKZRM257",
+      "secretAccessKey":"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",
+      "region": "us-east-1",
+      "path": ""
+    }
+  },
+  "sk": {
+    "PREFIX": "sk",
+    "APP_NAME": "STK",
+    "TITLE": "STK",
+    "BUILD_VERSION": "1.0.7",
+    "VERSION_T": "1",
+    "TEST": false,
+    "API_URL": "https://services.zangi.com/zangiServices",
+    "SOCKET_URL": "wss://aws3.hawkstream.com:9443/ws/",
+    "SIGN_IN_SOCKET_URL": "wss://services.zangi.com/zangiServices/v3/auth/getPinWS",
+    "VERSION_NAME": "stk",
+    "COPYRIGHT": "STK",
+    "WITHEMAILLOGIN": false,
+    "WITHEMAIL": false,
+    "WITHWALLET": false,
+    "WITHOUTPIN": true,
+    "WITHOUTVALIDATION": true,
+    "WITHOUTCOUNTRY": true,
+    "WITHCONFERENCE": false,
+    "MAILTO": "info@szstk.ru",
+    "BRANDURL": "http://www.szstk.ru",
+    "BUCKETS": {
+      "fileTransfer": "whitel/sk/filetransfer",
+      "profile": "whitel/sk/profile",
+      "group": "whitel/sk/groupfiletransfer",
+      "amazon": "whitel/sk/stickers",
+      "logs": "",
+      "desktopReleases": ""
+    },
+    "LANGUAGES": [
+      {
+        "label": "English",
+        "name": "english",
+        "value": "en-US"
+      },
+      {
+        "label": "Russian",
+        "name": "русский",
+        "value": "ru"
+      }
+    ],
+    "ignores": ["logs", "why_us"],
+    "BUNDLE_ID": "com.desktop.stkapp",
+    "APPLE_ID": "info@secretphone.io",
+    "APPLE_ID_PASSWORD": "uqrg-qvfc-dfbk-uhvr",
+    "TEAM_ID": "48HRNY665T",
+    "DOWNLOAD_FOLDER_NAME": "stk",
+    "LEARN_MORE_URL": "",
+    "SECURITY_LINK": {},
+    "S3": {
+      "accessKeyId": "AKIA5RIDCFW5RZKOPY6J",
+      "secretAccessKey":"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",
+      "region": "eu-east-1",
+      "path": ""
+    }
+  },
+  "tc": {
+    "PREFIX": "tc",
+    "APP_NAME": "TSEL Messanger",
+    "TITLE": "TSEL Messanger",
+    "BUILD_VERSION": "1.0.0",
+    "VERSION_T": "1",
+    "TEST": false,
+    "API_URL": "https://pbservices.zangi.com/zangiServices",
+    "SOCKET_URL": "wss://tc.zangi.com:9443/ws/",
+    "SIGN_IN_SOCKET_URL": "wss://pbservices.zangi.com/zangiServices/v3/auth/getPinWS",
+    "VERSION_NAME": "tsel",
+    "COPYRIGHT": "TSEL Inc.",
+    "WITHEMAILLOGIN": false,
+    "WITHEMAIL": false,
+    "WITHWALLET": false,
+    "WITHOUTPIN": false,
+    "WITHOUTVALIDATION": false,
+    "WITHOUTCOUNTRY": false,
+    "WITHCONFERENCE": false,
+    "MAILTO": "",
+    "BRANDURL": "http://tselmessenger.com",
+    "BUCKETS": {
+      "fileTransfer": "whitel/tc/filetransfer",
+      "profile": "whitel/tc/profile",
+      "group": "whitel/tc/groupfiletransfer",
+      "amazon": "whitel/tc/stickers",
+      "logs": "",
+      "desktopReleases": ""
+    },
+    "LANGUAGES": [
+      {
+        "label": "English",
+        "name": "english",
+        "value": "en-US"
+      }
+    ],
+    "ignores": ["logs", "why_us", "check_for_updates"],
+    "BUNDLE_ID": "com.desktop.tselapp",
+    "APPLE_ID": "",
+    "APPLE_ID_PASSWORD": "",
+    "TEAM_ID": "",
+    "DOWNLOAD_FOLDER_NAME": "tsel",
+    "LEARN_MORE_URL": "",
+    "SECURITY_LINK": {},
+    "S3": {
+      "accessKeyId": "AKIA5RIDCFW5RZKOPY6J",
+      "secretAccessKey":"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",
+      "region": "eu-west-1",
+      "path": "zangi"
+    }
+  },
+  "gc": {
+    "PREFIX": "gc",
+    "APP_NAME": "GlobalCredit Zangi",
+    "TITLE": "Global Credit",
+    "BUILD_VERSION": "1.0.0",
+    "VERSION_T": "1",
+    "TEST": false,
+    "API_URL": "https://pservices.globalcredit.am/zangiServices",
+    "SOCKET_URL": "wss://gc.zangi.com:9443/ws/",
+    "SIGN_IN_SOCKET_URL": "wss://pservices.globalcredit.am/zangiServices/v3/auth/getPinWS",
+    "VERSION_NAME": "globalcredit",
+    "COPYRIGHT": "GlobalCredit Inc.",
+    "WITHEMAILLOGIN": false,
+    "WITHEMAIL": false,
+    "WITHWALLET": false,
+    "WITHOUTPIN": true,
+    "WITHOUTVALIDATION": false,
+    "WITHOUTCOUNTRY": false,
+    "WITHCONFERENCE": false,
+    "MAILTO": "",
+    "BRANDURL": "https://www.globalcredit.am",
+    "BUCKETS": {
+      "fileTransfer": "whitel/gc/filetransfer",
+      "profile": "whitel/gc/profile",
+      "group": "whitel/gc/groupfiletransfer",
+      "amazon": "whitel/gc/stickers",
+      "logs": "",
+      "desktopReleases": ""
+    },
+    "LANGUAGES": [
+      {
+        "label": "English",
+        "name": "english",
+        "value": "en-US"
+      },
+      {
+        "label": "Russian",
+        "name": "russian",
+        "value": "ru"
+      }
+    ],
+    "ignores": ["logs", "why_us", "check_for_updates", "networks"],
+    "BUNDLE_ID": "com.desktop.globalcreditapp",
+    "APPLE_ID": "",
+    "APPLE_ID_PASSWORD": "",
+    "TEAM_ID": "",
+    "DOWNLOAD_FOLDER_NAME": "globalcredit",
+    "LEARN_MORE_URL": "",
+    "SECURITY_LINK": {},
+    "S3": {
+      "accessKeyId": "AKIA5RIDCFW5RZKOPY6J",
+      "secretAccessKey":"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",
+      "region": "eu-west-1",
+      "path": "zangi"
+    }
+  },
+  "dp": {
+    "PREFIX": "dp",
+    "APP_NAME": "DPDsApp",
+    "TITLE": "DPDsApp",
+    "BUILD_VERSION": "1.0.0",
+    "VERSION_T": "1",
+    "TEST": false,
+    "API_URL": "https://pbservices.zangi.com/zangiServices",
+    "SOCKET_URL": "wss://dp.zangi.com:9443/ws/",
+    "SIGN_IN_SOCKET_URL": "wss://pbservices.zangi.com/zangiServices/v3/auth/getPinWS",
+    "VERSION_NAME": "DPDsApp",
+    "COPYRIGHT": "DPDsApp Inc.",
+    "WITHEMAILLOGIN": false,
+    "WITHEMAIL": false,
+    "WITHWALLET": false,
+    "WITHOUTPIN": false,
+    "WITHOUTVALIDATION": false,
+    "WITHOUTCOUNTRY": false,
+    "WITHCONFERENCE": false,
+    "MAILTO": "",
+    "BRANDURL": "",
+    "BUCKETS": {
+      "fileTransfer": "whitel/dp/filetransfer",
+      "profile": "whitel/dp/profile",
+      "group": "whitel/dp/groupfiletransfer",
+      "amazon": "whitel/dp/stickers",
+      "logs": "",
+      "desktopReleases": ""
+    },
+    "LANGUAGES": [
+      {
+        "label": "English",
+        "name": "english",
+        "value": "en-US"
+      }
+    ],
+    "ignores": ["logs", "why_us", "check_for_updates"],
+    "BUNDLE_ID": "com.desktop.dpdsapp",
+    "APPLE_ID": "",
+    "APPLE_ID_PASSWORD": "",
+    "TEAM_ID": "",
+    "DOWNLOAD_FOLDER_NAME": "DPDsApp",
+    "LEARN_MORE_URL": "",
+    "SECURITY_LINK": {},
+    "S3": {
+      "accessKeyId": "AKIA5RIDCFW5RZKOPY6J",
+      "secretAccessKey":"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",
+      "region": "eu-west-1",
+      "path": "zangi"
+    }
+  },
+  "an": {
+    "PREFIX": "an",
+    "APP_NAME": "3-A-NET LTD",
+    "TITLE": "3-A-NET LTD",
+    "BUILD_VERSION": "1.0.0",
+    "VERSION_T": "1",
+    "TEST": false,
+    "API_URL": "https://pservices.3anet.ua/zangiServices",
+    "SOCKET_URL": "wss://an.zangi.com:9443/ws/",
+    "SIGN_IN_SOCKET_URL": "wss://pservices.3anet.ua/zangiServices/v3/auth/getPinWS",
+    "VERSION_NAME": "3-A-NET LTD",
+    "COPYRIGHT": "3-A-NET Inc.",
+    "WITHEMAILLOGIN": false,
+    "WITHEMAIL": false,
+    "WITHWALLET": false,
+    "WITHOUTPIN": true,
+    "WITHOUTVALIDATION": false,
+    "WITHOUTCOUNTRY": false,
+    "WITHCONFERENCE": false,
+    "MAILTO": "",
+    "BRANDURL": "",
+    "BUCKETS": {
+      "fileTransfer": "whitel/an/filetransfer",
+      "profile": "whitel/an/profile",
+      "group": "whitel/an/groupfiletransfer",
+      "amazon": "whitel/an/stickers",
+      "logs": "",
+      "desktopReleases": ""
+    },
+    "LANGUAGES": [
+      {
+        "label": "English",
+        "name": "english",
+        "value": "en-US"
+      },
+      {
+        "label": "Russian",
+        "name": "russian",
+        "value": "ru"
+      }
+    ],
+    "ignores": ["logs", "why_us", "check_for_updates", "networks"],
+    "BUNDLE_ID": "com.desktop.zanet",
+    "APPLE_ID": "",
+    "APPLE_ID_PASSWORD": "",
+    "TEAM_ID": "",
+    "DOWNLOAD_FOLDER_NAME": "3-A-NET",
+    "LEARN_MORE_URL": "",
+    "SECURITY_LINK": {},
+    "S3": {
+      "accessKeyId": "AKIA5RIDCFW5RZKOPY6J",
+      "secretAccessKey":"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",
+      "region": "eu-west-1",
+      "path": "zangi"
+    }
+  },
+  "in": {
+    "PREFIX": "in",
+    "APP_NAME": "INCORE IM",
+    "TITLE": "INCORE IM",
+    "BUILD_VERSION": "1.0.0",
+    "VERSION_T": "1",
+    "TEST": false,
+    "API_URL": "https://pservices.incore.am/zangiServices",
+    "SOCKET_URL": "wss://services.incore.am:9443/ws/",
+    "SIGN_IN_SOCKET_URL": "wss://pservices.pservices.am/zangiServices/v3/auth/getPinWS",
+    "VERSION_NAME": "INCORE",
+    "COPYRIGHT": "Incore Im Inc.",
+    "WITHEMAILLOGIN": false,
+    "WITHEMAIL": false,
+    "WITHWALLET": false,
+    "WITHOUTPIN": true,
+    "WITHOUTVALIDATION": false,
+    "WITHOUTCOUNTRY": false,
+    "WITHCONFERENCE": false,
+    "MAILTO": "support@incore.am",
+    "BRANDURL": "https://www.incore.am",
+    "BUCKETS": {
+      "fileTransfer": "whitel/in/filetransfer",
+      "profile": "whitel/in/profile",
+      "group": "whitel/in/groupfiletransfer",
+      "amazon": "whitel/in/stickers",
+      "logs": "",
+      "desktopReleases": ""
+    },
+    "LANGUAGES": [
+      {
+        "label": "English",
+        "name": "english",
+        "value": "en-US"
+      },
+      {
+        "label": "Russian",
+        "name": "russian",
+        "value": "ru"
+      }
+    ],
+    "ignores": ["logs", "why_us", "check_for_updates", "networks"],
+    "BUNDLE_ID": "com.desktop.incoreapp",
+    "APPLE_ID": "",
+    "APPLE_ID_PASSWORD": "",
+    "TEAM_ID": "",
+    "DOWNLOAD_FOLDER_NAME": "incore",
+    "LEARN_MORE_URL": "",
+    "SECURITY_LINK": {},
+    "S3": {
+      "accessKeyId": "AKIA5RIDCFW5RZKOPY6J",
+      "secretAccessKey":"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",
+      "region": "eu-west-1",
+      "path": "zangi"
+    }
+  },
+  "ss": {
+    "PREFIX": "ss",
+    "APP_NAME": "Synapse",
+    "TITLE": "Synapse",
+    "BUILD_VERSION": "1.0.0",
+    "VERSION_T": "1",
+    "TEST": false,
+    "API_URL": "https://services.zangi.com/zangiServices",
+    "SOCKET_URL": "wss://ss.zangi.com:9443/ws/",
+    "SIGN_IN_SOCKET_URL": "wss://services.zangi.com/zangiServices/v3/auth/getPinWS",
+    "VERSION_NAME": "Synapse",
+    "COPYRIGHT": "Synapse Inc.",
+    "WITHEMAILLOGIN": false,
+    "WITHEMAIL": false,
+    "WITHWALLET": false,
+    "WITHOUTPIN": true,
+    "WITHOUTVALIDATION": false,
+    "WITHOUTCOUNTRY": false,
+    "WITHCONFERENCE": false,
+    "MAILTO": "support@synapse.com",
+    "BRANDURL": "https://www.synapse.com",
+    "BUCKETS": {
+      "fileTransfer": "whitel/ss/filetransfer",
+      "profile": "whitel/ss/profile",
+      "group": "whitel/ss/groupfiletransfer",
+      "amazon": "whitel/ss/stickers",
+      "logs": "",
+      "desktopReleases": ""
+    },
+    "LANGUAGES": [
+      {
+        "label": "English",
+        "name": "english",
+        "value": "en-US"
+      },
+      {
+        "label": "Russian",
+        "name": "russian",
+        "value": "ru"
+      }
+    ],
+    "ignores": ["logs", "why_us", "check_for_updates", "networks"],
+    "BUNDLE_ID": "com.desktop.incoreapp",
+    "APPLE_ID": "",
+    "APPLE_ID_PASSWORD": "",
+    "TEAM_ID": "",
+    "DOWNLOAD_FOLDER_NAME": "incore",
+    "LEARN_MORE_URL": "",
+    "SECURITY_LINK": {},
+    "S3": {
+      "accessKeyId": "AKIA5RIDCFW5RZKOPY6J",
+      "secretAccessKey":"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",
+      "region": "eu-west-1",
+      "path": "zangi"
+    }
+  },
+  "zw": {
+    "PREFIX": "zw",
+    "APP_NAME": "Zangi For Business",
+    "TITLE": "Zangi For Business",
+    "BUILD_VERSION": "1.0.0",
+    "VERSION_T": "1",
+    "TEST": false,
+    "API_URL": "https://ssl.zangi.io/zangiServices",
+    "SOCKET_URL": "wss://zw.zangi.com:9443/ws/",
+    "SIGN_IN_SOCKET_URL": "wss://ssl.zangi.io/zangiServices/v3/auth/getPinWS",
+    "VERSION_NAME": "Zangi For Business",
+    "COPYRIGHT": "Zangi For Business Inc.",
+    "WITHEMAILLOGIN": false,
+    "WITHEMAIL": false,
+    "WITHWALLET": false,
+    "WITHOUTPIN": true,
+    "WITHOUTVALIDATION": false,
+    "WITHOUTCOUNTRY": false,
+    "WITHCONFERENCE": false,
+    "MAILTO": "support@zb.com",
+    "BRANDURL": "",
+    "BUCKETS": {
+      "fileTransfer": "whitel/zw/filetransfer",
+      "profile": "whitel/zw/profile",
+      "group": "whitel/zw/groupfiletransfer",
+      "amazon": "whitel/zw/stickers",
+      "logs": "",
+      "desktopReleases": ""
+    },
+    "LANGUAGES": [
+      {
+        "label": "English",
+        "name": "english",
+        "value": "en-US"
+      },
+      {
+        "label": "Russian",
+        "name": "russian",
+        "value": "ru"
+      }
+    ],
+    "ignores": ["logs", "why_us", "check_for_updates", "networks"],
+    "BUNDLE_ID": "com.desktop.zangiForBusiness",
+    "APPLE_ID": "",
+    "APPLE_ID_PASSWORD": "",
+    "TEAM_ID": "",
+    "DOWNLOAD_FOLDER_NAME": "zangiForBusiness",
+    "LEARN_MORE_URL": "",
+    "SECURITY_LINK": {},
+    "S3": {
+      "accessKeyId": "AKIA5RIDCFW5RZKOPY6J",
+      "secretAccessKey":"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",
+      "region": "eu-west-1",
+      "path": "zangi"
+    }
+  },
+  "pc": {
+    "PREFIX": "pc",
+    "APP_NAME": "PHILChat",
+    "TITLE": "PHILChat",
+    "BUILD_VERSION": "1.0.1",
+    "VERSION_T": "1",
+    "TEST": false,
+    "API_URL": "https://pservices.philchat.philcoin.io/zangiServices",
+    "SOCKET_URL": "wss://pc.zangi.com:9443/ws/",
+    "SIGN_IN_SOCKET_URL": "wss://pc.zangi.com/zangiServices/v3/auth/getPinWS",
+    "VERSION_NAME": "PHILChat",
+    "COPYRIGHT": "PHILChat Inc.",
+    "WITHEMAILLOGIN": true,
+    "WITHLOGINVALIDATION": false,
+    "WITHEMAIL": false,
+    "WITHWALLET": false,
+    "WITHOUTPIN": true,
+    "WITHOUTVALIDATION": false,
+    "WITHOUTCOUNTRY": false,
+    "WITHCONFERENCE": false,
+    "MAILTO": "",
+    "BRANDURL": "https://philcoin.com",
+    "BUCKETS": {
+      "fileTransfer": "pcfiletransfer",
+      "profile": "pcprofile",
+      "group": "pcgroupfiletransfer",
+      "amazon": "pc-sticker-packages",
+      "logs": "",
+      "desktopReleases": ""
+    },
+    "LANGUAGES": [
+      {
+        "label": "English",
+        "name": "english",
+        "value": "en-US"
+      }
+    ],
+    "ignores": ["logs", "why_us", "check_for_updates", "networks", "add_credit"],
+    "BUNDLE_ID": "com.desktop.philchat",
+    "APPLE_ID": "",
+    "APPLE_ID_PASSWORD": "",
+    "TEAM_ID": "",
+    "DOWNLOAD_FOLDER_NAME": "philchat",
+    "LEARN_MORE_URL": "",
+    "SECURITY_LINK": {},
+    "S3": {
+      "accessKeyId": "AKIA2N3ED5MZOGVPJBVW",
+      "secretAccessKey":"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",
+      "region": "us-east-1",
+      "path": ""
+    }
+  }
+}

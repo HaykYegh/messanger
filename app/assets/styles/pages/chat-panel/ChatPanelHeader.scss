@@ -1,0 +1,252 @@
+
+@import "../../utils/variables";
+@import "../../utils/mixin";
+
+//************************ Chat Panel Header ************************//
+
+.right_side_header {
+  border-bottom: 1px solid #edf2f9;
+  background-color: $header-color;
+  height: $header-height;
+  @include flex();
+  @include justify-content-center();
+  @include align-items-center();
+  .chat_status_wrapper {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    position: relative;
+    width: 100%;
+    @include flex();
+    @include flex-direction-row();
+    @include align-items-center();
+    @include justify-content-space-between();
+    .header-right {
+      font-size: 16px;
+      color: #0282e6;
+      margin: 0 20px 0 0;
+      cursor: pointer;
+    }
+    .header-left {
+      font-size: 16px;
+      color: #0282e6;
+      margin: 0 0 0 20px;
+      cursor: pointer;
+    }
+    .header_info {
+      @include flex();
+      @include flex-direction-column();
+      @include justify-content-center();
+      @include align-items-flex-start();
+      margin: 0 0 0 40px;
+      .contact_header_name {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 20px;
+        width: auto;
+        color: #000000;
+        cursor: pointer;
+        max-width: 400px;
+        text-align: center;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 4px 0 0 0;
+      }
+      .chat_status {
+        font-weight: 400;
+        margin: 5px 0 7px 0;
+        line-height: 13px;
+        font-size: 13px;
+        color: $footer-icon-color;
+        &.chat_status_online {
+          color: #17ABF6;
+        }
+        &.chat_status_offline {
+          color: #8f9cb4;
+        }
+      }
+    }
+    .call_buttons {
+      @include flex();
+      @include align-items-center();
+      .icon-video_call_chat {
+        width: 32px;
+        height: 32px;
+        position: relative;
+        z-index: 1;
+        margin: 2px 0 0 0;
+        @include icon-font();
+        cursor: pointer;
+        margin-right: 16px;
+        &:before {
+          content: "\e932";
+          color:$primary-color ;
+          font-size: 32px;
+          display: block;
+          transition: 0.3s;
+        }
+        &:after {
+          content: " ";
+          display: block;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background-color:$header-icon-bg;
+          @include absolute-center-xy();
+          z-index: -1;
+        }
+        &:hover {
+          &:before {
+            transform: scale(1.15);
+          }
+        }
+      }
+      .icon-chat_video_call {
+        width: 32px;
+        height: 32px;
+        position: relative;
+        z-index: 1;
+        @include icon-font();
+        &:before {
+          content: "\e91f";
+          color:$primary-color ;
+          font-size: 36px;
+          display: block;
+          transition: 0.3s;
+        }
+        &:after {
+          content: " ";
+          display: block;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background-color:$header-icon-bg ;
+          @include absolute-center-xy();
+          z-index: -1;
+        }
+        &:hover {
+          &:before {
+            transform: scale(1.15);
+          }
+        }
+      }
+      .icon-call_chat {
+        width: 32px;
+        height: 32px;
+        position: relative;
+        z-index: 1;
+        @include icon-font();
+        cursor: pointer;
+        margin-right: 16px;
+        &:before {
+          content: "\e92a";
+          color:$primary-color ;
+          font-size: 32px;
+          display: block;
+          transition: 0.3s;
+        }
+        &:after {
+          content: " ";
+          display: block;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background-color:$header-icon-bg ;
+          @include absolute-center-xy();
+          z-index: -1;
+        }
+        &:hover {
+          &:before {
+            transform: scale(1.15);
+          }
+        }
+      }
+      .icon-call_out {
+        width: 32px;
+        height: 32px;
+        position: relative;
+        z-index: 1;
+        @include icon-font();
+        cursor: pointer;
+        margin-right: 16px;
+        &:before {
+          content: "\e95f";
+          color: $primary-color;
+          font-size: 32px;
+          display: block;
+          transition: 0.3s;
+        }
+        &:after {
+          content: " ";
+          display: block;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background-color: $header-icon-bg;
+          @include absolute-center-xy();
+          z-index: -1;
+        }
+        &:hover {
+          &:before {
+            transform: scale(1.15);
+          }
+        }
+      }
+      .search{
+        width: 32px;
+        height: 32px;
+        position: relative;
+        z-index: 1;
+        @include icon-font();
+        cursor: pointer;
+        margin-right: 50px;
+        &:before {
+          content: "\e941";
+          color: $primary-color;
+          font-size: 32px;
+          display: block;
+          transition: 0.3s;
+        }
+        &:after {
+          content: " ";
+          display: block;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background-color: $header-icon-bg;
+          @include absolute-center-xy();
+          z-index: -1;
+        }
+        &:hover {
+          &:before {
+            transform: scale(1.15);
+          }
+        }
+      }
+      .hamburger-menu{
+        width: 32px;
+        height: 32px;
+        position: relative;
+        z-index: 1;
+        margin-right: 16px;
+        @include icon-font();
+        cursor: pointer;
+        &:before {
+          content: "\e948";
+          color: $primary-color;
+          font-size: 32px;
+          display: block;
+          transition: 0.3s;
+        }
+        &:hover {
+          &:before {
+            transform: scale(1.15);
+          }
+        }
+      }
+    }
+  }
+}
+

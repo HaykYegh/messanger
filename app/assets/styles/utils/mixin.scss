@@ -1,0 +1,349 @@
+
+
+//+++++++++++++++++++++++++++++ SCSS functions +++++++++++++++++++++++++++++//
+
+@mixin middle() {
+	&:after {
+		content: '';
+		height: 100%;
+		vertical-align: middle;
+		display: inline-block;
+	}
+}
+
+@mixin clear() {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+//ABSOLUTE POSITION MIXIN **************************************
+
+@mixin absolute($top, $right, $bottom, $left) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+@mixin absolute-center-x() {
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0); /* Safari */
+	-ms-transform: translate(-50%, 0); /* IE 10+ */
+	transform: translate(-50%, 0);
+}
+@mixin absolute-center-y() {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translate(0, -50%); /* Safari */
+	-ms-transform: translate(0, -50%); /* IE 10+ */
+	transform: translate(0, -50%);
+}
+@mixin absolute-center-xy() {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%,-50%); /* Safari */
+	-ms-transform: translate(-50%,-50%); /* IE 10+ */
+	transform: translate(-50%,-50%);
+}
+@mixin absolute-vertical-center($right, $left) {
+	position: absolute;
+	top: 50%;
+	right: $right;
+	left: $left;
+	transform: translate(0%, -50%);
+	-webkit-transform: translate(0%, -50%);
+	-ms-transform: translate(0%, -50%);
+}
+//FLEX MIXIN **************************************************
+
+@mixin flex() {
+	display: -webkit-flex; /* Safari */
+	display: -ms-flexbox; /* IE 10+ */
+	display: flex;
+}
+
+@mixin order($orderNumber) {
+	-webkit-order: $orderNumber; /* Safari 6.1+ */
+	-ms-flex-order: $orderNumber; /* IE 10+ */
+	order: $orderNumber;
+}
+
+@mixin flex-direction-column() {
+	-webkit-flex-direction: column; /* Safari 6.1+ */
+	-ms-flex-direction: column; /* IE 10+ */
+	flex-direction: column;
+
+}
+
+@mixin flex-direction-row() {
+	-webkit-flex-direction: row; /* Safari 6.1+ */
+	-ms-flex-direction: row; /* IE 10+ */
+	flex-direction: row;
+}
+
+@mixin flex-direction-row-reverse() {
+	-webkit-flex-direction: row-reverse !important; /* Safari 6.1+ */
+	-ms-flex-direction: row-reverse !important; /* IE 10+ */
+	flex-direction: row-reverse !important;
+}
+
+@mixin flex-wrap() {
+	-webkit-flex-wrap: wrap; /* Safari 6.1+ */
+	-ms-flex-wrap: wrap; /* IE 10+ */
+	flex-wrap: wrap;
+}
+
+@mixin flex-no-wrap() {
+	-webkit-flex-wrap: nowrap; /* Safari 6.1+ */
+	-ms-flex-wrap: nowrap; /* IE 10+ */
+	flex-wrap: nowrap;
+}
+
+//ALIGN ITEMS ------------------------------------------------------
+@mixin align-items-center() {
+	-webkit-align-items: center; /* Safari 7.0+ */
+	-ms-flex-align: center; /* IE 10+ */
+	align-items: center;
+}
+
+@mixin align-items-flex-end() {
+	-webkit-align-items: flex-end; /* Safari 7.0+ */
+	-ms-flex-align: end; /* IE 10+ */
+	align-items: flex-end;
+}
+
+@mixin align-items-flex-start() {
+	-webkit-align-items: flex-start; /* Safari 7.0+ */
+	-ms-flex-align: start; /* IE 10+ */
+	align-items: flex-start;
+}
+
+//JUSTIFY CONTENT ---------------------------------------------------
+@mixin justify-content-center() {
+    -webkit-justify-content: center; /* Safari 6.1+ */
+    justify-content: center;
+	-ms-flex-pack: center;
+}
+
+@mixin justify-content-space-between() {
+    -webkit-justify-content: space-between; /* Safari 6.1+ */
+    justify-content: space-between;
+}
+
+@mixin justify-content-space-around() {
+    -webkit-justify-content: space-around; /* Safari 6.1+ */
+    justify-content: space-around;
+}
+
+@mixin justify-content-flex-end() {
+	-webkit-justify-content: flex-end; /* Safari 6.1+ */
+	-ms-flex-pack: end; /* IE 10+ */
+	justify-content: flex-end;
+
+}
+
+@mixin justify-content-flex-start() {
+	-webkit-justify-content: flex-start; /* Safari 6.1+ */
+	-ms-flex-pack: start; /* IE 10+ */
+	justify-content: flex-start;
+}
+
+//Buttons ---------------------------------------------------------
+
+@mixin confirm-button() {
+	min-width: 85px;
+	padding: 4px 22px;
+	border-radius: 5px;
+	font-size: 13px;
+	font-weight: 700;
+	border: 1px solid $confirm-button-bg;
+	color: $confirm-button-text;
+	background: $confirm-button-bg;
+	cursor: pointer;
+	transition: 0.3s;
+	text-transform: capitalize;
+	@include user-select(none);
+	&:hover {
+		color: $confirm-button-hover-text;
+		background: $confirm-button-hover-bg;
+	}
+	&:active {
+		background: $primary-active-color;
+	}
+	&:disabled {
+		background: $confirm-button-disabled-bg;
+		color: $confirm-button-disabled-text;
+		border: 1px solid $confirm-button-disabled-border;
+		cursor: unset;
+		pointer-events: none;
+	}
+	&.disabled-button {
+		background: $confirm-button-disabled-bg;
+		//border: 1px solid $confirm-button-disabled-border;
+		color: $confirm-button-disabled-text;
+		cursor: unset;
+		pointer-events: none;
+	}
+}
+
+@mixin cancel-button() {
+	padding: 3px 22px;
+	border-radius: 5px;
+	font-size: 13px;
+	font-weight: 600;
+	cursor: pointer;
+	min-width: 30px;
+	border: 1px solid $cancel-button-border;
+	color: $cancel-button-text;
+	background: $cancel-button-bg;
+	text-transform: capitalize;
+	@include user-select(none);
+	&:hover {
+		color: $cancel-button-hover-text;
+		background: $cancel-button-hover-bg;
+	}
+}
+
+//Animation -----------------------------------------------------------
+
+@mixin animation($name, $duration) {
+	-webkit-animation: $name $duration 1; /* Safari 4+ */
+	-moz-animation:    $name $duration 1; /* Fx 5+ */
+	-o-animation:      $name $duration 1; /* Opera 12+ */
+	animation:         $name $duration 1; /* IE 10+, Fx 29+ */
+}
+
+//font icons -----------------------------------------------------------
+
+@mixin icon-font() {
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: 'icomoon',Noto, NotoArm, system-ui, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif !important;
+}
+
+@mixin user-select($select-arg) {
+	-webkit-user-select: $select-arg; /* Chrome all / Safari all */
+	-moz-user-select: $select-arg; /* Firefox all */
+	-ms-user-select: $select-arg; /* IE 10+ */
+	user-select: $select-arg; /* Likely future */
+}
+
+@mixin user-drag($drag-arg) {
+	-webkit-user-drag: $drag-arg; /* Chrome all / Safari all */
+	-khtml-user-drag: $drag-arg; /* Firefox all */
+	-moz-user-drag: $drag-arg; /* IE 10+ */
+	-o-user-drag: $drag-arg; /* Likely future */
+	user-drag: $drag-arg;
+}
+
+
+@mixin circle-loader($circleColor) {
+	@keyframes rotate {
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+	@keyframes dash {
+		0% {
+			stroke-dasharray: 1, 200;
+			stroke-dashoffset: 0;
+		}
+		50% {
+			stroke-dasharray: 89, 200;
+			stroke-dashoffset: -35px;
+		}
+		100% {
+			stroke-dasharray: 89, 200;
+			stroke-dashoffset: -124px;
+		}
+	}
+	.loader-content {
+		position: relative;
+		margin: 0 auto;
+		width: 60px;
+		&:before {
+			content: '';
+			display: block;
+			padding-top: 100%;
+		}
+		.circular {
+			animation: rotate 2s linear infinite;
+			height: 100%;
+			transform-origin: center center;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			.path {
+				stroke-dasharray: 1, 200;
+				stroke-dashoffset: 0;
+				animation: dash 1.5s ease-in-out infinite;
+				stroke-linecap: round;
+				stroke: $circleColor;
+				stroke-width: 3px;
+				stroke-miterlimit: 10px;
+			}
+		}
+	}
+}
+@mixin sticker-loader() {
+	.sticker-loader {
+		width: 4px;
+		height: 4px;
+		opacity: 0.5;
+		border-radius: 50%;
+		box-shadow:
+						0 -14px 0 rgba(0,0,0,0.8),
+						10px -10px 0 rgba(0,0,0,0.7),
+						14px 0px 1px rgba(0,0,0,0.6),
+						10px 10px 1px rgba(0,0,0,0.5),
+						0px 14px 2px rgba(0,0,0,0.4),
+						-10px 10px 2px rgba(0,0,0,0.3),
+						-14px 0px 3px rgba(0,0,0,0.2),
+						-10px -10px 3px rgba(0,0,0,0.1);
+		transform-origin: 50%;
+		animation: sticker-load 0.5s steps(8, end) infinite;
+	}
+
+	@keyframes sticker-load {
+		0% { transform: rotate(0); }
+		100% { transform: rotate(360deg); }
+	}
+}
+@mixin scroll($thumbBackgroundColor, $trackBackgroundColor) {
+	&::-webkit-scrollbar {
+		-webkit-appearance: none;
+	}
+
+	&::-webkit-scrollbar:vertical {
+		width: 7px;
+	}
+
+	&::-webkit-scrollbar:horizontal {
+		height: 7px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 8px;
+		background-color: $thumbBackgroundColor;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: $trackBackgroundColor;
+		border-radius: 8px;
+	}
+}

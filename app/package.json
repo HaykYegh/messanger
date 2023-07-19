@@ -1,0 +1,23 @@
+{
+  "name": "Zangi",
+  "productName": "Zangi",
+  "version": "1.0.0",
+  "description": "Zangi",
+  "main": "./main.js",
+  "author": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "scripts": {
+    "postinstall": "npm rebuild --runtime=electron --target=1.6.6 --disturl=https://atom.io/download/atom-shell --build-from-source"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.15",
+    "@ffprobe-installer/ffprobe": "^1.0.9",
+    "aws-sdk": "^2.302.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "webm-to-mp4": "^1.0.0"
+  }
+}

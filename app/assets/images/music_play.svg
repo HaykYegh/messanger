@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g transform="matrix(1,0,0,1,-1264,-2297)">
+        <g id="music_play" transform="matrix(1,0,0,1,-4,0)">
+            <rect x="1268" y="2297" width="36" height="36" style="fill:none;"/>
+            <g transform="matrix(4.9569e-17,0.809524,-0.666667,4.08216e-17,2081,-303.405)">
+                <path d="M3233.89,1180.22C3234.02,1179.96 3234.25,1179.8 3234.5,1179.8C3234.75,1179.8 3234.98,1179.96 3235.11,1180.22C3236.75,1183.5 3241.28,1192.56 3243.6,1197.19C3243.88,1197.76 3243.89,1198.48 3243.62,1199.06C3243.35,1199.64 3242.84,1200 3242.29,1200C3238.28,1200 3230.8,1200 3226.76,1200C3226.2,1200 3225.68,1199.63 3225.41,1199.04C3225.13,1198.45 3225.14,1197.72 3225.43,1197.14C3227.76,1192.49 3232.26,1183.49 3233.89,1180.22Z" style="fill:white;"/>
+            </g>
+        </g>
+    </g>
+</svg>

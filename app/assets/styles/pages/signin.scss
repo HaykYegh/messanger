@@ -1,0 +1,150 @@
+
+@import "../utils/variables";
+@import "../utils/mixin";
+
+//************************ Login Page ************************//
+
+.signin-page {
+  width: 100%;
+  height: 100%;
+  background-color: #eef3fa;
+  min-height: 700px;
+  @include flex();
+  @include flex-direction-column();
+  @include align-items-center();
+  @include justify-content-center();
+    .signin-qr-block {
+      @include flex();
+      @include flex-direction-column();
+      @include justify-content-center();
+      height: 100%;
+      .logo {
+        margin: 10px 0 0 0;
+        @include flex();
+        @include flex-direction-column();
+        @include align-items-center();
+        @include justify-content-center();
+        .logo-icon {
+          display: block;
+          background: url('../../images/new-logo.png');
+          background-repeat: no-repeat;
+          background-size: 210px auto;
+          min-height: 95px;
+          min-width: 210px;
+        }
+        .logo-text {
+          margin:10px 0 0 0;
+          width: 250px;
+          font-size: 16px;
+          color: #00a4ff;
+          font-weight: 400;
+          cursor: pointer;
+          text-transform: capitalize;
+          text-align: center;
+
+        }
+      }
+      .qr-block {
+        margin: 30px 0 0 0;
+        min-width: 300px;
+        min-height: 350px;
+        border-radius: 25px;
+        background-color: #ffffff;
+        border: 1px solid #cccccc;
+        @include flex();
+        @include flex-direction-column();
+        @include align-items-center();
+        @include justify-content-center();
+        .qr {
+          width: 200px;
+          height: 200px;
+          display: block;
+          position: relative;
+          margin: 0 0 30px 0;
+          canvas {
+            height: 200px !important;
+            width: 200px !important;
+          }
+          .loader {
+            @include absolute-center-xy();
+            .loader-content {
+              @keyframes rotate {
+                100% {
+                  transform: rotate(360deg);
+                }
+              }
+
+              @keyframes dash {
+                0% {
+                  stroke-dasharray: 1, 200;
+                  stroke-dashoffset: 0;
+                }
+                50% {
+                  stroke-dasharray: 89, 200;
+                  stroke-dashoffset: -35px;
+                }
+                100% {
+                  stroke-dasharray: 89, 200;
+                  stroke-dashoffset: -124px;
+                }
+              }
+              position: relative;
+              margin: 0 auto;
+              width: 60px;
+              &:before {
+                content: '';
+                display: block;
+                padding-top: 100%;
+              }
+              .circular {
+                animation: rotate 2s linear infinite;
+                height: 100%;
+                transform-origin: center center;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                .path {
+                  stroke-dasharray: 1, 200;
+                  stroke-dashoffset: 0;
+                  animation: dash 1.5s ease-in-out infinite;
+                  stroke-linecap: round;
+                  stroke: $primary-color;
+                  stroke-width: 3px;
+                  stroke-miterlimit: 10px;
+                }
+              }
+            }
+          }
+        }
+        .qr-text {
+          width: 90%;
+          font-size: 12px;
+          text-align: center;
+          color: #98a1ae;
+          font-weight: 400;
+          &:nth-of-type(2) {
+            margin: 10px 0 0 0;
+          }
+        }
+      }
+    }
+    .bottom-block {
+      margin: auto 0 25px 0;
+      @include flex();
+      @include flex-direction-column();
+      display: none;
+      .bottom-text {
+        text-align: center;
+        font-size: 16px;
+        color: #98a1ae;
+        font-weight: 400;
+        &:nth-of-type(2) {
+          margin: 10px 0 0 0;
+        }
+      }
+    }
+}

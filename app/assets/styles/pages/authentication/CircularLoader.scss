@@ -1,0 +1,31 @@
+@import "../../utils/LoaderMixin";
+
+.content-loader {
+  position: absolute;
+  right: 4px;
+
+  .circular-loader {
+    @include loader_circle(loader-stroke);
+    @include loader_stroke_width(loader-stroke, w-12px, 12px);
+    @include loader_stroke_rotate_step(slow, 0);
+    font-size: 12px;
+
+    .loader-stroke {
+      &:before {
+        border-width: 2px;
+      }
+
+      .loader-stroke-left {
+        &:before {
+          border-width: 2px;
+        }
+      }
+
+      .loader-stroke-right {
+        &:before {
+          border-width: 2px;
+        }
+      }
+    }
+  }
+}

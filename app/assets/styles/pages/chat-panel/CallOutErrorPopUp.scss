@@ -1,0 +1,62 @@
+@import "../../utils/variables";
+@import "../../utils/mixin";
+
+.call-out-error-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+  background-color: rgba(0, 0, 0, 0.3);
+  @include flex();
+  @include align-items-center();
+  @include justify-content-center();
+  .call-out-error-content {
+    width: 320px;
+    height: 170px;
+    background-color: #ffffff;
+    border: #c8c8ca solid 1px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 15px;
+    position: relative;
+    @include flex();
+    @include flex-direction-column();
+    @include align-items-center();
+    @include justify-content-flex-start();
+    .content_text {
+      width: 280px;
+      margin: 30px 0 0 0;
+      height: auto;
+      @include flex();
+      @include align-items-center();
+      text-align: center;
+      >.info {
+        width: 100%;
+        display: block;
+        text-align: center;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: #263239;
+      }
+    }
+    .content_btn {
+      margin: 25px 0 0 0;
+      width: 250px;
+      @include flex();
+      @include flex-direction-row();
+      @include justify-content-flex-end();
+      .confirm {
+        display: block;
+        text-align: center;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 22px;
+        color: $primary-color;
+        cursor: pointer;
+      }
+    }
+  }
+}

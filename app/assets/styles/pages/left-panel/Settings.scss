@@ -1,0 +1,278 @@
+@import "../../utils/variables";
+@import "../../utils/mixin";
+
+//******************* Settings Popup Navigation *******************//
+.settings-menu-bar {
+  @include flex();
+  @include flex-direction-column();
+  background-color: $settings-menu-bar-bg;
+  padding: 14px 0 0 14px;
+  width: 250px;
+  min-width: 250px;
+
+  .settings-title-block {
+    .icon-close {
+      cursor: pointer;
+      color:#000;
+      margin-left: 2px;
+    }
+
+    .settings-title {
+      padding-left: 50px;
+      color: #373749;
+      font-weight: 700;
+      font-size: 20px;
+    }
+  }
+
+  .icons_container {
+    list-style-type: none;
+    padding-top: 20px;
+    width: 100%;
+
+    .icon_pack {
+      cursor: pointer;
+      padding-bottom: 14px;
+      width: 100%;
+      @include user-drag(none);
+      @include user-select(none);
+      @include flex();
+      @include align-items-center();
+
+      &:hover {
+        .icon {
+          &:before {
+            color: $left-menu-icon-color-hover;
+          }
+        }
+      }
+
+      .icon {
+        width: auto;
+        height: auto;
+        display: inline-block;
+        background-size: 30px 270px;
+        border-radius: 5px;
+        margin-right: 18px;
+        padding: 0;
+        overflow-x: unset;
+        @include icon-font();
+
+        //&::before {
+        //  font-size: 20px;
+        //  color: #7b7d92;
+        //}
+      }
+
+      .block-info {
+        width: 100%;
+        height: 100%;
+        @include flex();
+        @include align-items-flex-end();
+        @include justify-content-space-between();
+        .update-notification{
+          @include flex();
+          @include align-items-center();
+          @include justify-content-center();
+          background-color: #FE0000;
+          color: #fff;
+          border-radius: 50%;
+          width: 14px;
+          height: 14px;
+          font-size: 10px;
+        }
+
+        .icon_info {
+          font-size: 14px;
+          line-height: 1.2;
+          font-weight: 500;
+          text-align: left;
+          color: #28283c;
+        }
+      }
+
+      &.icon_pack-active {
+        .block-info {
+          .icon_info {
+            font-weight: 700;
+          }
+        }
+
+        .icon-account {
+          &::before {
+            color: $settings-account-active;
+          }
+
+          + .block-info {
+            .icon_info {
+              color: $settings-account-active;
+            }
+          }
+        }
+
+        .icon-networks {
+          &::before {
+            color: $settings-networks-active;
+          }
+
+          + .block-info {
+            .icon_info {
+              color: $settings-networks-active;
+            }
+          }
+        }
+
+        .icon-add_credit {
+          &::before {
+            color: $settings-add-credit-active;
+          }
+
+          + .block-info {
+            .icon_info {
+              color: $settings-add-credit-active;
+            }
+          }
+        }
+
+        .icon-chat_settings {
+          &::before {
+            color: $settings-chat-settings-active;
+          }
+
+          + .block-info {
+            .icon_info {
+              color: $settings-chat-settings-active;
+            }
+          }
+        }
+
+        .icon-privacy {
+          &::before {
+            color: $settings-privacy-active;
+          }
+
+          + .block-info {
+            .icon_info {
+              color: $settings-privacy-active;
+            }
+          }
+        }
+
+        .icon-check_for_updates {
+          &::before {
+            color: $settings-check-for-updates-active;
+          }
+
+          + .block-info {
+            .icon_info {
+              color: $settings-check-for-updates-active;
+            }
+          }
+        }
+
+        .icon-sticker_store {
+          &::before {
+            color: $settings-sticker-store-active;
+          }
+
+          + .block-info {
+            .icon_info {
+              color: $settings-sticker-store-active;
+            }
+          }
+        }
+
+        .icon-system_language {
+          &::before {
+            color: $settings-system-language-active;
+          }
+
+          + .block-info {
+            .icon_info {
+              color: $settings-system-language-active;
+            }
+          }
+        }
+
+        .icon-notifications {
+          &::before {
+            color: $settings-notifications-active;
+          }
+
+          + .block-info {
+            .icon_info {
+              color: $settings-notifications-active;
+            }
+          }
+        }
+
+        .icon-why_us {
+          &::before {
+            color: $settings-why-us-active;
+          }
+
+          + .block-info {
+            .icon_info {
+              color: $settings-why-us-active;
+            }
+          }
+        }
+
+        .icon-logs {
+          &::before {
+            color: $settings-logs-active;
+          }
+
+          + .block-info {
+            .icon_info {
+              color: $settings-logs-active;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.settings-popup-content {
+  width: 100%;
+
+  .settings-popup-content-title {
+    padding: 12px 0;
+    text-align: center;
+    border-bottom: 1px solid #E6EAEE;
+    color: #373749;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .settings-scroll-bar {
+    position: relative;
+    height: 545px;
+    padding: 0 30px;
+  }
+
+  .settings_title {
+    color: #2D2E3B;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .settings_label_title {
+    color: #808088;
+    font-size: 14px;
+    text-align: left;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 24px;
+  }
+
+  .settings_text {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.38;
+    color: #9B9B9B;
+    width: 100%;
+  }
+}

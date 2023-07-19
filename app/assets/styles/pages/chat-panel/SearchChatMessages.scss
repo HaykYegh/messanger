@@ -1,0 +1,202 @@
+@import "../../utils/variables";
+@import "../../utils/mixin";
+
+//************************ Search Messages in chat panel ************************//
+
+// show/hide Animation
+
+@-webkit-keyframes search-show {
+  0% {
+    transform: translateY(-70px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes search-show {
+  0% {
+    transform: translateY(-70px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.search-messages {
+  width: 100%;
+  height: 70px;
+  min-height: 70px;
+  margin: 0 0 auto 0;
+  transform: translateY(-60px);
+  opacity: 0;
+  animation: search-show 0.2s forwards;
+  border-bottom: 1px solid #edf2f9;
+  .search-messages-content {
+    width: 100%;
+    height: 100%;
+    @include flex();
+    @include flex-direction-row();
+    @include justify-content-center();
+    @include align-items-center();
+    .search-input-block {
+      width: 80%;
+      height: 100%;
+      @include flex();
+      @include align-items-center();
+      @include justify-content-center();
+      padding: 0 0 0 15px;
+      .search_input {
+        position: relative;
+        width: 100%;
+        @include icon-font();
+        &::after {
+          position: absolute;
+          content: "\e93d";
+          color: #8492ab;
+          font-size: 16px;
+          left: 12px;
+          top: 7px;
+        }
+        input {
+          width: 100%;
+          height: 30px;
+          border-radius: 8px;
+          border: 1px solid rgba(144,155,180,0.34);
+          padding: 0 38px;
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 13px;
+          background-color: #f9f9f9;
+          &:focus {
+            border: 1px solid rgba(144,155,180,0.34);
+          }
+          &.no-border-right {
+            border-bottom-right-radius: 0 !important;
+            border-top-right-radius: 0 !important;
+          }
+        }
+        input::placeholder {
+          line-height: 24px;
+          font-size: 15px;
+          color: #8492ab;
+          font-weight: 400;
+        }
+        .clear-search {
+          @include absolute(6px, 9px, unset, unset);
+          @include icon-font();
+          border: none;
+          background: none;
+          padding: 0;
+          &:after {
+            content: "\e995";
+            color: #909cb4;
+            font-size: 18px;
+            cursor: pointer;
+          }
+        }
+      }
+      .search-result {
+        border: 1px solid rgba(144,155,180,0.34);
+        border-left: none !important;
+        min-width: 140px;
+        width: auto;
+        height: 30px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        background-color: #f9f9f9;
+        @include flex();
+        @include align-items-center();
+        @include justify-content-center();
+        .result-text-info {
+          width: 100%;
+          font-weight: 400;
+          font-size: 12px;
+          color: #6d7f92;
+          text-align: center;
+        }
+        .buttons-block {
+          width: 100%;
+          height: 100%;
+          @include flex();
+          @include flex-direction-row();
+          @include align-items-center();
+          @include justify-content-center();
+          .up-arrow {
+            @include icon-font();
+            &:before {
+              content: "\e918";
+              color: #6d7f92;
+              font-size: 14px;
+              cursor: pointer;
+            }
+            &.disable-arrow {
+              &:before {
+                color: #cccccc !important;
+                cursor: default !important;
+              }
+            }
+          }
+          .down-arrow {
+            @include icon-font();
+            margin: 0 0 0 12px;
+            &:before {
+              content: "\e915";
+              color: #6d7f92;
+              font-size: 14px;
+              cursor: pointer;
+            }
+            &.disable-arrow {
+              &:before {
+                color: #cccccc !important;
+                cursor: default !important;
+              }
+            }
+          }
+        }
+      }
+    }
+    .search-buttons-block {
+      width: 20%;
+      height: 100%;
+      padding: 0 10px;
+      @include flex();
+      @include flex-direction-row();
+      @include justify-content-space-around();
+      @include align-items-center();
+      .search-button {
+        cursor: pointer;
+        background: none;
+        border: none;
+        margin: 0;
+        padding: 0;
+        @include icon-font();
+        &.user-button {
+          &:after {
+            content: "\e912";
+            color: #909cb4;
+            font-size: 18px;
+          }
+        }
+        &.calendar-button {
+          &:after {
+            content: "\e90f";
+            color: #909cb4;
+            font-size: 18px;
+          }
+        }
+        &.close-button {
+          &:after {
+            content: "\e914";
+            color: #909cb4;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}

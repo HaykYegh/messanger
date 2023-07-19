@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g transform="matrix(1,0,0,1,-1142,-2297)">
+        <g id="shared_delete" transform="matrix(0.680851,0,0,0.680851,374.681,737.17)">
+            <rect x="1127" y="2291" width="23.5" height="23.5" style="fill:none;"/>
+            <clipPath id="_clip1">
+                <rect x="1127" y="2291" width="23.5" height="23.5"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g transform="matrix(1.175,0,0,1.11905,-214.85,-120.548)">
+                    <g id="shared_delete1" serif:id="shared_delete">
+                        <rect id="shared_delete2" serif:id="shared_delete" x="1142" y="2155" width="20" height="21" style="fill:none;"/>
+                        <clipPath id="_clip2">
+                            <rect id="shared_delete3" serif:id="shared_delete" x="1142" y="2155" width="20" height="21"/>
+                        </clipPath>
+                        <g clip-path="url(#_clip2)">
+                            <g transform="matrix(0.959302,0,0,1.00727,1144.81,2155.18)">
+                                <path d="M14,4.333L12.792,19.136C12.721,20.001 11.998,20.667 11.131,20.667L3.869,20.667C3.002,20.667 2.279,20.001 2.208,19.136L1,4.333L14,4.333ZM4.667,6.667L3.667,6.667L4.333,18.333L5.333,18.333L4.667,6.667ZM8,6.667L7,6.667L7,18.333L8,18.333L8,6.667ZM11.333,6.667L10.333,6.667L9.667,18.333L10.667,18.333L11.333,6.667ZM9,0.333C9.736,0.333 10.333,0.93 10.333,1.667L10.333,1.999L14,2C14.368,2 14.667,2.298 14.667,2.667L14.667,3.333L0.333,3.333L0.333,2.667C0.333,2.298 0.632,2 1,2L4.666,1.999L4.667,1.667C4.667,0.93 5.264,0.333 6,0.333L9,0.333Z" style="fill:rgb(22,172,246);"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

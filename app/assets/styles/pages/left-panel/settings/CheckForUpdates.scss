@@ -1,0 +1,94 @@
+@import "../../../utils/variables";
+@import "../../../utils/mixin";
+
+.m-0 {
+  margin: 0;
+}
+.app-update {
+
+  .update-content {
+
+
+
+    .logo {
+      img {
+        width: 64px;
+      }
+    }
+
+    h2 {
+      color: #333333;
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+      margin: 0 0 6px 0;
+    }
+
+
+
+
+  .update-text {
+    margin-top: 14px;
+    color: #262626;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .error-message {
+    text-align: center;
+    font-size: 18px;
+    color: #ff4144;
+    margin-top: 15px;
+  }
+
+  .current-version {
+    text-align: center;
+    font-size: 14px;
+    color: #9B9B9B;
+    margin-top: 10px;
+  }
+
+  .update-button {
+    padding: 0 75px;
+    color: $primary-color;
+    font-size: 13px;
+    @include flex();
+    @include justify-content-center();
+    @include align-items-center();
+    @include flex-direction-column();
+    .update-title {
+      @include confirm-button();
+      background-color: $primary-color;
+      min-width: 150px;
+      margin: 20px 0 0 0;
+      padding: 8px 18px;
+      line-height: 1;
+    }
+  }
+  .app-logo {
+    width: auto;
+    height: 250px;
+    margin: 30px auto;
+    display: block;
+  }
+
+  .loader {
+    border: 4px solid #ecedef;
+    border-top: 4px solid #91939c;
+    border-radius: 100%;
+    width: 30px;
+    margin: 50%;
+    height: 54px;
+    animation: spin 1s linear infinite;
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+}

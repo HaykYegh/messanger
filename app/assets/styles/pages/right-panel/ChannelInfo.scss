@@ -1,0 +1,1050 @@
+
+@import "../../utils/variables";
+@import "../../utils/mixin";
+
+//******************* Group Chat Info Page *******************//
+
+.right_bar {
+  .channel-profile-right {
+    width: 100%;
+    height: 100%;
+    @include flex();
+    @include flex-direction-column();
+    .group-profile-content {
+      width: 100%;
+      overflow-y: auto;
+      position: relative;
+      padding: 0 20px;
+      position: absolute;
+      //@include animation(chat-list, 0.17s);
+      @include user-select(text);
+      .close_arrow {
+        @include absolute(14px, unset, unset, 16px);
+        @include icon-font();
+        cursor: pointer;
+        &:after {
+          content: "\e995";
+          color: $primary-color;
+          font-size: 14px;
+          line-height: 15px;
+        }
+      }
+      .back_arrow {
+        display: block;
+        @include absolute(14px, unset, unset, 16px);
+        @include icon-font();
+        cursor: pointer;
+        &:after {
+          content: "\e962";
+          color: $primary-color;
+          font-size: 15px;
+          line-height: 15px;
+        }
+      }
+      .edit-btn {
+        display: block;
+        @include absolute(14px, 16px, unset, unset);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        color: $primary-color;
+        user-select: none;
+        cursor: pointer;
+      }
+      .done-btn {
+        display: block;
+        @include absolute(14px, 16px, unset, unset);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        color: $primary-color;
+        user-select: none;
+        cursor: pointer;
+      }
+      .image-block {
+        width: 100%;
+        height:auto;
+        background-color: #ffffff;
+        @include flex();
+        @include flex-direction-column();
+        @include justify-content-flex-start();
+        @include align-items-center();
+
+        .img {
+          margin: 30px 0 0 0;
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          object-fit: contain;
+          @include user-drag(none);
+        }
+        .channel-icon {
+          display: block;
+          margin: 30px 0 0 0;
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          @include flex();
+          @include flex-direction-column();
+          @include justify-content-center();
+          @include align-items-center();
+          &:after {
+            content: attr(data-line);
+            font-weight: 300;
+            font-size: 30px;
+            line-height: 30px;
+            text-transform: uppercase;
+            color: #fff;
+          }
+        }
+
+        .contact_img {
+          margin: 30px 0 0 0;
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          object-fit: contain;
+          @include user-drag(none);
+          @include user-select(none);
+        }
+        .contact_icon {
+          font-weight: 300;
+          font-size: 14px;
+          position: relative;
+          margin: 30px 0 0 0;
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &::after {
+            content: attr(data-line); //!important;
+            //font-weight: 300;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 36px;
+            color: #fff;
+            text-transform: uppercase;
+          }
+        }
+        .no-name_icon {
+          margin: 30px 0 0 0;
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          background-color: $avatar-bg-color;
+          @include icon-font();
+          @include flex();
+          @include align-items-center();
+          @include justify-content-center();
+          &::after {
+            content: "\e947";
+            color: #ffffff;
+            font-size: 60px;
+            display: block;
+          }
+        }
+
+        .group-name {
+          display: block;
+          margin: 20px 0 0 0;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 21px;
+          color: #000000;
+          text-align: center;
+          width: 240px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          cursor: text;
+          @include user-select(text);
+        }
+        .number-of-members {
+          display: block;
+          margin: 8px 0 20px 0;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 12px;
+          color: $grey-color;
+        }
+        .img-edit {
+          display: block;
+          margin: 30px 0 0 0;
+          width: 90px;
+          height: 90px;
+          background: linear-gradient(rgb(52, 165, 243) 0%, rgb(107, 208, 252) 100%);
+          border-radius: 50%;
+          position: relative;
+          @include flex();
+          @include flex-direction-column();
+          @include justify-content-center();
+          @include align-items-center();
+          img {
+            width: 102%;
+            height: 102%;
+            border-radius: 50%;
+            margin: 0;
+          }
+          .group-pic-icon {
+            width: 30px;
+            height: 30px;
+            display: block;
+            z-index: 8;
+            @include flex();
+            @include align-items-center();
+            @include justify-content-center();
+            @include absolute-center-xy();
+            @include icon-font();
+            &:before {
+              content: "\E94F";
+              font-size: 30px;
+              color: #FFFFFF;
+            }
+            .group-pic-upload {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              right: 0px;
+              margin: 0;
+              bottom: 0;
+              padding: 0;
+              opacity: 0;
+              outline: none;
+              cursor: pointer;
+              font-size: 0px !important;
+            }
+          }
+          .no-name_icon {
+            display: none !important;
+          }
+          .contact_icon {
+            display: none !important;
+          }
+        }
+        .group-name-input {
+          border: none;
+          margin: 20px 0 0 0;
+          font-size: 16px;
+          line-height: 18px;
+          border-bottom: 1px solid #edf2f9;
+          color: #000000;
+          background-color: transparent;
+          width: 240px;
+          font-weight: 400;
+          &:focus {
+            border-bottom: 1px solid $primary-color;
+          }
+        }
+      }
+      .description-row {
+        width: 100%;
+        height: auto;
+        border-top: 1px solid #eaeaea;
+        border-bottom: 1px solid #eaeaea;
+        @include flex();
+        @include flex-direction-column();
+        @include justify-content-flex-start();
+        @include align-items-flex-start();
+        .title {
+          display: block;
+          margin: 10px 0 0 0;
+          font-weight: 400;
+          font-size: 15px;
+          color: $grey-color;
+        }
+        .description {
+          padding: 0 0 10px 0;
+          display: block;
+          margin-top: 5px;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 1.3;
+          overflow-wrap: break-word;
+          word-break: break-word;
+          @include user-select(text);
+        }
+      }
+      .link-row {
+        width: 100%;
+        height: auto;
+        margin: 0 0 10px 0;
+        padding: 10px 0;
+        border-bottom: 1px solid #eaeaea;
+        cursor: pointer;
+        @include flex();
+        @include flex-direction-column();
+        @include justify-content-flex-start();
+        @include align-items-flex-start();
+        .title {
+          display: block;
+          font-weight: 400;
+          font-size: 15px;
+          color: $grey-color;
+        }
+        .link {
+          display: block;
+          margin-top: 5px;
+          font-weight: 400;
+          font-size: 15px;
+          color: $chat-link-color;
+          line-height: 1.3;
+          overflow-wrap: break-word;
+          word-break: break-word;
+          position: relative;
+          @include user-select(text);
+          .channel-context-menu{
+            background: white;
+            box-shadow: 0 2px 10px #999999;
+            z-index: 15;
+            position: fixed;
+            color: white;
+            .contextMenu--option
+            {
+              padding: 0;
+              text-align: center;
+              width: 100px;
+              @include user-select(none);
+              @include justify-content-center();
+            }
+          }
+        }
+      }
+      .private-chat {
+        width: 100%;
+        height: 50px;
+        @include flex();
+        @include flex-direction-row();
+        @include justify-content-flex-start();
+        @include align-items-center();
+        cursor: pointer;
+        &:hover {
+          .info-block {
+            .private-chat-btn {
+              color: $primary-color;
+            }
+          }
+        }
+        .private-ico {
+          width: 28px;
+          @include flex();
+          @include justify-content-center();
+          @include icon-font();
+          &:before {
+            content: "\e922";
+            color: $primary-color;
+            font-size: 24px;
+
+          }
+        }
+        .info-block {
+          height: 100%;
+          width: 100%;
+          margin: 0 0 0 10px;
+          border-bottom: 1px solid #edf2f9;
+          @include flex();
+          @include flex-direction-row();
+          @include justify-content-flex-start();
+          @include align-items-center();
+          .private-chat-btn {
+            font-size: 15px;
+            line-height: 16px;
+            font-weight: 400;
+            color: #000000;
+          }
+          .private-chat-ico-next {
+            margin: 0 15px 0 auto;
+            @include icon-font();
+            &:before {
+              content: "\E946";
+              color: #D1DCEE;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .private-call {
+        width: 100%;
+        height: 50px;
+        @include flex();
+        @include flex-direction-row();
+        @include justify-content-flex-start();
+        @include align-items-center();
+        cursor: pointer;
+        &:hover {
+          .info-block {
+            .private-call-btn {
+              color: $primary-color;
+            }
+          }
+        }
+        .private-call-ico {
+          width: 28px;
+          @include flex();
+          @include justify-content-center();
+          @include icon-font();
+          &:before {
+            content: "\e92e";
+            color: $primary-color;
+            font-size: 24px;
+
+          }
+        }
+        .info-block {
+          height: 100%;
+          width: 100%;
+          margin: 0 0 0 10px;
+          border-bottom: 1px solid #edf2f9;
+          @include flex();
+          @include flex-direction-row();
+          @include justify-content-flex-start();
+          @include align-items-center();
+          .private-call-btn {
+            font-size: 15px;
+            line-height: 16px;
+            color: #000000;
+            cursor: pointer;
+          }
+          .private-call-ico-next {
+            margin: 0 15px 0 auto;
+            @include icon-font();
+            &:before {
+              content: "\E946";
+              color: #D1DCEE;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .mute-row {
+        width: 100%;
+        height: 50px;
+        @include flex();
+        @include flex-direction-row();
+        @include justify-content-flex-start();
+        @include align-items-center();
+        cursor: pointer;
+        &:hover {
+          .info-block {
+            .mute-btn {
+              color: $primary-color;
+            }
+          }
+        }
+        .mute-ico {
+          width: 28px;
+          @include flex();
+          @include justify-content-center();
+          @include icon-font();
+          &:before {
+            content: "\E963";
+            color: $primary-color;
+            font-size: 28px;
+
+          }
+        }
+        .info-block {
+          height: 100%;
+          width: 100%;
+          margin: 0 0 0 10px;
+          border-bottom: 1px solid #edf2f9;
+          @include flex();
+          @include flex-direction-row();
+          @include justify-content-flex-start();
+          @include align-items-center();
+          .mute-btn {
+            display: block;
+            font-size: 15px;
+            font-weight: 400;
+            color: #000000;
+            cursor: pointer;
+          }
+          .mute-icons {
+            margin: 0 0 0 auto;
+            @include flex();
+            @include flex-direction-row();
+            @include align-items-center();
+            .mute-status {
+              display: block;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 18px;
+              color: $primary-color;
+            }
+            .mute-ico-next {
+              margin: 0 15px 0 10px;
+              @include icon-font();
+              &:before {
+                content: "\e946";
+                color: $grey-border-color;
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+      .admins-media {
+        width: 100%;
+        height: 50px;
+        @include flex();
+        @include flex-direction-row();
+        @include justify-content-flex-start();
+        @include align-items-center();
+        cursor: pointer;
+        &:hover {
+          .info-block {
+            .admins-btn {
+              color: $primary-color;
+            }
+          }
+        }
+        .admins-ico {
+          width: 28px;
+          @include flex();
+          @include justify-content-center();
+          @include icon-font();
+          &:before {
+            content: "\e96e";
+            color: $primary-color;
+            font-size: 24px;
+
+          }
+        }
+        .info-block {
+          height: 100%;
+          width: 100%;
+          margin: 0 0 0 10px;
+          border-bottom: 1px solid #edf2f9;
+          @include flex();
+          @include flex-direction-row();
+          @include justify-content-flex-start();
+          @include align-items-center();
+          .admins-btn {
+            font-size: 15px;
+            line-height: 16px;
+            font-weight: 400;
+            color: #000000;
+            cursor: pointer;
+          }
+          .admins-ico-next {
+            margin: 0 15px 0 auto;
+            @include icon-font();
+            &:before {
+              content: "\E946";
+              color: #D1DCEE;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .followers-media {
+        width: 100%;
+        height: 50px;
+        @include flex();
+        @include flex-direction-row();
+        @include justify-content-flex-start();
+        @include align-items-center();
+        cursor: pointer;
+        &:hover {
+          .info-block {
+            .followers-btn {
+              color: $primary-color;
+            }
+          }
+        }
+        .followers-ico {
+          width: 28px;
+          @include flex();
+          @include justify-content-center();
+          @include icon-font();
+          &:before {
+            content: "\e970";
+            color: $primary-color;
+            font-size: 24px;
+
+          }
+        }
+        .info-block {
+          height: 100%;
+          width: 100%;
+          margin: 0 0 0 10px;
+          border-bottom: 1px solid #edf2f9;
+          @include flex();
+          @include flex-direction-row();
+          @include justify-content-flex-start();
+          @include align-items-center();
+          .followers-btn {
+            font-size: 15px;
+            line-height: 16px;
+            font-weight: 400;
+            color: #000000;
+            cursor: pointer;
+          }
+          .followers-ico-next {
+            margin: 0 15px 0 auto;
+            @include icon-font();
+            &:before {
+              content: "\E946";
+              color: #D1DCEE;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .shared-media {
+        width: 100%;
+        height: 50px;
+        @include flex();
+        @include flex-direction-row();
+        @include justify-content-flex-start();
+        @include align-items-center();
+        cursor: pointer;
+        &:hover {
+          .info-block {
+            .shared-media-btn {
+              color: $primary-color;
+            }
+          }
+        }
+        .shared-media-ico {
+          width: 28px;
+          @include flex();
+          @include justify-content-center();
+          @include icon-font();
+          &:before {
+            content: "\e952";
+            color: $primary-color;
+            font-size: 24px;
+
+          }
+        }
+        .info-block {
+          height: 100%;
+          width: 100%;
+          margin: 0 0 0 10px;
+          border-bottom: 1px solid #edf2f9;
+          @include flex();
+          @include flex-direction-row();
+          @include justify-content-flex-start();
+          @include align-items-center();
+          .shared-media-btn {
+            font-size: 15px;
+            line-height: 16px;
+            font-weight: 400;
+            color: #000000;
+            cursor: pointer;
+          }
+          .shared-media-ico-next {
+            margin: 0 15px 0 auto;
+            @include icon-font();
+            &:before {
+              content: "\E946";
+              color: #D1DCEE;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .message-row {
+        width: 100%;
+        height: 50px;
+        @include flex();
+        @include flex-direction-row();
+        @include justify-content-flex-start();
+        @include align-items-center();
+        cursor: pointer;
+        &:hover {
+          .info-block {
+            .mute-name {
+              color: $primary-color;
+            }
+          }
+        }
+        .message-ico {
+          width: 28px;
+          @include flex();
+          @include justify-content-center();
+          @include icon-font();
+          &:before {
+            content: "\e922";
+            color: $primary-color;
+            font-size: 24px;
+
+          }
+        }
+        .info-block {
+          height: 100%;
+          width: 100%;
+          margin: 0 0 0 10px;
+          border-bottom: 1px solid #edf2f9;
+          @include flex();
+          @include flex-direction-row();
+          @include justify-content-flex-start();
+          @include align-items-center();
+          .mute-name {
+            display: block;
+            font-weight: 400;
+            font-size: 15px;
+            color: #000000;
+          }
+        }
+      }
+      .call-row {
+        width: 100%;
+        height: 50px;
+        @include flex();
+        @include flex-direction-row();
+        @include justify-content-flex-start();
+        @include align-items-center();
+        cursor: pointer;
+        &:hover {
+          .info-block {
+            .mute-name {
+              color: $primary-color;
+            }
+          }
+        }
+        .call-ico {
+          width: 28px;
+          @include flex();
+          @include justify-content-center();
+          @include icon-font();
+          &:before {
+            content: "\e92e";
+            color: $primary-color;
+            font-size: 28px;
+
+          }
+        }
+        .info-block {
+          height: 100%;
+          width: 100%;
+          margin: 0 0 0 10px;
+          border-bottom: 1px solid #edf2f9;
+          @include flex();
+          @include flex-direction-row();
+          @include justify-content-flex-start();
+          @include align-items-center();
+          .mute-name {
+            display: block;
+            font-weight: 400;
+            font-size: 15px;
+            color: #000000;
+          }
+        }
+      }
+      .leave-group {
+        width: 100%;
+        height: 50px;
+        border-bottom: 1px solid #edf2f9;
+        @include flex();
+        @include flex-direction-row();
+        @include justify-content-flex-start();
+        @include align-items-center();
+        cursor: pointer;
+        &:hover {
+          .leave-group-btn {
+            color: $primary-color;
+          }
+        }
+        .leave-group-btn {
+          font-size: 15px;
+          line-height: 15px;
+          font-weight: 400;
+          color: red;
+          cursor: pointer;
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+  .followers_info_right {
+    width: 100%;
+    height: 100%;
+    @include flex();
+    @include flex-direction-column();
+    position: relative;
+    .back_arrow {
+      display: block;
+      @include absolute(14px, unset, unset, 16px);
+      @include icon-font();
+      cursor: pointer;
+      &:after {
+        content: "\e962";
+        color: $primary-color;
+        font-size: 15px;
+        line-height: 15px;
+      }
+    }
+    .back-to-chat {
+      display: block;
+      cursor: pointer;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+      color: $primary-color;
+      position: absolute;
+      top: 50%;
+      left: 14px;
+      transform: translate(0%, -50%);
+      -webkit-transform: translate(0%, -50%);
+    }
+    .close_btn {
+      @include absolute(14px, unset, unset, 16px);
+      @include icon-font();
+      cursor: pointer;
+      &:after {
+        content: "\e995";
+        color: #909cb4;
+        font-size: 20px;
+      }
+    }
+    .back_btn {
+      display: block;
+      @include absolute(14px, unset, unset, 16px);
+      @include icon-font();
+      cursor: pointer;
+      &:after {
+        content: "\e962";
+        color: $primary-color;
+        font-size: 15px;
+        line-height: 15px;
+      }
+    }
+    .next_btn {
+      display: block;
+      @include absolute(14px, 16px, unset, unset);
+      margin: 0 15px 0 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+      color: #8b8a89;
+      cursor: pointer;
+    }
+    .next_btn_active {
+      color: $primary-color;
+      cursor: pointer;
+    }
+    .edit-btn {
+      display: block;
+      @include absolute(14px, 16px, unset, unset);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+      color: $primary-color;
+      user-select: none;
+      cursor: pointer;
+    }
+    .add_contact_header-btn {
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      @include absolute(22px, 16px, unset, unset);
+      @include flex();
+      @include align-items-center();
+      @include justify-content-center();
+      -webkit-transform: translate(0%, -50%);
+      -ms-transform: translate(0%, -50%);
+      @include icon-font();
+      &::after {
+        content: "\e96a";
+        color: $primary-color;
+        font-size: 25px;
+      }
+    }
+    .done-btn {
+      display: block;
+      @include absolute(14px, 16px, unset, unset);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+      color: $primary-color;
+      user-select: none;
+      cursor: pointer;
+    }
+    .followers-info-content {
+      width: 100%;
+      min-height: 70px;
+      overflow-y: auto;
+      margin: 60px 0 0 0;
+      @include flex();
+      @include flex-direction-column();
+      .add-members {
+        width: 90%;
+        margin: 0 0 0 auto;
+        height: 50px;
+        min-height: 50px;
+        border-bottom: 1px solid #edf2f9;
+        @include flex();
+        @include flex-direction-row();
+        @include justify-content-flex-start();
+        @include align-items-center();
+        .add-members-ico {
+          width: 28px;
+          @include flex();
+          @include justify-content-center();
+          @include icon-font();
+          &:before {
+            content: "\e914";
+            color: $primary-color;
+            font-size: 28px;
+          }
+        }
+        .add-members-btn {
+          margin: 0 0 0 20px;
+          font-size: 15px;
+          line-height: 16px;
+          font-weight: 400;
+          cursor: pointer;
+        }
+        .shared-media-ico-next {
+          margin: 0 15px 0 auto;
+          @include icon-font();
+          &:before {
+            content: "\e946";
+            color: #bababa;
+            font-size: 18px;
+          }
+        }
+      }
+      .contacts_pack {
+        padding: 14px 15px 14px 23px;
+        min-height: 70px;
+        height: 70px;
+        display: flex;
+        overflow: hidden;
+        cursor: pointer;
+        @include flex();
+        @include flex-direction-row();
+        @include justify-content-space-between();
+        @include align-items-center();
+        .contact_time {
+          display: none;
+        }
+        .contact_img {
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          margin-right: 14px;
+          margin-left: 13px;
+          object-fit: contain;
+          @include user-drag(none);
+          @include user-select(none);
+        }
+        .contact_icon {
+          font-size: 14px;
+          position: relative;
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          margin-right: 14px;
+          margin-left: 13px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &::after {
+            content: attr(data-line); //!important;
+            //font-weight: 300;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 18px;
+            color: #fff;
+            text-transform: uppercase;
+          }
+        }
+        .no-name_icon {
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          margin-right: 14px;
+          margin-left: 13px;
+          background-color: $avatar-bg-color;
+          @include icon-font();
+          @include flex();
+          @include align-items-center();
+          @include justify-content-center();
+          &::after {
+            content: "\e947";
+            color: #ffffff;
+            font-size: 32px;
+            display: block;
+          }
+        }
+        .contact_info {
+          >.contact_number {
+            font-weight: 400;
+            font-size: 12px;
+            position: relative;
+            color: #8a8e91;
+          }
+          >.contact_name {
+            width: 135px;
+          }
+        }
+        .group-chat-not-checked {
+          width: 46px;
+        }
+        .group-chat-delete {
+          @include flex();
+          @include justify-content-center();
+          @include align-items-center();
+          width: 46px;
+          .contact_option_btn {
+            text-transform: capitalize;
+            font-weight: 400;
+            font-size: 12px;
+            position: relative;
+            margin-left: auto;
+            color: #E92E28;
+            width: 46px;
+          }
+        }
+      }
+      .show-more {
+        width: 100%;
+        height: 60px;
+        min-height: 60px;
+        @include flex();
+        @include align-items-center();
+        @include justify-content-center();
+        .show-more-members {
+          cursor: pointer;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 14px;
+          color: #999999;
+        }
+      }
+      .no-info {
+        width: 100%;
+        height: auto;
+        padding: 0 30px;
+        @include flex();
+        @include absolute-center-xy();
+        @include flex-direction-column();
+        @include align-items-center();
+        @include justify-content-center();
+        .no-info-title {
+          font-size: 20px;
+          color: #000000;
+        }
+        .no-info-text {
+          margin: 15px 0 0 0;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 1.2;
+          color: #8A93A4;
+          text-align: center;
+          width: 100%;
+        }
+      }
+    }
+    .loader {
+      @include absolute-center-xy();
+      @include circle-loader($primary-color);
+    }
+  }
+}

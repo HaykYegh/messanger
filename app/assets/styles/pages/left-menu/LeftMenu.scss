@@ -1,0 +1,186 @@
+@import '../../utils/mixin';
+@import '../../utils/variables';
+
+.app-left-menu {
+  min-width: 60px;
+  background-color: $left-menu-background;
+  @include flex();
+  @include justify-content-space-between();
+  @include flex-direction-column();
+
+  .left-menu-content {
+    padding-top: 15px;
+    @include flex();
+    @include flex-direction-column();
+    @include align-items-center();
+
+    .left-icons {
+      padding-bottom: 13px;
+      cursor: pointer;
+      @include flex();
+      @include flex-direction-column();
+      @include align-items-center();
+
+      .icon_left-menu {
+        display: inline-block;
+        font-size: 24px;
+        background-color: rgba(255, 0, 0, 0);
+        @include flex();
+        @include align-items-center();
+        @include justify-content-center();
+      }
+
+
+      .icon-messages {
+        position: relative;
+      }
+
+      .unread-messages {
+        &::after {
+          content: attr(data-unread);
+          position: absolute;
+          padding: 0 5px;
+          background-color: #ff0000;
+          color: #fff;
+          font-size: 12px;
+          font-weight: 500;
+          border-radius: 15px;
+          min-width: 18px;
+          width: auto;
+          height: 18px;
+          top: -3px;
+          left: 12px;
+          @include flex();
+          @include justify-content-center();
+          @include align-items-center();
+        }
+      }
+
+      &:hover {
+        .icon_left-menu {
+          &:before {
+            color: $left-menu-icon-color-hover;
+          }
+        }
+      }
+
+      &.left-icon-active {
+
+        .icon-messages {
+          &::before {
+            color: $left-menu-icon-messages-color-active;
+          }
+
+          &:hover {
+            &::before {
+              color: $left-menu-icon-messages-color-active;
+            }
+          }
+
+          + .title {
+            color: $left-menu-icon-messages-color-active;
+            font-weight: 600;
+          }
+        }
+
+        .icon-calls {
+          &::before {
+            color: $left-menu-icon-calls-color-active;
+          }
+
+          &:hover {
+            &::before {
+              color: $left-menu-icon-calls-color-active;
+            }
+          }
+
+          + .title {
+            color: $left-menu-icon-calls-color-active;
+            font-weight: 600;
+          }
+        }
+
+        .icon-contacts {
+          &::before {
+            color: $left-menu-icon-contacts-color-active;
+          }
+
+          &:hover {
+            &::before {
+              color: $left-menu-icon-contacts-color-active;
+            }
+          }
+
+          + .title {
+            color: $left-menu-icon-contacts-color-active;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  .settings {
+    .settings-content {
+      margin: 0 10px;
+      padding-bottom: 6px;
+      cursor: pointer;
+      @include flex();
+      @include flex-direction-column();
+      @include align-items-center();
+
+      .contact_img {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+      }
+
+    }
+
+    .settings-popup {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 27;
+      opacity: 1;
+      @include flex();
+      @include align-items-center();
+      @include justify-content-center();
+
+      &.open {
+        opacity: 0;
+        animation: profile-popup-content 0.2s forwards;
+
+        .settings-popup-block {
+          opacity: 0;
+          transform: scale(0.6);
+          animation: popup-scale 0.3s forwards;
+        }
+      }
+
+      &.close {
+        opacity: 1;
+        animation: close-popup 0.15s forwards;
+
+        .settings-popup-block {
+          opacity: 1;
+          transform: scale(1);
+          animation: close-popup-scale 0.23s forwards;
+        }
+      }
+
+      .settings-popup-block {
+        //min-width: 640px;
+        //min-height: 600px;
+        width: 724px;
+        //height: 600px;
+        background-color: #ffffff;
+        opacity: 1;
+        @include flex();
+      }
+    }
+  }
+}

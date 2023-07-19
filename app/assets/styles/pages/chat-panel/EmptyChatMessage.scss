@@ -1,0 +1,49 @@
+
+@import "../../utils/variables";
+@import "../../utils/mixin";
+
+//************************ empty Chat screen ************************//
+
+.empty-chat-message {
+  width: 340px;
+  height: 230px;
+  border-radius: 8px;
+  background-color: #f4f7fc;
+  border: 1px solid #e6ebf4;
+  cursor: pointer;
+  @include absolute-center-xy();
+  @include flex();
+  @include flex-direction-column();
+  @include align-items-center();
+  z-index: 1;
+  &:hover {
+    background-color: #f3f8ff;
+  }
+  .icon {
+    width: 65px;
+    height: 65px;
+    @include flex();
+    @include align-items-center();
+    @include justify-content-center();
+    margin: 35px 0 0 0;
+    @include icon-font();
+    &:before {
+      content: "\E901";
+      color: $secondary-color;
+      font-size: 55px;
+      display: block;
+    }
+  }
+  .text {
+    @include user-select(none);
+    margin: 15px 0 0 0;
+    color: #000;
+    width: 240px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.35;
+    font-weight: 400;
+
+  }
+}

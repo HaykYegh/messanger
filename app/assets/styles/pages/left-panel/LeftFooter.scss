@@ -1,0 +1,180 @@
+@import "../../utils/variables";
+@import "../../utils/mixin";
+
+//******************* Left Side footer Navigation *******************//
+
+.left_side_footer {
+  border-top: 1px solid rgba(199, 206, 216, 0.5);
+  background-color: #e9ebee;
+  height: 58px;
+  min-height: 58px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .icon-settings_icon {
+    color: #ffffff;
+    &:hover {
+      color: $footer-icon-color;
+    }
+  }
+  .icon_footer {
+    display: inline-block;
+    font-size: 32px;
+    width: 50px;
+    height: 50px;
+    @include flex();
+    @include align-items-center();
+    @include justify-content-center();
+    cursor: pointer;
+  }
+  .icon-messages_icon {
+    position: relative;
+    &::before {
+      content: '\e97d';
+      color: $footer-icon-color;
+    }
+    &:hover {
+      &::before {
+        content: '\e948';
+        color: $footer-icon-color-hover;
+      }
+    }
+  }
+  .unread-messages {
+    &::after {
+      content: attr(data-unread);
+      display: block;
+      position: absolute;
+      top: 6px;
+      left: 31px;
+      width: auto;
+      min-width: 20px;
+      padding: 0 5px;
+      height: 20px;
+      border:2px solid #e9ebee;
+      border-radius: 30px;
+      background-color: #ff0000;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 20px;
+      @include flex();
+      @include justify-content-center();
+      @include align-items-center();
+    }
+  }
+  .icon-messages_icon-active {
+    &::before {
+      content: '\e948';
+      color: $footer-icon-color-active;
+    }
+    &:hover {
+      &:before {
+        content: '\e948';
+        color: $footer-icon-color-active;
+      }
+    }
+  }
+
+  .icon-contacts_icon {
+    &::before {
+      content: '\e97e';
+      color: $footer-icon-color;
+    }
+    &:hover {
+      &::before {
+        content: '\e949';
+        color: $footer-icon-color-hover;
+      }
+    }
+  }
+  .icon-contacts_icon-active {
+    &::before {
+      content: '\e949';
+      color: $footer-icon-color-active;
+    }
+    &:hover {
+      &:before {
+        content: '\e949';
+        color: $footer-icon-color-active;
+      }
+    }
+  }
+
+  .icon-keypad_icon {
+    &::before {
+      content: '\e920';
+      color: $footer-icon-color;
+    }
+    &:hover {
+      &::before {
+        content: '\e970';
+        color: $footer-icon-color-hover;
+      }
+    }
+  }
+  .icon-keypad_icon-active {
+    &::before {
+      content: '\e970';
+      color: $footer-icon-color-active;
+    }
+    &:hover {
+      &:before {
+        content: '\e970';
+        color: $footer-icon-color-active;
+      }
+    }
+  }
+
+  .icon-settings_icon {
+    &::before {
+      content: '\e980';
+      color: $footer-icon-color;
+    }
+    &:hover {
+      &::before {
+        content: '\e97c';
+        color: $footer-icon-color-hover;
+      }
+    }
+  }
+  .icon-settings_icon-active {
+    &::before {
+      content: '\e97c';
+      color: $footer-icon-color-active;
+    }
+    &:hover {
+      &:before {
+        content: '\e97c';
+        color: $footer-icon-color-active;
+      }
+    }
+  }
+
+  .icon-channels_icon {
+    color: #4e4e52;
+    position: relative;
+    &::before {
+      content: '\e96c';
+      color: #94A6B9;
+    }
+    &:hover {
+      &::before {
+        content: '\e96c';
+        color: $footer-icon-color;
+      }
+    }
+  }
+  .icon-channels_icon-active {
+    &::before {
+      content: '\e96c';
+      color: $footer-icon-color-active;
+    }
+    &:hover {
+      &:before {
+        content: '\e96c';
+        color: $footer-icon-color-active;
+      }
+    }
+  }
+}

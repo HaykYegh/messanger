@@ -1,0 +1,316 @@
+@import "../../../utils/variables";
+@import "../../../utils/mixin";
+
+//************************ Chat Panel Content ************************//
+.channel-bubble {
+  .audio-block {
+    margin: 0 0 20px 0;
+  }
+}
+
+.audio-block {
+
+
+  .audio-block-icon {
+    margin: 5px 10px 0 0;
+    width: 36px;
+    height: 36px;
+    background-color: #17ABF6;
+    border-radius: 50%;
+    @include icon-font();
+    @include flex();
+    @include align-items-center();
+    @include justify-content-center();
+
+    &::before {
+      color: #fff;
+      font-size: 36px;
+      cursor: pointer;
+      display: block;
+    }
+
+    &.play-btn {
+      &::before {
+        content: "\e945";
+      }
+    }
+
+    &.pause-btn {
+      &::before {
+        content: "\e942";
+      }
+    }
+  }
+
+  .audio-block-icon-ar {
+    margin: 5px 0 0 10px;
+    &:before {
+      transform: rotate(180deg);
+    }
+  }
+
+  .voice-amplitude {
+    background-color: red;
+    width: 2px;
+  }
+
+  .voice-amplitudes-container {
+    display: flex;
+    height: 40px;
+    max-width: 149px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  $circle-size: 36px;
+  $circle-background: transparent;
+  $circle-color: #17ABF6;
+  $inset-size: 34px;
+  $inset-color: #fff;
+  $transition-length: 1s;
+
+  .bg-circle {
+    width: 36px;
+    height: 36px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    position: relative;
+    margin: 4px 4px 0 0;
+
+    .resend-icon {
+      border: none;
+      padding: 0;
+      background: none;
+      @include absolute-center-xy();
+      @include icon-font();
+
+      &:before {
+        content: "\E94B";
+        color: #fff;
+        background: #17ABF6;
+        font-size: 36px;
+        display: block;
+        border-radius: 50%;
+      }
+    }
+
+    .download-icon {
+      border: none;
+      padding: 0;
+      background: none;
+      @include absolute-center-xy();
+      @include icon-font();
+
+      &:before {
+        content: "\e93f";
+        color: #fff;
+        background: #17ABF6;
+        font-size: 36px;
+        display: block;
+        border-radius: 50%;
+      }
+    }
+
+    .cancel-icon {
+      border: none;
+      padding: 0;
+      background: none;
+      @include absolute-center-xy();
+      @include icon-font();
+
+      &:before {
+        content: "\e93c";
+        color: #17ABF6;
+        font-size: 36px;
+        display: block;
+      }
+    }
+
+    .ko-progress-circle {
+      width: $circle-size;
+      height: $circle-size;
+      background-color: $circle-background;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-top: -18px;
+      margin-left: -18px;
+      animation: rotating 1s linear infinite;
+      overflow:hidden;
+      @keyframes rotating {
+        from {
+          -ms-transform: rotate(0deg);
+          -moz-transform: rotate(0deg);
+          -webkit-transform: rotate(0deg);
+          -o-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        to {
+          -ms-transform: rotate(360deg);
+          -moz-transform: rotate(360deg);
+          -webkit-transform: rotate(360deg);
+          -o-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+
+      .ko-progress-circle__slice, .ko-progress-circle__fill {
+        width: $circle-size;
+        height: $circle-size;
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        transition: transform $transition-length;
+        border-radius: 50%;
+      }
+
+      .ko-progress-circle__slice {
+        clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+
+        .ko-progress-circle__fill {
+          clip: rect(0px, $circle-size/2, $circle-size, 0px);
+          background-color: $circle-color;
+        }
+      }
+
+      .ko-progress-circle__overlay {
+        width: $inset-size;
+        height: $inset-size;
+        margin-left: ($circle-size - $inset-size)/2;
+        margin-top: ($circle-size - $inset-size)/2;
+        background-color: $inset-color;
+        border-radius: 50%;
+        position: relative;
+      }
+
+      $i: 0;
+      $increment: 180deg / 100;
+      @while $i <= 100 {
+        &[data-progress='#{$i}'] {
+          .ko-progress-circle__slice.full, .ko-progress-circle__fill {
+            transform: rotate($increment * $i);
+          }
+
+          .ko-progress-circle__fill.ko-progress-circle__bar {
+            transform: rotate($increment * $i * 2);
+          }
+
+          $i: $i + 1;
+        }
+      }
+    }
+  }
+
+  .audio {
+    height: 40px;
+
+    audio {
+      display: none;
+      width: 150px;
+      height: 30px;
+      background-color: $primary-color;
+    }
+
+    .custom-audio {
+      width: 150px;
+      height: 40px;
+      @include flex();
+      @include align-items-center();
+      @include justify-content-center();
+
+      .duration {
+        width: 100%;
+        height: auto;
+        //background-color: $primary-color;
+        border-radius: 20px;
+        position: relative;
+
+        .slider {
+          -webkit-appearance: none;
+          //border: 1px solid #c8c8ca;
+          border-radius: 10px;
+          width: 100%;
+
+          &::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 3px;
+            background: #ffffff;
+            border-radius: 5px;
+          }
+
+          &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            border: none;
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            background: $primary-color;
+            margin-top: -4px;
+          }
+
+          &:focus {
+            outline: none;
+          }
+
+          &::-moz-range-track {
+            width: 100%;
+            height: 5px;
+            background: #ddd;
+            border: none;
+            border-radius: 3px;
+          }
+
+          &:-moz-focusring {
+            outline: 1px solid white;
+            outline-offset: -1px;
+          }
+
+          &::-ms-track {
+            width: 100%;
+            height: 5px;
+            background: transparent;
+            border-color: transparent;
+            border-width: 6px 0;
+            color: transparent;
+          }
+
+          &::-ms-fill-lower {
+            background: #fff;
+            border-radius: 10px;
+          }
+
+          &::-ms-fill-upper {
+            background: #ddd;
+            border-radius: 10px;
+          }
+
+          &::-ms-thumb {
+            border: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: $primary-color;
+          }
+
+          &:focus::-ms-fill-lower {
+            background: #fff;
+          }
+
+          &:focus::-ms-fill-upper {
+            background: #ccc;
+          }
+        }
+      }
+    }
+
+    .audio-duration {
+      position: absolute;
+      left: 48px;
+      color: $primary-color;
+      bottom: 0;
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+}

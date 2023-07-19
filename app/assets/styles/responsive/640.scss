@@ -1,0 +1,36 @@
+@media screen and (max-height: 650px) {
+  .media-caption-popup-content {
+    width: 410px;
+    height: 550px !important;
+
+    .caption-content {
+      .image-preview {
+        height: 260px !important;
+      }
+
+      .list-block {
+        .file-list {
+          height: 100px !important;
+        }
+      }
+    }
+  }
+
+  .app-left-menu {
+    .settings {
+      .settings-popup {
+        .settings-popup-block {
+          min-height: 550px;
+          height: 550px;
+          transition: height .3s ease-out;
+
+          .settings-popup-content {
+            .settings-scroll-bar {
+              height: 495px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

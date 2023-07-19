@@ -1,0 +1,139 @@
+@import "../../../utils/variables";
+@import "../../../utils/mixin";
+
+//******************* Left Side Settings Why Our Up *******************//
+.carousel-block{
+  width: 100%;
+  //height: 100%;
+  @include flex();
+  @include flex-direction-column();
+  @include justify-content-center();
+  @include align-items-center();
+  .carousel {
+    width: 90%;
+    position: relative;
+    //padding: 30px 0;
+    border-radius: 5px;
+    background-color: #fff;
+    //@include animation(right-to-left, 0.17s);
+    .content {
+      width: 100%;
+      @include flex();
+      @include flex-direction-column();
+      @include justify-content-center();
+      @include align-items-center();
+      position: relative;
+      overflow-x: hidden;
+      .info {
+        padding: 0 10px;
+        height: 170px;
+        @include flex();
+        @include flex-direction-column();
+        @include align-items-center();
+        .title {
+          margin-bottom: 15px;
+          text-align: center;
+          line-height: 1.25;
+          font-size: 24px;
+          font-weight: 400;
+          width: 100%;
+        }
+        .text {
+          height: 100px;
+          margin-bottom: 10px;
+          max-width: 300px;
+          color: #808088;
+          font-size: 15px;
+          font-weight: 400;
+          padding: 0;
+          line-height: 1.38;
+          text-align: center;
+        }
+        .learn-more {
+          font-weight: 400;
+          font-size: 15px;
+          color: #357BF2;
+          width: 100%;
+          padding: 10px;
+          text-align: center;
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+    .btn-block {
+      @include flex();
+      @include flex-direction-row();
+      @include justify-content-center();
+      @include align-items-center();
+      font-family: 'icomoon';
+      margin: 0 0 30px 0;
+      .btn-content{
+        padding: 0px;
+        border: none;
+        background: none;
+        @include icon-font();
+        &:before{
+          color: $grey-border-color;
+          font-size: 20px;
+        }
+      }
+      .btn-active{
+        cursor: pointer;
+        &:before{
+          color: $primary-color;
+        }
+      }
+      .left{
+        -ms-transform: rotate(180deg); /* IE 9 */
+        -webkit-transform: rotate(180deg); /* Safari 3-8 */
+        transform: rotate(180deg);
+        @include icon-font();
+        &:before{
+          content: "\E946";
+        }
+      }
+      .right{
+        @include flex();
+        @include icon-font();
+        &:before{
+          content: "\E946";
+        }
+      }
+      .step {
+        display: flex !important;
+        display: -webkit-flex !important;
+        margin: 0 15px;
+        @include flex-direction-row();
+        @include justify-content-center();
+        .step-icon {
+          width: 10px;
+          height: 10px;
+          margin: 0 10px;
+          padding: 0;
+          cursor: pointer;
+          border-radius: 50%;
+          background-color: $grey-border-color;
+          .step-icon-btn {
+            font-size: 0;
+            line-height: 0;
+            display: block;
+            width: 8px;
+            height: 9px;
+            padding: 5px;
+            cursor: pointer;
+            color: transparent;
+            border: 0;
+            outline: none;
+            background: transparent;
+          }
+        }
+        .carousel-active {
+          background-color: $primary-color;
+        }
+      }
+    }
+  }
+}
+

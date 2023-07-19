@@ -1,0 +1,166 @@
+@import "../../utils/variables";
+@import "../../utils/mixin";
+
+//************************ Audio/Video Calling Screen ************************//
+
+.forwarding-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(14, 14, 14, 0.47);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .forwarding-popup-content {
+    width: 370px;
+    height: 500px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    position: relative;
+    .close-popup {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 999;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 2px;
+        background-color: #8b8a89;
+        top: 7px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 2px;
+        background-color: #8b8a89;
+        top: 7px;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+    }
+    .title-span {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .forwarding-contacts {
+        margin: 0 0 0 0;
+        height: 420px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        .forwarding-contact-row {
+          max-height: 70px;
+          height: 70px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 14px 15px 14px 0 !important;
+          cursor: pointer;
+          .contact_icon {
+            background: linear-gradient(rgb(255, 173, 94) 0%, rgb(255, 200, 103) 100%);
+            font-weight: 300;
+            font-size: 14px;
+            position: relative;
+            width: 42px;
+            height: 42px;
+            margin-right: 14px;
+            margin-left: 13px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            &:after {
+              content: attr(data-line);
+              font-weight: 700;
+              font-size: 18px;
+              line-height: 18px;
+              color: #fff;
+              text-transform: uppercase;
+              z-index: 10;
+            }
+          }
+          .forwarding-contact-info {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            align-items: flex-start;
+            justify-content: space-around;
+            height: 44px;
+            .forwarding-contact-name {
+              font-weight: 500;
+              font-size: 16px;
+              line-height: 16px;
+              width: 150px;
+              height: 16px;
+              display: block;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+          .delete-checked {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 15px 0 auto;
+            border: 1px solid $primary-color;
+            border-radius: 50px;
+            background-color: $primary-color;
+            @include icon-font();
+            &::before {
+              content: "\E906";
+              color: #ffffff;
+              font-size: 9px;
+            }
+          }
+          .delete-not-checked{
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #edf2f9;
+            border-radius: 50px;
+            margin: 0 15px 0 auto;
+            cursor: pointer;
+          }
+        }
+    }
+    .forwarding-send {
+      height: 40px;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .forwarding-send-btn {
+        margin: 0 30px 0 0;
+        font-weight: 500;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+        width: auto;
+        color: $primary-color;
+        cursor: pointer;
+      }
+    }
+  }
+}

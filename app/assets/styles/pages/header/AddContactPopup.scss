@@ -1,0 +1,245 @@
+@import '../../utils/mixin';
+@import '../../utils/variables';
+
+.add-contact-popup {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 27;
+  opacity: 1;
+  @include flex();
+  @include align-items-center();
+  @include justify-content-center();
+
+  &.open {
+    opacity: 0;
+    animation: profile-popup-content 0.3s forwards;
+
+    .add-contact-popup-block {
+      opacity: 0;
+      transform: scale(0.6);
+      animation: popup-scale 0.3s forwards;
+    }
+  }
+
+  &.close {
+    opacity: 1;
+    animation: close-popup 0.2s forwards;
+
+    .add-contact-popup-block {
+      opacity: 1;
+      transform: scale(1);
+      animation: close-popup-scale 0.2s forwards;
+    }
+  }
+
+  .add-contact-popup-block {
+    width: 440px;
+    height: 500px;
+    background-color: #ffffff;
+    border-radius: 7px;
+    user-select: none;
+    opacity: 1;
+    @include flex();
+
+    .add-contact-popup-container {
+      width: 100%;
+      position: relative;
+      @include flex();
+      @include justify-content-space-between();
+      @include flex-direction-column();
+
+      .add-contact-popup-header {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e2e4eb;
+
+        .text-block {
+          height: 56px;
+          @include flex;
+          @include align-items-center();
+          @include justify-content-center();
+          @include flex-direction-column();
+
+          h2 {
+            margin: 10px 0 0 0;
+            font-size: 15px;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .add-contact-popup-body {
+        height: 420px;
+        padding: 0 20px;
+        overflow-y: auto;
+
+        .name-block {
+          @include flex();
+          @include flex-direction-column();
+          width: 100%;
+
+          .first-name {
+            border: none;
+            margin-top: 20px;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(199, 206, 216, 0.3);
+            color: #2D2E3B;
+            background-color: transparent;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 24px;
+            caret-color: $primary-color;
+
+            &::placeholder {
+              color: #999;
+              font-size: 14px;
+              line-height: 17px;
+              @include user-select(none);
+            }
+
+          }
+
+          .last-name {
+            border: none;
+            padding: 5px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(199, 206, 216, 0.3);
+            color: #2D2E3B;
+            background-color: transparent;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 24px;
+            caret-color: $primary-color;
+
+            &::placeholder {
+              color: #999;
+              font-size: 14px;
+              line-height: 17px;
+              @include user-select(none);
+            }
+          }
+        }
+
+        .phone-numbers-block {
+          @include flex();
+          @include flex-direction-column();
+          width: 100%;
+          margin-top: 10px;
+
+          .phone-number {
+            @include flex();
+            @include flex-direction-row();
+            @include align-items-center();
+            border-bottom: 1px solid rgba(199, 206, 216, 0.3);
+            min-height: 35px;
+
+            .number {
+              border: none;
+              padding: 5px 0 5px 20px;
+              color: #2D2E3B;
+              background-color: transparent;
+              font-size: 14px;
+              font-weight: 300;
+              line-height: 24px;
+              caret-color: $primary-color;
+              width: 100%;
+
+              &::placeholder {
+                color: #999;
+                font-size: 14px;
+                line-height: 17px;
+                @include user-select(none);
+              }
+            }
+          }
+        }
+
+        .emails-block {
+          @include flex();
+          @include flex-direction-column();
+          width: 100%;
+          margin-top: 30px;
+
+          .email-address {
+            @include flex();
+            @include flex-direction-row();
+            @include align-items-center();
+            border-bottom: 1px solid rgba(199, 206, 216, 0.3);
+            min-height: 35px;
+
+            .email {
+              border: none;
+              padding: 5px 0 5px 20px;
+              color: #2D2E3B;
+              background-color: transparent;
+              font-size: 14px;
+              font-weight: 300;
+              line-height: 24px;
+              caret-color: $primary-color;
+              width: 100%;
+
+              &::placeholder {
+                color: #999;
+                font-size: 14px;
+                line-height: 17px;
+                @include user-select(none);
+              }
+            }
+          }
+        }
+
+        .invalid-input {
+          border-bottom: 1px solid #F51815 !important;
+        }
+
+        .dropdown-arrows {
+          width: 10px;
+          height: 10px;
+        }
+
+        .clear-button {
+          width: 13px;
+          margin-right: 40px;
+        }
+
+        .label {
+          color: $primary-color;
+          font-size: 12px;
+          width: 100px;
+          text-align: right;
+        }
+
+        .contact-type {
+          padding-right: 5px;
+        }
+      }
+
+      .add-contact-popup-footer {
+        background: #fff;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-top: 1px solid #e2e4eb;
+
+        .footer-content {
+          padding: 20px;
+          @include flex();
+          @include justify-content-flex-end();
+
+          .btn-cancel {
+            margin: 0 14px 0 0;
+            @include cancel-button();
+          }
+
+          .btn-create {
+            @include confirm-button();
+
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,593 @@
+@import "../../utils/variables";
+@import "../../utils/mixin";
+
+.single-call-panel {
+  width: 100%;
+  min-height: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  //background: linear-gradient(#111827 0%, #1D2941 100%);
+  background: #26334F;
+  z-index: 30;
+  position: absolute;
+  top: 0;
+  -webkit-user-drag: none;
+}
+
+.single-call-panel.expanded {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100% !important;
+  height: 100% !important;
+  touch-action: none !important;
+  z-index: 30;
+  transform: translate(0px, 0px) !important;
+}
+
+.single-call-panel.video-on {
+  background: #000;
+}
+
+.single-call-panel .call-panel-block {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: white;
+}
+
+.single-call-panel .call-panel-block .header,
+.single-call-panel .call-panel-block .footer {
+  position: absolute;
+  height: 200px;
+  min-height: 200px;
+  direction: ltr;
+  outline: none;
+  width: 100%;
+  z-index: 10;
+  opacity: 0;
+  //-webkit-transition: opacity 0.4s cubic-bezier(0.4, 0, 0.6, 1) 0.05s, -webkit-transform 0.5s cubic-bezier(0.4, 0, 0.6, 1);
+  //transition: opacity 0.4s cubic-bezier(0.4, 0, 0.6, 1) 0.05s, transform 0.5s cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 0.5s cubic-bezier(0.4, 0, 0.6, 1);
+  user-select: none;
+  display: flex;
+}
+
+// Header start
+
+.single-call-panel .call-panel-block .header {
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.6, 1) 0.05s, padding-top 0.4s cubic-bezier(0.4, 0, 0.6, 1);
+
+  background: transparent linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  padding: 0 0 0 18px;
+  //transform: translateY(-20px);
+  top: 0;
+  align-items: flex-start;
+}
+
+.single-call-panel .call-panel-block .header.show {
+  opacity: 1;
+  padding-top: 22px;
+}
+
+.single-call-panel .call-panel-block .header.no-background {
+  background-image: unset;
+}
+
+// Header end
+.single-call-panel .call-panel-block .header .left-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.single-call-panel .call-panel-block .header .left-content .icon-minimize {
+  padding-right: 18px;
+}
+
+.single-call-panel .call-panel-block .header .left-content .icon-minimize:hover {
+  cursor: pointer;
+}
+
+.single-call-panel .call-panel-block .header .left-content .icon-minimize:before {
+  content: '\e927';
+  font-size: 50px;
+}
+
+.single-call-panel .call-panel-block .header .left-content .caller-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.single-call-panel .call-panel-block .header .left-content .caller-info .caller-name {
+  padding-bottom: 8px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.single-call-panel .call-panel-block .header .left-content .caller-info .call-status {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: .7;
+}
+
+// Content start
+
+.single-call-panel .call-panel-block .content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.single-call-panel .call-panel-block .content .react-draggable {
+  top: 16px;
+  right: 16px;
+  max-width: 200px;
+  max-height: 100px;
+  border-radius: 10px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, .5);
+  position: absolute;
+  z-index: 999;
+  //cursor: move;
+}
+
+.single-call-panel .call-panel-block .content .avatar-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: center/cover no-repeat;
+  filter: blur(40px) brightness(.85);
+  -webkit-filter: blur(40px) brightness(.85);
+  -moz-filter: blur(40px) brightness(.85);
+  -webkit-user-drag: none;
+}
+
+.single-call-panel .call-panel-block .content .guest-video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.single-call-panel .call-panel-block .content .caller-info {
+  z-index: 999;
+}
+
+.single-call-panel .call-panel-block .content .caller-info .contact_img,
+.single-call-panel .call-panel-block .content .caller-info .contact_icon,
+.single-call-panel .call-panel-block .content .caller-info .no-name_icon {
+  width: 140px;
+  height: 140px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, .5);
+}
+
+.single-call-panel .call-panel-block .content .caller-info .contact_icon span {
+  font-size: 48px;
+}
+
+.single-call-panel .call-panel-block .content .caller-info .no-name_icon {
+  padding-top: 20px;
+}
+
+.single-call-panel .call-panel-block .content .caller-info .no-name_icon:after {
+  font-size: 132px;
+}
+
+// Content end
+
+// Footer start
+
+.single-call-panel .call-panel-block .footer {
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.6, 1) 0.05s, padding-bottom 0.4s cubic-bezier(0.4, 0, 0.6, 1);
+  color: white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+  bottom: 0;
+  padding: 0 30px;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.single-call-panel .call-panel-block .footer.show {
+  opacity: 1;
+  padding-bottom: 30px;
+}
+
+.single-call-panel .call-panel-block .footer.no-background {
+  background-image: unset;
+}
+
+.single-call-panel .call-panel-block .footer .call-actions,
+.single-call-panel .call-panel-block .footer .mini-window {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-call-panel .call-panel-block .footer .call-actions .action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 16px;
+}
+
+.single-call-panel .call-panel-block .footer .call-actions .action:last-child {
+  margin-right: 0;
+}
+
+.single-call-panel .call-panel-block .footer .icon-footer {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #232426;
+  transition: 0.2s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conference-panel-block .footer .mini-window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 30px;
+  bottom: 20px;
+}
+
+.conference-panel-block .footer .mini-window-expanded {
+  bottom: 30px;
+}
+
+.conference-panel-block .footer .mini-window-minimized {
+  left: 0;
+  bottom: 0;
+}
+
+.conference-panel-block .footer .max-window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 30px;
+  bottom: 20px;
+}
+
+.conference-panel-block .footer .max-window-minimized {
+  left: 2px;
+  bottom: 10px;
+}
+
+.conference-panel-block .footer .mini-window .icon-footer:before,
+.single-call-panel .call-panel-block .footer .icon-footer:before {
+  color: #ffffff;
+  font-size: 50px;
+  transition: 0.2s;
+}
+
+.conference-panel-block .footer .max-window,
+.conference-panel-block .footer .mini-window {
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.single-call-panel .call-panel-block .footer .icon-footer:hover {
+  cursor: pointer;
+}
+
+.single-call-panel .call-panel-block .footer .icon-footer:hover:before {
+  color: #ffffff;
+  opacity: .7;
+}
+
+.single-call-panel .call-panel-block .footer .disabled {
+  cursor: unset !important;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.single-call-panel .call-panel-block .footer .disabled .icon-footer:before {
+  color: #ffffff;
+}
+
+// add members icon
+
+.single-call-panel .call-panel-block .footer .call-actions .action .icon-footer.icon-add-members:before {
+  content: "\e92a";
+}
+
+// mute on/off
+.single-call-panel .call-panel-block .footer .call-actions .action .icon-footer.icon-microphone:before {
+  content: "\e928";
+}
+
+.single-call-panel .call-panel-block .footer .call-actions .action .icon-footer.icon-microphone.on:before {
+  color: #fff;
+}
+
+.single-call-panel .call-panel-block .footer .call-actions .action .icon-footer.icon-microphone.off {
+  background-color: #fff;
+}
+
+.single-call-panel .call-panel-block .footer .call-actions .action .icon-footer.icon-microphone.off:before {
+  color: #000;
+}
+
+// video on/off
+.single-call-panel .call-panel-block .footer .call-actions .action .icon-footer.icon-video-call:before {
+  content: "\e929";
+}
+
+.single-call-panel .call-panel-block .footer .call-actions .action .icon-footer.icon-video-call.on:before {
+  color: #000;
+}
+
+.single-call-panel .call-panel-block .footer .call-actions .action .icon-footer.icon-video-call.on {
+  background-color: #fff;
+}
+
+.single-call-panel .call-panel-block .footer .call-actions .action .icon-footer.icon-video-call.off:before {
+  color: #fff;
+}
+
+// end call
+.single-call-panel .call-panel-block .footer .call-actions .action .icon-footer.icon-end-call {
+  background-color: #FB2C2F;
+}
+
+.single-call-panel .call-panel-block .footer .call-actions .action .icon-footer.icon-end-call:before {
+  content: "\e921";
+}
+
+.single-call-panel .call-panel-block .footer .call-actions .action .icon-footer.icon-end-call:before:hover {
+  background-color: #f41d00;
+}
+
+.single-call-panel .call-panel-block .footer .icon-footer.icon-end-call {
+  background-color: #FB2C2F;
+}
+
+.single-call-panel .call-panel-block .footer .icon-footer.icon-end-call:before {
+  content: "\e921";
+}
+
+.single-call-panel .call-panel-block .footer .icon-footer.icon-end-call:before:hover {
+  background-color: #f41d00;
+}
+
+// mini & max window
+.single-call-panel .call-panel-block .footer .mini-window,
+.single-call-panel .call-panel-block .footer .max-window {
+  flex-direction: column;
+  position: absolute;
+}
+
+.single-call-panel .call-panel-block .footer .mini-window {
+  right: 40px;
+}
+
+.single-call-panel .call-panel-block .footer .max-window {
+  left: 40px;
+}
+
+.conference-panel-block .footer .mini-window .icon-mini-window,
+.conference-panel-block .header .left-content .icon-max-window,
+.single-call-panel .call-panel-block .footer .mini-window .icon-mini-window,
+.single-call-panel .call-panel-block .footer .max-window .icon-max-window {
+  background: transparent;
+}
+
+.conference-panel-block .footer .mini-window .icon-mini-window:before,
+.conference-panel-block .header .left-content .icon-max-window:before,
+.single-call-panel .call-panel-block .footer .mini-window .icon-mini-window:before,
+.single-call-panel .call-panel-block .footer .max-window .icon-max-window:before {
+  padding-top: 10px;
+}
+
+.conference-panel-block .footer .mini-window .icon-mini-window:before,
+.single-call-panel .call-panel-block .footer .mini-window .icon-mini-window:before {
+  content: "\e925";
+}
+
+.conference-panel-block .header .left-content .icon-max-window:before,
+.single-call-panel .call-panel-block .footer .max-window .icon-max-window:before {
+  content: "\e922";
+}
+
+// icon description
+.single-call-panel .call-panel-block .footer .description {
+  font-size: 12px;
+  padding-top: 8px;
+}
+
+// Footer end
+
+// Minimized call screen
+
+.single-call-panel.minimized {
+  touch-action: none !important;
+  transform: translate(0px, 0px) !important;
+}
+
+.single-call-panel.minimized .call-panel-block .header {
+  padding: 0 30px 0;
+}
+
+.single-call-panel.minimized .call-panel-block .header.show {
+  opacity: 1;
+  padding-top: 30px;
+}
+
+.single-call-panel.minimized .call-panel-block .footer.show {
+  padding: 0 30px 15px;
+}
+
+.single-call-panel.minimized .call-panel-block .content .caller-info .contact_img,
+.single-call-panel.minimized .call-panel-block .content .caller-info .contact_icon,
+.single-call-panel.minimized .call-panel-block .content .caller-info .no-name_icon {
+  width: 80px;
+  height: 80px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, .5);
+}
+
+.single-call-panel.minimized .call-panel-block .content .caller-info .contact_icon span {
+  font-size: 34px;
+}
+
+.single-call-panel.minimized .call-panel-block .content .caller-info .no-name_icon {
+  padding-top: 10px;
+}
+
+.single-call-panel.minimized .call-panel-block .content .caller-info .no-name_icon:after {
+  font-size: 75px;
+}
+
+.single-call-panel.minimized .call-panel-block .footer .icon-footer {
+  width: 38px;
+  height: 38px;
+}
+
+.single-call-panel.minimized .call-panel-block .footer .icon-footer:before {
+  font-size: 38px;
+}
+
+.single-call-panel.minimized .call-panel-block .footer .description {
+  font-size: 10px;
+  padding-top: 7px;
+}
+
+.single-call-panel.minimized .call-panel-block .footer .mini-window {
+  right: 30px;
+}
+
+.single-call-panel.minimized .call-panel-block .footer .max-window {
+  left: 30px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .single-call-panel.minimized .call-panel-block .footer .mini-window {
+    right: 10px;
+  }
+
+  .single-call-panel.minimized .call-panel-block .footer .max-window {
+    left: 10px;
+  }
+}
+//Redial screen
+
+.single-call-panel.redial .call-panel-block .footer .call-actions .icon-footer.icon-redial-call {
+  background-color: #00A2EC;
+}
+
+.single-call-panel.redial .call-panel-block .footer .call-actions .icon-footer.icon-redial-call:before {
+  transition: none;
+  content: '\e950';
+  font-size: 24px;
+}
+
+.single-call-panel.redial .call-panel-block .footer .call-actions .icon-footer.icon-cancel-call {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.single-call-panel.redial .call-panel-block .footer .call-actions .icon-footer.icon-cancel-call:before {
+  content: "\e921";
+}
+
+// mini-window
+.single-call-panel.mini-window {
+  bottom: 0;
+  right: 0;
+  top: unset;
+  width: 288px !important;
+  height: 177px !important;
+  min-height: 177px;
+  position: absolute;
+}
+
+.single-call-panel.mini-window .call-panel-block .header,
+.single-call-panel.mini-window .call-panel-block .footer {
+  height: 65px;
+  min-height: 65px;
+}
+
+.single-call-panel.mini-window .call-panel-block .header {
+  padding: 0 0 0 16px;
+  justify-content: space-between;
+}
+
+.single-call-panel.mini-window .call-panel-block .header.show {
+  padding-top: 16px;
+}
+
+.single-call-panel.mini-window .call-panel-block .header .icon-max-window {
+  background: transparent;
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  right: 8px;
+  top: -4px;
+}
+
+.single-call-panel.mini-window .call-panel-block .header .icon-max-window:hover {
+  cursor: pointer;
+}
+
+.conference-panel-block .header .left-content .icon-max-window:before,
+.single-call-panel.mini-window .call-panel-block .header .icon-max-window:before {
+  content: "\e922";
+  font-size: 38px;
+}
+
+.conference-panel-block .header .left-content .icon-max-window:before {
+  font-size: 50px;
+}
+
+.single-call-panel.mini-window .call-panel-block .header .left-content .caller-info .caller-name {
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+
+.single-call-panel.mini-window .call-panel-block .header .left-content .caller-info .call-status {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.single-call-panel.mini-window .call-panel-block .content .caller-info .contact_img,
+.single-call-panel.mini-window .call-panel-block .content .caller-info .contact_icon,
+.single-call-panel.mini-window .call-panel-block .content .caller-info .no-name_icon {
+  width: 65px;
+  height: 65px;
+}
+
+.single-call-panel.mini-window .call-panel-block .content .caller-info .contact_icon span {
+  font-size: 24px;
+}
+
+.single-call-panel.mini-window .call-panel-block .content .caller-info .no-name_icon {
+  padding-top: 10px;
+}
+
+.single-call-panel.mini-window .call-panel-block .content .caller-info .no-name_icon:after {
+  font-size: 34px;
+}
+
+.single-call-panel.mini-window .call-panel-block .footer.show {
+  padding-bottom: 10px;
+}
+
+.single-call-panel.mini-window .call-panel-block .footer .icon-footer {
+  width: 38px;
+  height: 38px;
+}
+
+.single-call-panel.mini-window .call-panel-block .footer .icon-footer:before {
+  font-size: 38px;
+}

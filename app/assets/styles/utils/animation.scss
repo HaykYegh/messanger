@@ -1,0 +1,595 @@
+// Right panel width
+@-webkit-keyframes right-bar {
+  0% {
+    width: 0;
+    min-width: 0;
+    opacity: 0;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    width: 25%;
+    min-width: 310px;
+    opacity: 1;
+  }
+}
+
+@keyframes right-bar {
+  0% {
+    width: 0;
+    min-width: 0;
+    opacity: 0;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    width: 25%;
+    min-width: 310px;
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes right-bar {
+  0% {
+    width: 0;
+    min-width: 0;
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    width: 25%;
+    min-width: 310px;
+    opacity: 1;
+  }
+}
+
+
+// Chat List Animation
+@-webkit-keyframes chat-list {
+  0% {
+    right: -120px;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes chat-list {
+  0% {
+    right: -120px;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@-moz-keyframes chat-list {
+  0% {
+    right: -120px;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+// Keypad Animation
+@-webkit-keyframes right-to-left {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes right-to-left {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-moz-keyframes right-to-left {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+// beck Animation
+@-webkit-keyframes left-to-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes left-to-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-moz-keyframes left-to-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+// popup Animation ----------------
+@-webkit-keyframes popup {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  90% {
+    transform: scale(0.94);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes popup {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  90% {
+    transform: scale(0.93);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-moz-keyframes popup {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  90% {
+    transform: scale(0.93);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+//-----------------------------------
+// footer icons animation -----------
+
+@keyframes footer-icons {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes footer-icons {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// -----------------------------------
+// profile popup animation -----------
+@keyframes profile-popup {
+  0% {
+    width: 0;
+    min-width: 0;
+    min-height: 0;
+    height: 0;
+  }
+  100% {
+    width: 90%;
+    min-width: 282px;
+    min-height: 330px;
+    height: 330px;
+  }
+}
+
+@-moz-keyframes profile-popup {
+  0% {
+    width: 0;
+    min-width: 0;
+    min-height: 0;
+    height: 0;
+  }
+  100% {
+    width: 90%;
+    min-width: 282px;
+    min-height: 330px;
+    height: 330px;
+  }
+}
+
+@keyframes profile-popup-content {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes profile-popup-content {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes profile-popup-img {
+  0% {
+    transform: scale(0.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-moz-keyframes profile-popup-img {
+  0% {
+    transform: scale(0.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// --------------------------------------
+// stickers block in footer -----------
+@keyframes sticker-popup {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 285px;
+    height: 276px;
+  }
+}
+
+@-moz-keyframes sticker-popup {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 285px;
+    height: 276px;
+  }
+}
+
+// --------------------------------------
+// stickers block in footer -----------
+@keyframes rates-popup {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 100%;
+    height: 105px;
+  }
+}
+
+@-moz-keyframes rates-popup {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 100%;
+    height: 105px;
+  }
+}
+
+// --------------------------------------
+// shared media tabs--------- -----------
+@keyframes shared-media-tabs {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: calc(100% - 28px);
+  }
+}
+
+@-moz-keyframes shared-media-tabs {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: calc(100% - 28px);
+  }
+}
+
+// --------------------------------------
+// footer icons animations--------- -----------
+@keyframes footer-icons {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  70% {
+    background-color: $left-side-bg;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+  100% {
+    width: 128px;
+    height: 128px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 2px 20px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 2px 20px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 20px 3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@-moz-keyframes footer-icons {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  70% {
+    background-color: $left-side-bg;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+  100% {
+    width: 128px;
+    height: 128px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 2px 20px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 2px 20px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 20px 3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// --------------------------------------
+// shared media tabs--------- -----------
+@keyframes header-more-info {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: auto;
+    height: auto;
+  }
+}
+
+@-moz-keyframes header-more-info {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: auto;
+    height: auto;
+  }
+}
+
+// --------------------------------------
+// pop up send contact and forward message---------------------
+@keyframes popup-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes message-popup-scale {
+  0% {
+    opacity: 0;
+    transform: translate(0, 10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@-moz-keyframes popup-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+//-------------------
+@keyframes close-popup-scale {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+@-moz-keyframes close-popup-scale {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+//----------------------
+@keyframes close-popup {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes close-popup {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+// --------------------------------------
+// trying animation clock---------------------
+@keyframes trying-clock {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes close-popup {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes contacts-top-tabs {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@-moz-keyframes contacts-top-tabs {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@-o-keyframes contacts-top-tabs {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes contacts-top-tabs {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+//----------------------
+@keyframes opacity-loader {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes opacity-loader {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide-scrollbar {
+  0% {
+    color: rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    color: rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    color: rgba(0, 0, 0, 0);
+  }
+}
+
+//.item-enter {
+//  opacity: 0;
+//}
+//
+//.item-enter-done {
+//  animation: message-popup-scale 110ms forwards;
+//}
+//
+//.item-exit {
+//  opacity: 1;
+//}
+//
+//.item-exit-active {
+//  opacity: 0;
+//  transition: opacity 90ms ease-in;
+//}

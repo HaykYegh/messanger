@@ -1,0 +1,379 @@
+.authentication-page,
+.authentication-block,
+.authentication-block > .logo,
+.authentication-type,
+.authentication-type .content-block,
+.authentication-type .content-block > div {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    line-height: 1.42857143;
+
+}
+.authentication-type .content-block > div {
+    position: relative;
+}
+.authentication-page,
+.authentication-block > .logo,
+.authentication-type {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.authentication-page {
+    width: 100%;
+    height: 100%;
+    background-color: #D1DCEE;
+    min-height: 700px;
+}
+.authentication-block {
+    height: 100%;
+}
+.authentication-block > .logo {
+    width: 190px;
+    margin: 0 auto -20px;
+}
+.authentication-block > .logo > div {
+    margin: 0 !important;
+}
+.authentication-type {
+    width: 300px;
+    height: 363px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    border: 1px solid #E9F2FC;
+}
+.authentication-type > ul {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    border-radius: 15px;
+}
+.authentication-type > ul > li {
+    width: 50%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    height: 55px;
+    border-radius: 15px 0 0;
+    background-color: #F2F7FD;
+    color: #000;
+    cursor: pointer;
+    text-decoration: none !important;
+    line-height: 1.42857143;
+    font-size: 15px;
+    font-weight: bold;
+}
+.authentication-type > ul > li.sign-up {
+    width: 100%;
+    background-color: transparent;
+    padding: 15px;
+}
+.authentication-type > ul > li > button {
+    border-radius: 15px 0 0;
+    border: none;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    font-size: 15px;
+    font-weight: bold;
+    background: inherit;
+    cursor: pointer;
+}
+.authentication-type > ul > li:last-child,
+.authentication-type > ul > li:last-child > button {
+    border-radius: 0 15px 0 0;
+}
+.authentication-type > ul > li.active {
+    background-color: #fff;
+}
+.authentication-type > ul > li.active:hover {
+    background: none !important;
+    cursor: pointer;
+}
+.authentication-type .content-block .qr-block {
+    width: 100%;
+    /*height: 223px;*/
+    padding: 22px 0;
+    text-align: center;
+}
+.authentication-type .content-block .qr-block canvas {
+    height: 200px !important;
+    width: 200px !important;
+}
+.authentication-type .content-block .login-form {
+    padding: 14px;
+}
+.authentication-type .content-block .login-form p.title {
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.25;
+    padding: 30px 0;
+}
+.authentication-type .content-block .login-form > .login-details {
+    padding: 6px 6px 7px 6px;
+}
+.authentication-type .content-block .login-form select {
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #000;
+    padding: 9px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #eee;
+    background-color: white;
+    -webkit-appearance: none;
+}
+.authentication-type .content-block .login-form select:focus {
+    outline: none;
+}
+/*.authentication-type .content-block .login-form select:before {*/
+/*content: "\e946";*/
+/*color: #c7c7cc;*/
+/*}*/
+.authentication-type .content-block .login-form .number-group {
+    padding-top: 15px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.authentication-type .content-block .login-form .number-group > input#phoneNumber {
+    padding: 0 9px 3px;
+    width: 100%;
+    font-size: 15px;
+    border: none;
+    border-bottom: 1px solid #E9F2FC;
+}
+.authentication-type .content-block .login-form .number-group > input#phoneNumber::-webkit-input-placeholder,
+.authentication-type .content-block .login-form .number-group > input#phoneNumber::-moz-placeholder,
+.authentication-type .content-block .login-form .number-group > input#phoneNumber:-ms-input-placeholder,
+.authentication-type .content-block .login-form .number-group > input#phoneNumber:-moz-placeholder{
+    color: #A3ACB7;
+}
+.authentication-type .content-block .login-form .number-group > span#phoneCode {
+    padding: 0 9px;
+    border: none;
+    border-bottom: 1px solid #E9F2FC;
+    font-size: 15px;
+    margin-right: 9px;
+    color: #000;
+}
+.authentication-type .content-block .login-form button {
+    margin-top: 30px;
+    width: 100%;
+    padding: 15px;
+}
+.authentication-type .content-block .login-form .pin-code {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 0 6px;
+}
+.authentication-type .content-block .login-form .pin-code .pin-code-number {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    padding: 10px 0;
+}
+
+.authentication-type .content-block .login-form .pin-code p {
+    text-align: center;
+    font-size: 15px;
+    padding: 2px;
+
+}
+.authentication-type .content-block .login-form .pin-code button.change-number {
+    margin-top: 0;
+    width: auto;
+    border: none;
+    padding: 10px;
+    font-size: 11px;
+    color: #15A2F5;
+}
+.authentication-type .content-block .login-form .pin-code .pin-code-number input {
+    width: 60px;
+    padding: 5px;
+    border: none;
+    text-align: center;
+    border-bottom: 1px solid #E9F2FC;
+}
+
+.authentication-type .loader-block {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 0 auto;
+}
+.authentication-type .content-block .login-form .set-password-block {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 7px 20px 8px;
+    width: 100%;
+}
+.authentication-type .content-block .login-form .set-password-block input {
+    padding: 10px 10px;
+    border: none;
+    text-align: center;
+    border-bottom: 1px solid #E9F2FC;
+}
+.authentication-type .content-block .login-form .set-password-block .password-info {
+    font-size: 11px;
+    width: 100%;
+    text-align: center;
+    padding: 11px 0;
+}
+.authentication-type .content-block .login-form .password-block {
+    width: 100%;
+    padding: 43px 6px 21px;
+    text-align: center;
+}
+.authentication-type .content-block .login-form .password-block input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    padding: 10px;
+}
+.authentication-type .content-block .login-form .password-block .forgot-password {
+    margin-top: 0;
+    width: auto;
+    border: none;
+    padding: 16px;
+    font-size: 11px;
+    color: #15A2F5;
+}
+.authentication-type .loader {
+    height: 306px;
+    width: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center; /* Safari 7.0+ */
+    -ms-flex-align: center; /* IE 10+ */
+    align-items: center;
+    position: absolute;
+    background: #fff;
+}
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+    }
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+    }
+}
+.authentication-type .loader > .loader-content {
+    position: relative;
+    margin: 0 auto;
+    width: 60px;
+}
+.authentication-type .loader > .loader-content:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+.authentication-type .loader > .loader-content .circular {
+    animation: rotate 2s linear infinite;
+    height: 100%;
+    transform-origin: center center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.authentication-type .loader > .loader-content .path {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    animation: dash 1.5s ease-in-out infinite;
+    stroke-linecap: round;
+    stroke: #1c9ddf;
+    stroke-width: 3px;
+    stroke-miterlimit: 10px;
+}
+.authentication-type .qr-text {
+    text-align: center;
+    margin-bottom: 22px;
+    font-size: 12px;
+}
+.authentication-page .authentication-block .new-register {
+    text-align: center;
+    margin: 30px 0 18px 0;
+}
+.btn {
+
+
+}
+.btn:focus, .btn:hover {
+    text-decoration: none;
+}
+.btn-primary {
+    background-color: #15A2F5;
+    color: #fff;
+}
+.btn-disable {
+    background-color: #d7e1f1;
+    color: #fff
+}
+.btn-default {
+    background-color: #F2F7FD;
+    color: #000;
+}
+.btn-white {
+    background-color: #fff;
+    color: #15A2F5;
+}
+.btn-white:hover {
+    color: white;
+    background-color: #15A2F5;
+    text-decoration: none;
+}
+.error {
+    color: #F51815;
+    font-size: 12px;
+    padding-bottom: 11px;
+    display: block;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    left: 0;
+}

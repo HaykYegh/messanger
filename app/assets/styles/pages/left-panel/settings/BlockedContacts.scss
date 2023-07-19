@@ -1,0 +1,312 @@
+@import "../../../utils/variables";
+@import "../../../utils/mixin";
+
+//************************* Add Credit *************************//
+
+.blocked-contact {
+  width: 100%;
+  margin: 0;
+
+  .add-new-block {
+    @include flex();
+    @include align-items-center();
+    height: 60px;
+    width: 90%;
+    margin: 0 0 0 auto;
+
+
+    .add-new-block-text {
+      font-weight: 400;
+      text-transform: capitalize;
+      font-size: 15px;
+      line-height: 16px;
+      color: $primary-color;
+      cursor: pointer;
+    }
+
+    .icon_arrow {
+      @include icon-font();
+      margin: 0 15px 0 auto;
+
+      &::before {
+        content: "\E946";
+        color: #bababa;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .heading {
+    @include flex();
+    justify-content: space-between;
+    position: absolute;
+    margin: -44px 0 0 -5px;
+    width: 390px;
+
+    .title {
+      text-align: center;
+      width: 100%;
+      color: rgb(55, 55, 73);
+      font-weight: 700;
+      font-size: 20px;
+      background-color: #FFFFFF;
+      display: inline-block;
+      height: 25px;
+    }
+
+    .icon-back {
+      cursor: pointer;
+    }
+
+    .icon-right {
+      cursor: pointer;
+    }
+
+  }
+
+  .blocked-contact-row {
+    @include flex();
+    @include flex-direction-column();
+    @include align-items-flex-start();
+    @include justify-content-space-between();
+    height: 60px;
+    width: 90%;
+    margin: 0 0 0 auto;
+    text-align: -webkit-left;
+    .blocked-contact-name {
+      margin: 0 auto 0 0;
+      display: block;
+      padding-bottom: 3px;
+    }
+
+    .blocked-contact-number {
+      margin: 5px auto 0 0;
+      display: block;
+    }
+
+    .select {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 1px solid #e2e4eb;
+
+      &:before {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 5px;
+        position: relative;
+        left: 4px;
+        top: 4px;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        transform: rotate(-45deg);
+      }
+    }
+
+    .isSelected {
+      background: $primary-color;
+      border: 1px solid #fff;
+    }
+  }
+
+  .no-info {
+    width: 100%;
+    height: auto;
+    padding: 0 30px;
+    @include flex();
+    @include absolute-center-xy();
+    @include flex-direction-column();
+    @include align-items-center();
+    @include justify-content-center();
+
+    .no-info-title {
+      font-weight: 300;
+      font-size: 20px;
+      color: #000000;
+    }
+
+    .no-info-text {
+      margin: 15px 0 0 0;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.2;
+      color: #8A93A4;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+.add-blocked-contact {
+  width: 100%;
+
+  .add-new-block {
+    display: none;
+  }
+
+  .blocked-contact-row {
+    @include flex();
+    @include flex-direction-row();
+    @include align-items-center();
+    @include justify-content-space-between();
+    height: 60px;
+    width: 100%;
+    margin: 0 0 0 auto;
+    text-align: -webkit-left;
+
+    .delete-blocked-contact {
+      display: none;
+    }
+
+    .blocked-contact-info {
+      @include flex();
+      @include flex-direction-row();
+      width: 100%;
+      .contact_icon {
+        margin: 0 12px 0 0;
+      }
+
+      .contact_img {
+        margin: 0 12px 0 0;
+      }
+      .blocked-contact-block{
+        width: 100%;
+        padding: 0 0 10px 0;
+        border-bottom: 1px solid #eaeaea;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .blocked-contact-name {
+        font-weight: 500;
+        line-height: 14px;
+        font-size: 14px;
+        color: #000000;
+        display: block;
+        width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .blocked-contact-number {
+        font-weight: 400;
+        line-height: 14px;
+        font-size: 14px;
+        color: #919193;
+        display: block;
+        width: 140px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .icon-close {
+      margin: 0 10px 0 auto;
+      @include icon-font();
+      cursor: pointer;
+      color: #cecece;
+      font-size: 14px;
+      line-height: 15px;
+      transition: .3s;
+
+      &:hover {
+        color: #555;
+      }
+    }
+  }
+}
+
+.delete-blocked-contact {
+  width: 100%;
+
+  .add-new-block {
+    display: none;
+  }
+
+  .blocked-contact-row {
+    @include flex();
+    @include flex-direction-row();
+    @include align-items-center();
+    @include justify-content-space-between();
+    height: 60px;
+    width: 90%;
+    margin: 0 0 0 auto;
+    text-align: -webkit-left;
+
+    .delete-blocked-contact-icon {
+      width: 20px;
+      height: 20px;
+      background: #ff0000;
+      border-radius: 50%;
+      margin: 0 15px 0 0;
+      cursor: pointer;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -ms-flex-pack: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+
+      &:before {
+        display: block;
+        content: "";
+        width: 14px;
+        height: 2px;
+        background-color: #ffffff;
+      }
+    }
+
+    .blocked-contact-info {
+      @include flex();
+      @include flex-direction-column();
+
+      .contact_icon {
+        margin: 0 12px 0 0;
+      }
+
+      .contact_img {
+        margin: 0 12px 0 0;
+      }
+
+      .blocked-contact-name {
+        font-weight: 400;
+        line-height: 14px;
+        font-size: 14px;
+        color: #000000;
+        display: block;
+        width: 170px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .blocked-contact-number {
+        margin: 5px 0 0 0;
+        font-weight: 400;
+        line-height: 14px;
+        font-size: 14px;
+        color: #000000;
+        display: block;
+        width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .delete-not-checked {
+      display: none;
+    }
+
+    .delete-checked {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,230 @@
+@import "../../../utils/variables";
+@import "../../../utils/mixin";
+
+//******************* Left Side add group name  *******************//
+
+.left_side {
+  .group_chat_info {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .group_chat_content {
+      width: 100%;
+      height: calc(100% - 61px);
+      //position: absolute;
+      //right: 0;
+      //@include animation(chat-list, 0.17s);
+      .info-block {
+        width: 100%;
+        height: auto;
+        @include flex();
+        @include flex-direction-column();
+        @include justify-content-flex-start();
+        @include align-items-center();
+        position: relative;
+        .left_btn {
+          @include absolute(14px, unset, unset, 14px);
+          @include icon-font();
+          cursor: pointer;
+          &:before {
+            content: "\E962";
+            color: $primary-color;
+            font-size: 20px;
+          }
+        }
+        .right_btn {
+          @include absolute(14px, 14px, unset, unset);
+          display: block;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 15px;
+          color: $grey-color;
+          transition: 0.3s;
+          &.next_btn_active {
+            color: $primary-color;
+            cursor: pointer;
+          }
+        }
+        .user-img {
+          margin: 30px 0 0 0;
+          position: relative;
+          background-color: #D1DCEE;
+          border-radius: 50%;
+          width: 90px;
+          height: 90px;
+          @include flex();
+          @include align-items-center();
+          @include justify-content-center();
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: contain;
+          }
+          .group-pic-icon {
+            display: block;
+            z-index: 8;
+            @include flex();
+            @include align-items-center();
+            @include justify-content-center();
+            @include absolute-center-xy();
+            @include icon-font();
+            /*&:before {
+              content: "\e968";
+              cursor: pointer;
+
+              color: #FFFFFF;
+              font-size: 30px;
+            }*/
+            &:before {
+              content: "\e949";
+              color: #FFFFFF;
+              font-size: 30px;
+            }
+            .group-pic-upload {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              right: 0px;
+              margin: 0;
+              bottom: 0;
+              padding: 0;
+              opacity: 0;
+              outline: none;
+              cursor: pointer;
+              font-size: 0px !important;
+            }
+          }
+        }
+        .user-img-without-before {
+          margin: 30px 0 0 0;
+          position: relative;
+          background-color: rgba(0, 0, 0, 0.4);
+          border-radius: 50%;
+          width: 90px;
+          height: 90px;
+          @include flex();
+          @include align-items-center();
+          @include justify-content-center();
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .group-pic-icon {
+            display: block;
+            z-index: 8;
+            @include flex();
+            @include align-items-center();
+            @include justify-content-center();
+            @include absolute-center-xy();
+            &:before {
+              content: attr(data-edit);
+              cursor: pointer;
+              color: #FFFFFF;
+              font-size: 28px;
+              font-weight: 700;
+              text-transform: capitalize;
+            }
+            .group-pic-upload {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              right: 0px;
+              margin: 0;
+              bottom: 0;
+              padding: 0;
+              opacity: 0;
+              outline: none;
+              cursor: pointer;
+              font-size: 0px !important;
+            }
+          }
+        }
+        .user-name {
+          border: none;
+          margin: 20px 0 0 0;
+          font-size: 16px;
+          line-height: 20px;
+          border-bottom: 1px solid $grey-border-color;
+          color: #000000;
+          background-color: transparent;
+          width: 240px;
+          font-weight: 400;
+          text-align: center;
+          &:focus {
+            border-bottom: 1px solid $primary-color;
+          }
+          &::placeholder {
+            text-align: center;
+            color: $grey-color;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+          }
+        }
+        .number-of-members {
+          display: block;
+          margin: 8px 0 20px 0;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 12px;
+          color: $grey-color;
+        }
+      }
+      .contacts {
+        //height: 100%;
+        height: calc(100% - 146px);
+        overflow-y: auto;
+        .contacts_pack {
+          .contact_img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin: 0 12px;
+            object-fit: contain;
+            @include user-drag(none);
+            @include user-select(none);
+          }
+          .contact_icon {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin: 0 12px;
+            background-color: $contact-icon-color;
+            @include flex();
+            @include justify-content-center();
+            @include align-items-center();
+            span {
+              font-size: 16px;
+              line-height: 19px;
+              font-weight: 700;
+              text-transform: uppercase;
+
+              text-align: left;
+            }
+          }
+          .no-name_icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin: 0 12px;
+            background-color: $avatar-bg-color;
+            @include icon-font();
+            @include flex();
+            @include align-items-center();
+            @include justify-content-center();
+            &::after {
+              content: "\e947";
+              color: #fff;
+              font-size: 34px;
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}

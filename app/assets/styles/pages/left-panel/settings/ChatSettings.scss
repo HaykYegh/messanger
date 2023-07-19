@@ -1,0 +1,30 @@
+
+@import "../../../utils/variables";
+@import "../../../utils/mixin";
+
+//************************* Chat Settings *************************//
+
+.chat-settings {
+  //margin: 0 30px;
+  //@include animation(right-to-left, 0.17s);
+  .message_enter {
+    border-radius: 8px;
+    background-color: #fff;
+    width: 100%;
+    min-height: 55px;
+    @include flex();
+    @include flex-direction-row();
+    @include align-items-center();
+    @include justify-content-space-between();
+  }
+}
+// Chat Settings open to choose language
+.chat_settings_content_open {
+  .language_block {
+    display: flex !important;
+  }
+  .message_enter {
+    border-top: 1px solid $border-color;
+    margin: 20px 0 0 0;
+  }
+}

@@ -1,0 +1,36 @@
+
+@import "../../utils/variables";
+@import "../../utils/mixin";
+
+//************************ Chat List ************************//
+
+.left_side_content {
+  flex: 1;
+  overflow-y: hidden;
+  text-align: -webkit-center;
+  .referral-input {
+    width: 80%;
+    margin-top: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    line-height: unset;
+    height: 36px;
+    padding-left: 10px;
+    text-rendering: optimizeLegibility;
+  }
+  .referral-hint {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #ccc;
+  }
+  .referral-success {
+    color: green;
+    margin-top: 12px;
+    font-size: 15px;
+  }
+  .referral-error {
+    color: red;
+    margin-top: 12px;
+    font-size: 15px;
+  }
+}

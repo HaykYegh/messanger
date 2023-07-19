@@ -1,0 +1,58 @@
+@media screen and (max-width: 1350px) {
+  .right_side_chat_footer{
+    .right_side_footer_content{
+      .chat_footer_input{
+        .text-input-block{
+          .replaying-message{
+            .message-part{
+              .top-info{
+                .replay-name{
+                  max-width: 250px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+@media screen and (max-width: 1180px) {
+  .right_side_content{
+    .message_container{
+      .bubble{
+        max-width: 83%;
+      }
+      .reply_bubble{
+        .replay-block{
+          .message-part{
+            .top-info{
+              .replay-name{
+                max-width: 105px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .right_side_chat_footer{
+    .right_side_footer_content{
+      .chat_footer_input{
+        .text-input-block{
+          .replaying-message{
+            .message-part{
+              .top-info{
+                .replay-name{
+                  max-width: 122px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

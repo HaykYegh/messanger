@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g transform="matrix(1,0,0,1,-1319,-2297)">
+        <g id="music_pause" transform="matrix(1,0,0,1,51,0)">
+            <rect x="1268" y="2297" width="36" height="36" style="fill:none;"/>
+            <g transform="matrix(1,0,0,1,-51,0)">
+                <path d="M1342,2308.5C1342.55,2308.5 1343,2308.95 1343,2309.5L1343,2320.5C1343,2321.05 1342.55,2321.5 1342,2321.5L1340,2321.5C1339.45,2321.5 1339,2321.05 1339,2320.5L1339,2309.5C1339,2308.95 1339.45,2308.5 1340,2308.5L1342,2308.5ZM1334,2308.5C1334.55,2308.5 1335,2308.95 1335,2309.5L1335,2320.5C1335,2321.05 1334.55,2321.5 1334,2321.5L1332,2321.5C1331.45,2321.5 1331,2321.05 1331,2320.5L1331,2309.5C1331,2308.95 1331.45,2308.5 1332,2308.5L1334,2308.5Z" style="fill:white;"/>
+            </g>
+        </g>
+    </g>
+</svg>
